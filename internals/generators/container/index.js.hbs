@@ -1,0 +1,39 @@
+/*
+ *
+ * {{properCase name }}
+ *
+ */
+
+import React from 'react';
+import { connect } from 'react-redux';
+{{#if wantActionsAndReducer}}
+import * as actions from './actions';
+{{/if}}
+
+export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
+}
+
+{{#if wantActionsAndReducer}}
+function mapStateToProps(state) {
+  //const {} = state;
+  return {};
+}
+{{/if}}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+  };
+}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, actions)({{ properCase name }});
+{{else}}
+export default connect(null, actions)({{ properCase name }});
+{{/if}}
