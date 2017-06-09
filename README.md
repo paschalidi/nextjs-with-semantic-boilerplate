@@ -1,2 +1,10 @@
-# new-vimcar-website
-the new vimcar website. including a CMS
+# nextjs-boilerplate 
+ 
+ 
+## Install 
+ 
+## Deploy 
+ 
+## Test 
+ 
+## CLI generators
