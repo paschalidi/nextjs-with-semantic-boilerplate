@@ -11,9 +11,8 @@
     "deploy": "now --public",
     "generate": "plop --plopfile internals/generators/index.js"
   },
-  "keywords": [],
-  "author": "christos.paschalidis",
-  "license": "Vimcar",
+  "author": "Vimcar GmbH",
+  "license": "All rights reserved",
   "dependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
