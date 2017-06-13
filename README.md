@@ -5,8 +5,9 @@ the new vimcar website. including a CMS
 
 - [Installation](#installation)
 - [Run](#run)
+- [Deploy](#deploy)
 - [Test](#test)
-- [CLI generators](#cliGenerators)
+- [CLI-generators](#CLI-generators)
 - [Licence](#licence)
 
 ## Installation
@@ -45,6 +46,6 @@ In case YARN is not installed in your machine go [here](https://yarnpkg.com/lang
  
 ## Test 
  
-## CLI generators
+## CLI-generators
 
 ## Licence
