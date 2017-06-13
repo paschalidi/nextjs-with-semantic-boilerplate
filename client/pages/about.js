@@ -1,10 +1,9 @@
-/* eslint-disable react/jsx-filename-extension */
-
 /**
 *
 * about
 *
 */
+/* eslint-disable react/jsx-filename-extension */
 
 import React from 'react';
 import withRedux from 'next-redux-wrapper';
