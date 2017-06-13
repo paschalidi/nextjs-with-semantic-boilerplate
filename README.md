@@ -42,7 +42,8 @@ In case YARN is not installed in your machine go [here](https://yarnpkg.com/lang
     ``` sh
     yarn deploy
     ```
- 
+* To delete deployed instances [here](https://zeit.co/blog/now-rm-is-here-and-more)]
+
 ## Generators
 
 ## Test 
