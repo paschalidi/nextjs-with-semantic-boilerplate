@@ -4,11 +4,11 @@
   "description": "New Vimcar website",
   "main": "index.js",
   "scripts": {
-    "production": "NODE_ENV=production node server",
-    "start": "NODE_ENV=development node server",
+    "dev": "NODE_ENV=development node server",
+    "start": "NODE_ENV=production node server",
     "test": "NODE_ENV=test jest --coverage",
     "build": "next build client",
-    "deploy": "now --public",
+    "deploy": "now --public ",
     "generate": "plop --plopfile internals/generators/index.js"
   },
   "author": "Vimcar GmbH",
