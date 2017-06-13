@@ -6,8 +6,8 @@ the new vimcar website. including a CMS
 - [Installation](#installation)
 - [Run](#run)
 - [Deploy](#deploy)
-- [Test](#test)
 - [Generators](#generators)
+- [Test](#test)
 - [Licence](#licence)
 
 ## Installation
@@ -34,8 +34,7 @@ In case YARN is not installed in your machine go [here](https://yarnpkg.com/lang
 * To deploy using now follow the next steps
 
     ``` sh
-    yarn build
-    yarn start
+    yarn build && yarn start
     ```
     Leave the server running.
     Open a new terminal or a tab and then run the follow command
@@ -44,8 +43,8 @@ In case YARN is not installed in your machine go [here](https://yarnpkg.com/lang
     yarn deploy
     ```
  
-## Test 
- 
 ## Generators
+
+## Test 
 
 ## Licence
