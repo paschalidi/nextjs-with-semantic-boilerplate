@@ -9,7 +9,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import GoogleAnalytics from '../GoogleTagManager'
+import GoogleTagManager from '../GoogleTagManager';
 
 export default class Layout extends React.Component {
 
@@ -17,7 +17,6 @@ export default class Layout extends React.Component {
     const { title, children } = this.props
     return (
       <div>
-        <GoogleAnalytics gtmId='GTM-5N7BT99' />
         <Head>
           <style>{`
             * { box-sizing: border-box; margin: 0; padding: 0 }
@@ -37,6 +36,7 @@ export default class Layout extends React.Component {
             <Link href="/about"><a>About</a></Link> |
           </nav>
         </header>
+        <GoogleTagManager gtmId='GTM-5N7BT99' />
 
         { children }
 
