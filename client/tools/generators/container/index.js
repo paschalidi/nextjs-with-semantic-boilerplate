@@ -34,12 +34,12 @@ module.exports = {
     // Generate index.js and index.test.js
     const actions = [{
       type: 'add',
-      path: '../../client/containers/{{properCase name}}/index.js',
+      path: '../../containers/{{properCase name}}/index.js',
       templateFile: './container/index.js.hbs',
       abortOnFail: true,
     }, {
       type: 'add',
-      path: '../../client/containers/{{properCase name}}/tests/index.test.js',
+      path: '../../containers/{{properCase name}}/tests/index.test.js',
       templateFile: './container/test.js.hbs',
       abortOnFail: true,
     }];
@@ -50,13 +50,13 @@ module.exports = {
       // Actions
       actions.push({
         type: 'add',
-        path: '../../client/containers/{{properCase name}}/actions.js',
+        path: '../../containers/{{properCase name}}/actions.js',
         templateFile: './container/actions.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../client/containers/{{properCase name}}/tests/actions.test.js',
+        path: '../../containers/{{properCase name}}/tests/actions.test.js',
         templateFile: './container/actions.test.js.hbs',
         abortOnFail: true,
       });
@@ -64,7 +64,7 @@ module.exports = {
       // Constants
       actions.push({
         type: 'add',
-        path: '../../client/containers/{{properCase name}}/constants.js',
+        path: '../../containers/{{properCase name}}/constants.js',
         templateFile: './container/constants.js.hbs',
         abortOnFail: true,
       });
@@ -72,13 +72,13 @@ module.exports = {
       // Reducer
       actions.push({
         type: 'add',
-        path: '../../client/containers/{{properCase name}}/reducer.js',
+        path: '../../containers/{{properCase name}}/reducer.js',
         templateFile: './container/reducer.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../client/containers/{{properCase name}}/tests/reducer.test.js',
+        path: '../../containers/{{properCase name}}/tests/reducer.test.js',
         templateFile: './container/reducer.test.js.hbs',
         abortOnFail: true,
       });
