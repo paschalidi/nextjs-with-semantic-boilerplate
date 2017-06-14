@@ -9,21 +9,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { initGA, logPageView } from '../../utils/google-anaytics';
+import GoogleAnalytics from '../GoogleTagManager'
 
 export default class Layout extends React.Component {
-  componentDidMount() {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true
-    }
-    logPageView()
-  }
 
   render() {
     const { title, children } = this.props
     return (
       <div>
+        <GoogleAnalytics gtmId='GTM-5N7BT99' />
         <Head>
           <style>{`
             * { box-sizing: border-box; margin: 0; padding: 0 }
