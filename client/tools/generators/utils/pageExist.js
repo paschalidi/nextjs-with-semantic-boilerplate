@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const pages = fs.readdirSync(path.join(__dirname, '../../../client/pages'));
+const pages = fs.readdirSync(path.join(__dirname, '../../../pages'));
 
 function pageExist(comp) {
   return pages.indexOf(comp) >= 0;

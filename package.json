@@ -10,6 +10,7 @@
     "build": "next build client",
     "deploy": "now --public ",
     "generate": "plop --plopfile internals/generators/index.js"
+    "generate": "plop --plopfile client/tools/generators/index.js"
   },
   "author": "Vimcar GmbH",
   "license": "All rights reserved",
@@ -29,6 +30,8 @@
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
+    "react-ga": "^2.2.0",
+    "react-google-tag-manager": "^2.1.0",
     "react-redux": "^5.0.5",
     "react-test-renderer": "^15.5.4",
     "redux": "^3.6.0",

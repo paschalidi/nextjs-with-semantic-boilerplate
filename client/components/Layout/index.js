@@ -9,31 +9,41 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import GoogleAnalytics from '../GoogleTagManager'
 
-export default ({ children, title = 'This is the default title' }) => (
-  <div>
-    <Head>
-      <style>{`
-      * { box-sizing: border-box; margin: 0; padding: 0 }
-      body {
-        font: 15px Helvetica, Arial, sans-serif;
-      }
-    `}</style>
-      <title>{ title }</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/"><a>Home</a></Link> |
-        <Link href="/about"><a>About</a></Link> |
-      </nav>
-    </header>
+export default class Layout extends React.Component {
 
-    { children }
+  render() {
+    const { title, children } = this.props
+    return (
+      <div>
+        <GoogleAnalytics gtmId='GTM-5N7BT99' />
+        <Head>
+          <style>{`
+            * { box-sizing: border-box; margin: 0; padding: 0 }
+            body {
+              font: 15px Helvetica, Arial, sans-serif;
+            }
+          `}
+          </style>
+          <title>{ title }</title>
+          <meta charSet="utf-8" />
+          <meta name="viewport"
+                content="initial-scale=1.0, width=device-width" />
+        </Head>
+        <header>
+          <nav>
+            <Link href="/"><a>Home</a></Link> |
+            <Link href="/about"><a>About</a></Link> |
+          </nav>
+        </header>
 
-    <footer>
-      {'I`m here to stay'}
-    </footer>
-  </div>
-);
+        { children }
+
+        <footer>
+          {'I`m here to stay'}
+        </footer>
+      </div>
+    )
+  }
+}
