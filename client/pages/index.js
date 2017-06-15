@@ -7,12 +7,26 @@
 
 import React from 'react';
 import withRedux from 'next-redux-wrapper';
+import * as contentful from 'contentful'
 import initStore from '../store';
-
+import { ACCESS_TOKEN, SPACE_ID, AN_ENTRY } from '../contentful-constants';
 import Layout from '../components/Layout/index';
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+    let client = contentful.createClient({
+      space: SPACE_ID,
+      accessToken: ACCESS_TOKEN,
+    });
+
+    client.getEntries()
+      .then((response) => console.log(response.items))
+      .catch(console.error);
+
+    client.getEntry(AN_ENTRY)
+      .then((entry) => console.log(entry))
+      .catch(console.error)
+
     return (
       <Layout title="Vimcar">
         <div className="hello">
@@ -28,8 +42,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
             .hello:hover {
               background: #ccc;
             }
-          `}
-          </style>
+          `}</style>
         </div>
       </Layout>
     );

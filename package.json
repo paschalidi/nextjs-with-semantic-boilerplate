@@ -14,6 +14,7 @@
   "author": "Vimcar GmbH",
   "license": "All rights reserved",
   "dependencies": {
+    "contentful": "^4.4.3",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-airbnb-base": "^11.2.0",
