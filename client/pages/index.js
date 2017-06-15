@@ -9,7 +9,7 @@ import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import * as contentful from 'contentful'
 import initStore from '../store';
-import { ACCESS_TOKEN, SPACE_ID, HEADER } from '../contentful';
+import { ACCESS_TOKEN, SPACE_ID, HEADER_ENTRY } from '../contentful';
 import Layout from '../components/Layout/index';
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -23,7 +23,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       .then((response) => console.log(response.items))
       .catch(console.error);
 
-    client.getEntry('1ECvjGoZQgQcKYgGew0wmu')
+    client.getEntry(HEADER_ENTRY)
       .then((entry) => console.log(entry))
       .catch(console.error)
 
