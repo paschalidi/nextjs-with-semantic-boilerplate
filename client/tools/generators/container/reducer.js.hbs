@@ -7,6 +7,10 @@
 import { fromJS } from 'immutable';
 import {
   DEFAULT_ACTION,
+{{#if wantContentful}}
+  FETCH_CONTENTFUL,
+{{/if}}
+
 } from './constants';
 
 const initialState = fromJS({});
@@ -15,6 +19,11 @@ function {{ camelCase name }}Reducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;
+{{#if wantContentful}}
+    case FETCH_CONTENTFUL:
+      return state
+{{/if}}
+
     default:
       return state;
   }

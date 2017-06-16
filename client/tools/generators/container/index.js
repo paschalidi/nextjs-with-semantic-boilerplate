@@ -29,6 +29,12 @@ module.exports = {
     name: 'wantActionsAndReducer',
     default: true,
     message: 'Do you want an actions/constants/reducer tuple for this container?',
+  },
+  {
+    type: 'confirm',
+    name: 'wantContentful',
+    default: true,
+    message: 'Do you want to fetch from Contentful?',
   }],
   actions: (data) => {
     // Generate index.js and index.test.js

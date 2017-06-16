@@ -5,13 +5,37 @@
  */
 
 import React from 'react';
+
 import { connect } from 'react-redux';
 {{#if wantActionsAndReducer}}
 import * as actions from './actions';
 {{/if}}
 
+{{#if wantContentful}}
+import * as contentful from 'contentful'
+import { SPACE_ID, ACCESS_TOKEN } from '../../contentful/';
+{{/if}}
+
 export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
   render() {
+    {{#if wantContentful}}
+    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
+    // client.getEntries()
+    //   .then((response) => this.props.fetchContentful(response))
+    //   .catch(console.error);
+    //
+    // client.getEntry(SUPPORT)
+    //   .then(function (entry) {
+    //     // logs the entry metadata
+    //
+    //     console.log('entry.sys')
+    //     console.log(entry.sys)
+    //
+    //     // logs the field with ID title
+    //     console.log(entry.fields.productName)
+    //   })productName
+    {{/if}}
+
     return (
       <div>
       </div>
