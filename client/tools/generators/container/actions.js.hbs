@@ -1,0 +1,22 @@
+/*
+ *
+ * {{ properCase name }} actions
+ *
+ */
+
+import {
+  DEFAULT_ACTION,
+  FETCH_CONTENTFUL,
+} from './constants';
+
+export function defaultAction() {
+  return {
+    type: DEFAULT_ACTION,
+  };
+}
+
+export function fetchContentful() {
+  return {
+    type: FETCH_CONTENTFUL,
+  };
+}

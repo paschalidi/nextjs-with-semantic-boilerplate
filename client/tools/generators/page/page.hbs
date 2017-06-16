@@ -1,0 +1,25 @@
+/**
+*
+* {{ name }}
+*
+*/
+/* eslint-disable react/jsx-filename-extension */
+
+import React from 'react';
+import withRedux from 'next-redux-wrapper';
+import initStore from '../store';
+
+import Layout from '../components/Layout/index';
+
+class {{ properCase name }} extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    return (
+      <Layout title="{{ properCase name }}">
+        <style jsx>{``}</style>
+        <p>Hello from {{ name }}!!</p>
+      </Layout>
+    );
+  }
+}
+
+export default withRedux(initStore)({{ properCase name }});
