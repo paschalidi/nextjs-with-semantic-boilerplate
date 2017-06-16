@@ -18,6 +18,7 @@ export default class Layout extends React.Component {
     return (
       <div>
         <Head>
+          <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css' />
           <style>{`
             * { box-sizing: border-box; margin: 0; padding: 0 }
             body {
