@@ -16,7 +16,7 @@ import { Grid, List } from 'semantic-ui-react';
 
 export class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
+    // const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
     // client.getEntries()
     //   .then((response) => this.props.fetchContentful(response))
     //   .catch(console.error);
