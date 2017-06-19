@@ -33,171 +33,80 @@ export class Footer extends React.Component { // eslint-disable-line react/prefe
     //   })productName
 
     return (
-      <div className="footer footer-font-color">
+      <div className="footer">
         <div className="top-bottom-padding">
           <Grid container stackable columns={6}>
             <Grid.Row>
+              <Grid.Column>
+                <List inverted verticalAlign="middle">
+                  <List.Item>
+                    <List.Content>
+                      <List.Header>Header</List.Header>
+                    </List.Content>
+                  </List.Item>
+                </List>
+                <List link animated inverted verticalAlign="middle">
+                  <List.Item>
+                    <List.Content>
+                      <List.Description>
+                        <a>Home</a>
+                      </List.Description>
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Description>
+                        <a>Fleet Management</a>
+                      </List.Description>
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Description>
+                        <a>Magazine</a>
+                      </List.Description>
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Description>
+                        <a>Support</a>
+                      </List.Description>
+                    </List.Content>
+                  </List.Item>
+                </List>
+              </Grid.Column>
 
-              <Grid.Column>
-                <List verticalAlign="middle">
+
+              <Grid.Column floated="right">
+                <List className="footer-inverted-color" inverted verticalAlign="middle">
                   <List.Item>
-                    <List.Content>
-                      <List.Header className="footer-font-color">Header</List.Header>
-                    </List.Content>
+                    <List.Icon name="phone" />
+                    <List.Content className="nowrap">+49 30 55579852</List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Icon name="mail outline" />
+                    <List.Content className="nowrap">kontakt@vimcar.com</List.Content>
                   </List.Item>
                 </List>
-                <List link animated verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Home</a>
-                      </List.Description>
-                    </List.Content>
+                <br />
+                <br />
+                <List link horizontal inverted verticalAlign="middle">
+                  <List.Item as="a">
+                    <List.Icon name="facebook f" />
                   </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Fleet Management</a>
-                      </List.Description>
-                    </List.Content>
+                  <List.Item as="a">
+                    <List.Icon name="twitter" />
                   </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Magazine</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Support</a>
-                      </List.Description>
-                    </List.Content>
+                  <List.Item as="a">
+                    <List.Icon name="google plus" />
                   </List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column>
-                <List verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Header className="footer-font-color">Header</List.Header>
-                    </List.Content>
-                  </List.Item>
-                </List>
-                <List link animated verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Home</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Fleet Management</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Magazine</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Support</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column>
-                <List verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Header className="footer-font-color">Header</List.Header>
-                    </List.Content>
-                  </List.Item>
-                </List>
-                <List link animated verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Home</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Fleet Management</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Magazine</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Support</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column>
-                <List verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Header className="footer-font-color">Header</List.Header>
-                    </List.Content>
-                  </List.Item>
-                </List>
-                <List link animated verticalAlign="middle">
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Home</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Fleet Management</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Magazine</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Content>
-                      <List.Description>
-                        <a className="footer-font-color">Support</a>
-                      </List.Description>
-                    </List.Content>
-                  </List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column floated="right"> 6 </Grid.Column>
             </Grid.Row>
           </Grid>
         </div >
+
 
         <div className="top-bottom-padding-sm">
           <Grid container stackable columns={5}>
@@ -223,8 +132,8 @@ export class Footer extends React.Component { // eslint-disable-line react/prefe
         </div>
 
         <style>{`
-          .footer-font-color{
-            color: #fbfcfc !important;
+          .footer-inverted-color{
+            color: rgba(255,255,255,.9);
           }
           .footer{
             height: auto;
@@ -239,6 +148,9 @@ export class Footer extends React.Component { // eslint-disable-line react/prefe
           .divider-padding{
             padding : 1.5em 0;
           }
+          .nowrap {
+            white-space: nowrap ;
+          }
         `} </style>
 
       </div>
@@ -246,6 +158,7 @@ export class Footer extends React.Component { // eslint-disable-line react/prefe
   }
 }
 
+//todo connect with redux and contentful when you have input for content
 function mapStateToProps(state) {
   //const {} = state;
   return {};
