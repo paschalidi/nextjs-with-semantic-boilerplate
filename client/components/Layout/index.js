@@ -3,6 +3,7 @@
  * Layout
  *
  */
+/* eslint-disable import/first */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prop-types */
 
@@ -11,7 +12,7 @@ import Head from 'next/head';
 
 import GoogleTagManager from '../GoogleTagManager';
 import Footer from '../../containers/Footer';
-import NavigationMenu from '../../containers/NavigationMenu';
+import NavigationMenu from '../NavigationMenu';
 
 export default class Layout extends React.Component {// eslint-disable-line react/prefer-stateless-function
 

@@ -7,17 +7,34 @@
 import React from 'react';
 import Link from 'next/link'
 
-import { connect } from 'react-redux';
-import * as actions from './actions';
-
 import * as contentful from 'contentful'
-import { SPACE_ID, ACCESS_TOKEN } from './constants';
+import { SPACE_ID, ACCESS_TOKEN, LOGO } from './constants';
 
 import { Menu, Segment, Container, Button } from 'semantic-ui-react';
 
-export class NavigationMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export default class NavigationMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
   state = { activeItem: 'home' };
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      logoUrl: null,
+      navigationMenuItems: []
+    }
+  }
+
+  componentWillMount() {
+    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
+
+    client.getEntries()
+      .then((response) => this.setState({ navigationMenuItems: response.items }))
+      .catch(console.error);
+
+    client.getAsset(LOGO)
+      .then((asset) => this.setState({ logoUrl: `https:${asset.fields.file.url}` }))
+      .catch(console.error)
+  }
 
   renderMenuItems(items, activeItem) {
     return items.map((key, index) => {
@@ -46,36 +63,21 @@ export class NavigationMenu extends React.Component { // eslint-disable-line rea
     })
   }
 
-  componentWillMount() {
-    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
-
-    client.getEntries()
-      .then((response) => this.props.fetchContentful(response))
-      .catch(console.error);
-  }
-
   render() {
-    const { activeItem } = this.state;
-    const { navigationMenuReducer } = this.props;
+    const { activeItem, navigationMenuItems, logoUrl } = this.state;
     return (
       <div>
         <Segment className="no-round-corner">
-          <Menu size="large" icon stackable secondary>
+          <Menu size="large" stackable secondary>
             <Container>
-              <Link href='/'>
-                {/*todo fix logo bug*/}
-                <Menu.Item className="logo-item"
-                           name="logo"
-                           active={activeItem === 'logo'}
-                           onClick={this.handleItemClick}>
-                  <img className="fix-logo-width"
-                       role="presentation"
-                       src="https://source.unsplash.com/300x100"
-                  />
-                </Menu.Item>
-              </Link>
 
-              {this.renderMenuItems(navigationMenuReducer, activeItem)}
+              <Menu.Item name="logo">
+                <img role="presentation" src={logoUrl} />
+                <div className="float-right">VIMCAR</div>
+              </Menu.Item>
+
+
+              {this.renderMenuItems(navigationMenuItems, activeItem)}
 
               <Menu.Item className="right">
                 <Button>LOGIN</Button>
@@ -93,16 +95,14 @@ export class NavigationMenu extends React.Component { // eslint-disable-line rea
           .ui.secondary.menu a.logo-item:hover{
                 background: transparent !important;
           }
+          .float-right{
+            color: darkturquoise;
+            font-size: 30px;
+            padding-left: 0.5em;
+          }
         `}</style>
       </div>
 
     );
   }
 }
-
-function mapStateToProps(state) {
-  const { navigationMenuReducer } = state;
-  return { navigationMenuReducer };
-}
-
-export default connect(mapStateToProps, actions)(NavigationMenu);
