@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import * as actions from './actions';
 
 import * as contentful from 'contentful'
-import { SPACE_ID, ACCESS_TOKEN } from '../../contentful/navigation-menu.js';
+import { SPACE_ID, ACCESS_TOKEN } from './constants';
 
 import { Menu, Segment, Container, Button } from 'semantic-ui-react';
 
