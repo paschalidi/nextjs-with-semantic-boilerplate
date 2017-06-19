@@ -10,6 +10,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import GoogleTagManager from '../GoogleTagManager';
+import Footer from '../../containers/Footer'
 
 export default class Layout extends React.Component {
 
@@ -19,6 +20,8 @@ export default class Layout extends React.Component {
       <div>
         <Head>
           <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css' />
+          <link rel='stylesheet'
+                href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css' />
           <style>{`
             * { box-sizing: border-box; margin: 0; padding: 0 }
             body {
@@ -38,12 +41,9 @@ export default class Layout extends React.Component {
           </nav>
         </header>
         <GoogleTagManager gtmId='GTM-5N7BT99' />
-
         { children }
 
-        <footer>
-          {'I`m here to stay'}
-        </footer>
+        <Footer />
       </div>
     )
   }
