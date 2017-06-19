@@ -3,7 +3,7 @@
  * {{properCase name }}
  *
  */
-
+/* eslint-disable import/first */
 import React from 'react';
 
 import { connect } from 'react-redux';
@@ -12,8 +12,8 @@ import * as actions from './actions';
 {{/if}}
 
 {{#if wantContentful}}
-import * as contentful from 'contentful'
-import { SPACE_ID, ACCESS_TOKEN } from '../../contentful/';
+import * as contentful from 'contentful';
+import { SPACE_ID, ACCESS_TOKEN } from './constants'
 {{/if}}
 
 export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
@@ -49,12 +49,6 @@ function mapStateToProps(state) {
   return {};
 }
 {{/if}}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
-}
 
 {{#if wantActionsAndReducer}}
 export default connect(mapStateToProps, actions)({{ properCase name }});
