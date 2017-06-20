@@ -20,7 +20,7 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
     super(props);
     this.state = {
       logoUrl: null,
-      navigationMenuItems: []
+      navigationMenuItems: [],
     }
   }
 
