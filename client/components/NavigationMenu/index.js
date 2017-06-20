@@ -50,7 +50,11 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
               <Menu.Item className="right"
                          name={value}
                          active={activeItem === { value }}
-                         onClick={this.handleItemClick}>
+                         onClick={this.handleItemClick}
+                         onMouseEnter={() => {
+                           Router.prefetch('/');
+                           console.log('prefetching /!')
+                         }}>
                 {value}
               </Menu.Item>
             </Link>
