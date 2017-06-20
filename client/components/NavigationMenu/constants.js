@@ -13,4 +13,4 @@ export const STEUERBERATER = '4lEF90YMCsASycSOQWeiqM';
 export const MAGAZIN = '6R5AXDxTheEkMkwIiAowmq';
 export const SUPPORT = '2D6ZFf49zma2MeSKa6Wu6e';
 
-export const LOGO = '2xpICVGGWUmMKqYQSUU6Qm';
+export const LOGO = '6FSa2ADCyQk4Qe0ckmOa4k';

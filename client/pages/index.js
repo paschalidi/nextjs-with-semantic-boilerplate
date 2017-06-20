@@ -10,6 +10,7 @@ import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 
 import Layout from '../components/Layout/index';
+import TripleContainer from '../components/TripleContainer';
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -17,6 +18,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       <Layout title="Vimcar">
         <div className="hello">
           <p>Hello Vimcar</p>
+          <TripleContainer />
           <style jsx>{`
             .hello {
               font: 15px Helvetica, Arial, sans-serif;
