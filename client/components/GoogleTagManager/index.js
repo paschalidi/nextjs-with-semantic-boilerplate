@@ -3,6 +3,7 @@
  * GoogleTagManager
  *
  */
+/* eslint-disable import/first */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prop-types */
 

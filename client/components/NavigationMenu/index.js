@@ -3,6 +3,9 @@
  * NavigationMenu
  *
  */
+/* eslint-disable import/first */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/prop-types */
 
 import React from 'react';
 import Link from 'next/link'
