@@ -77,7 +77,7 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
           {`
           .no-round-corner {
             border-radius: 0px !important;
-
+            background-color:#f2f2f2;
           }
           .text-block{
             position: relative;

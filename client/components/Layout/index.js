@@ -11,11 +11,11 @@ import React from 'react';
 import Head from 'next/head';
 
 import GoogleTagManager from '../GoogleTagManager';
-import Footer from '../../containers/Footer';
+import VimcarFooter from '../Footer';
 import NavigationMenu from '../NavigationMenu';
 import PageLoader from '../PageLoader';
 
-export default class Layout extends React.Component {// eslint-disable-line react/prefer-stateless-function
+export default class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     const { title, children } = this.props
@@ -26,10 +26,14 @@ export default class Layout extends React.Component {// eslint-disable-line reac
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
           />
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
+            rel="stylesheet"
+          />
+
           <style>{`
             * { box-sizing: border-box; margin: 0; padding: 0 }
-            body { font-family: 'Open Sans', sans-serif; }
+            body {font-family: 'Open Sans', sans-serif; }
           `}
           </style>
           <title>{ title }</title>
@@ -42,7 +46,7 @@ export default class Layout extends React.Component {// eslint-disable-line reac
 
         { children }
 
-        <Footer />
+        <VimcarFooter />
       </div>
     );
   }
