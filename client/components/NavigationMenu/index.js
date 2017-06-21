@@ -34,8 +34,11 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
     const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
 
     client.getEntries()
-      .then((response) => this.setState({ isLoading: false, navigationMenuItems: response.items }))
-      .catch(console.error);
+      .catch(console.error)
+      .then((response) => this.setState({
+        isLoading: false,
+        navigationMenuItems: response.items,
+      }));
 
     client.getAsset(LOGO)
       .then((asset) => this.setState({ logoUrl: `https:${asset.fields.file.url}` }))
