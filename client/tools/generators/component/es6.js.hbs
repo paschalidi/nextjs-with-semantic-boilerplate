@@ -23,7 +23,11 @@ import Loading from '../../components/Loading'
 
 import {} from 'semantic-ui-react';
 
+{{#if isContainer}}
+export default class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+{{else}}
 export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+{{/if}}
 {{#if wantContentful}}
   constructor(props) {
     super(props);
@@ -62,11 +66,9 @@ function mapStateToProps(state) {
 {{/if}}
 
 {{#if isContainer}}
-    {{#if wantActionsAndReducer}}
+{{#if wantActionsAndReducer}}
 export default connect(mapStateToProps, actions)({{ properCase name }});
-    {{else}}
-export default connect(null, actions)({{ properCase name }});
-    {{/if}}
 {{else}}
-export default {{ properCase name }};
+export default connect(null, actions)({{ properCase name }});
+{{/if}}
 {{/if}}
