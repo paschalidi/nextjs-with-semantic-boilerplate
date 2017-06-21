@@ -10,8 +10,9 @@ import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 
 import Layout from '../components/Layout/index';
-import TripleContainer from '../components/TripleContainer';
 import HeroHeader from '../components/HeroHeader';
+import TripleContainer from '../components/TripleContainer';
+import SingleContainer from '../components/SingleContainer';
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -20,6 +21,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
         <div>
           <HeroHeader />
           <TripleContainer />
+          <SingleContainer />
         </div>
 
         <style jsx>{`
