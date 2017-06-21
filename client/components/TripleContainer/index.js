@@ -86,10 +86,8 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
           .product-title{
             margin: 0;
             font-size: 25px;
-            font-weight: 300;
           }
           .product-anchor{
-            font-weight: 300;
             color: #1f9ac1;
           }
 
