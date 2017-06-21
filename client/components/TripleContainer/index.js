@@ -35,7 +35,7 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
     const { logoUrl } = this.state;
 
     return (
-      <div>
+      <div className="top">
         <Grid container centered stackable>
           <Grid.Row stretched columns={3}>
             <Grid.Column>
@@ -75,6 +75,10 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
         </Grid>
         <style jsx>
           {`
+          .top{
+            position: relative;
+            top: -10em;
+          }
           .no-round-corner {
             border-radius: 0px !important;
             background-color:#f2f2f2;
