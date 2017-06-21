@@ -13,9 +13,6 @@ import { Loader, Dimmer } from 'semantic-ui-react';
 class Loading extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
-    console.log('this.props')
-    console.log(this.props)
-
     if (!this.props.isLoading) {
       return <div></div>;
     }
