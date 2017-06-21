@@ -26,16 +26,10 @@ export default class Layout extends React.Component {// eslint-disable-line reac
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
           />
-          <link
-            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel='stylesheet'
-            type="text/css"
-          />
-
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" />
           <style>{`
             * { box-sizing: border-box; margin: 0; padding: 0 }
-            body {
-              font-family: 'Source Sans Pro', sans-serif;
-            }
+            body { font-family: 'Open Sans', sans-serif; }
           `}
           </style>
           <title>{ title }</title>
