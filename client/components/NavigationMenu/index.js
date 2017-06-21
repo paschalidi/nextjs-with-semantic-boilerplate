@@ -14,7 +14,8 @@ import Router from 'next/router'
 import * as contentful from 'contentful'
 import { SPACE_ID, ACCESS_TOKEN, LOGO } from './constants';
 
-import { Menu, Segment, Container, Button } from 'semantic-ui-react';
+import { Menu, Segment, Container, Button, Loader, Dimmer } from 'semantic-ui-react';
+import Loading from '../Loading';
 
 export default class NavigationMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
   state = { activeItem: 'home' };
@@ -23,16 +24,17 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: true,
       logoUrl: null,
       navigationMenuItems: [],
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
 
     client.getEntries()
-      .then((response) => this.setState({ navigationMenuItems: response.items }))
+      .then((response) => this.setState({ isLoading: false, navigationMenuItems: response.items }))
       .catch(console.error);
 
     client.getAsset(LOGO)
@@ -78,16 +80,18 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
   }
 
   render() {
-    const { activeItem, navigationMenuItems, logoUrl } = this.state;
+    const { activeItem, navigationMenuItems, logoUrl, isLoading } = this.state;
+
     return (
       <div>
         <Segment className="no-round-corner">
           <Menu size="large" stackable secondary>
             <Container>
+              <Loading isLoading={isLoading} />
 
               <Menu.Item name="logo">
                 <img role="presentation" src={logoUrl} />
-                <div className="float-right">VIMCAR</div>
+                <div className="navbar-logo">VIMCAR</div>
               </Menu.Item>
 
 
@@ -109,7 +113,7 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
           .ui.secondary.menu a.logo-item:hover{
                 background: transparent !important;
           }
-          .float-right{
+          .navbar-logo{
             color: #1f9ac1;
             font-size: 30px;
             padding-left: 0.5em;
