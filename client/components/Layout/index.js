@@ -13,7 +13,7 @@ import Head from 'next/head';
 import GoogleTagManager from '../GoogleTagManager';
 import Footer from '../../containers/Footer';
 import NavigationMenu from '../NavigationMenu';
-import Loader from '../Loader';
+import PageLoader from '../PageLoader';
 
 export default class Layout extends React.Component {// eslint-disable-line react/prefer-stateless-function
 
@@ -37,7 +37,7 @@ export default class Layout extends React.Component {// eslint-disable-line reac
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <GoogleTagManager gtmId="GTM-5N7BT99" />
-        <Loader />
+        <PageLoader />
         <NavigationMenu />
 
         { children }
