@@ -6,15 +6,13 @@
 /* eslint-disable import/first */
 import React from 'react';
 
-import { connect } from 'react-redux';
-import * as actions from './actions';
 
 import * as contentful from 'contentful';
 import { SPACE_ID, ACCESS_TOKEN } from './constants';
 
 import { Grid, List } from 'semantic-ui-react';
 
-export class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export default class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     // const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
     // client.getEntries()
@@ -157,11 +155,3 @@ export class Footer extends React.Component { // eslint-disable-line react/prefe
     );
   }
 }
-
-//todo connect with redux and contentful when you have input for content
-function mapStateToProps(state) {
-  //const {} = state;
-  return {};
-}
-
-export default connect(mapStateToProps, actions)(Footer);
