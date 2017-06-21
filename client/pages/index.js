@@ -11,27 +11,20 @@ import initStore from '../store';
 
 import Layout from '../components/Layout/index';
 import TripleContainer from '../components/TripleContainer';
+import HeroHeader from '../components/HeroHeader';
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <Layout title="Vimcar">
-        <div className="hello">
-          <p>Hello Vimcar</p>
+        <div>
+          <HeroHeader />
           <TripleContainer />
-          <style jsx>{`
-            .hello {
-              font: 15px Helvetica, Arial, sans-serif;
-              background: #eee;
-              padding: 100px;
-              text-align: center;
-              transition: 100ms ease-in background;
-            }
-            .hello:hover {
-              background: #ccc;
-            }
-          `}</style>
         </div>
+
+        <style jsx>{`
+        `}</style>
+
       </Layout>
     );
   }
