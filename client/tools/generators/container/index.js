@@ -6,42 +6,52 @@ const componentExists = require('../utils/componentExists');
 
 module.exports = {
   description: 'Add a container component',
-  prompts: [{
-    type: 'input',
-    name: 'name',
-    message: 'What should it be called?',
-    default: 'Form',
-    validate: (value) => {
-      if ((/.+/).test(value)) {
-        return componentExists(value) ? 'A component or container with this name already exists' : true;
-      }
-
-      return 'The name is required';
+  prompts: [
+    {
+      type: 'confirm',
+      name: 'isContainer',
+      message: 'Is container:',
+      default: true,
     },
-  }, {
-    type: 'list',
-    name: 'component',
-    message: 'Select a base component:',
-    default: 'Component',
-    choices: () => ['Component', 'PureComponent'],
-  }, {
-    type: 'confirm',
-    name: 'wantActionsAndReducer',
-    default: true,
-    message: 'Do you want an actions/constants/reducer tuple for this container?',
-  },
-  {
-    type: 'confirm',
-    name: 'wantContentful',
-    default: true,
-    message: 'Do you want to fetch from Contentful?',
-  }],
+    {
+      type: 'confirm',
+      name: 'wantContentful',
+      message: 'Are you gonna use Contentful',
+      default: true,
+      choices: () => ['Yes', 'No'],
+    },
+    {
+      type: 'confirm',
+      name: 'wantActionsAndReducer',
+      default: true,
+      message: 'Do you want an actions/constants/reducer tuple for this container?',
+    },
+    {
+      type: 'list',
+      name: 'component',
+      message: 'Select a base component:',
+      default: 'Component',
+      choices: () => ['Component', 'PureComponent'],
+    },
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What should it be called?',
+      default: 'Form',
+      validate: (value) => {
+        if ((/.+/).test(value)) {
+          return componentExists(value) ? 'A component or container with this name already exists' : true;
+        }
+        return 'The name is required';
+      },
+    },
+  ],
   actions: (data) => {
     // Generate index.js and index.test.js
     const actions = [{
       type: 'add',
       path: '../../containers/{{properCase name}}/index.js',
-      templateFile: './container/index.js.hbs',
+      templateFile: './component/es6.js.hbs',
       abortOnFail: true,
     }, {
       type: 'add',
@@ -71,7 +81,7 @@ module.exports = {
       actions.push({
         type: 'add',
         path: '../../containers/{{properCase name}}/constants.js',
-        templateFile: './container/constants.js.hbs',
+        templateFile: './component/constants.js.hbs',
         abortOnFail: true,
       });
 

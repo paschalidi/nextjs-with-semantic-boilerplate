@@ -4,5 +4,14 @@
  *
  */
 
+
+{{#if wantActionsAndReducer}}
 export const DEFAULT_ACTION = '{{ properCase name }}/DEFAULT_ACTION';
 export const FETCH_CONTENTFUL = '{{ properCase name }}/FETCH_CONTENTFUL';
+{{/if}}
+
+
+{{#if wantContentful}}
+export const SPACE_ID = '';
+export const ACCESS_TOKEN = '';
+{{/if}}
