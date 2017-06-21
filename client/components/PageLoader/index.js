@@ -1,6 +1,6 @@
 /**
  *
- * Loader
+ * PageLoader
  *
  */
 /* eslint-disable import/first */
