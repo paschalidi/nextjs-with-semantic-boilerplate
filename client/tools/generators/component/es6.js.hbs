@@ -18,15 +18,15 @@ import * as actions from './actions';
 {{#if wantContentful}}
 import * as contentful from 'contentful';
 import { SPACE_ID, ACCESS_TOKEN } from './constants';
-import Loading from '../../components/Loading'
+import Loading from '../../components/Loading';
 {{/if}}
 
 import {} from 'semantic-ui-react';
 
 {{#if isContainer}}
-export default class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
-{{else}}
 export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+{{else}}
+export default class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
 {{/if}}
 {{#if wantContentful}}
   constructor(props) {
