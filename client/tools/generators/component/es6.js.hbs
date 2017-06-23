@@ -26,7 +26,7 @@ import {} from 'semantic-ui-react';
 {{#if isContainer}}
 export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
 {{else}}
-export default class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
 {{/if}}
 {{#if wantContentful}}
   constructor(props) {
@@ -39,20 +39,31 @@ export default class {{ properCase name }} extends React.{{{ component }}} { // 
   componentDidMount() {
     // const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN });
 
-    // client.getEntries()
-    //   .then(response => this.setState({ isLoading: false, navigationMenuItems: response.items }))
-    //   .catch(console.error);
+    // client.getEntry(ENTRY_ID)
+    //   .catch(console.error)
+    //   .then((entry) => {
+    //     const { title, subtitle, anchor } = entry.fields;
     //
-    // client.getAsset(ASSET_ID)
-    //   .then(asset => this.setState({ logoUrl: `https:${asset.fields.file.url}` }))
-    //   .catch(console.error);
+    //     this.setState({ isLoading: false, title, subtitle, anchor });
+    //   });
+
+    // client.getAsset(IMAGE_ID)
+    //   .catch(console.error)
+    //   .then((asset) => {
+    //     const { url } = asset.fields.file;
+    //
+    //     this.setState({
+    //       isLoading: false,
+    //       imageUrl: `https:${url}`,
+    //     });
+    //   });
   }
 {{/if}}
   render() {
     return (
       <div>
+        <p>{{ properCase name }}!!</p>
         <style jsx>{``}</style>
-        <p>Form!!</p>
       </div>
     );
   }
@@ -71,4 +82,6 @@ export default connect(mapStateToProps, actions)({{ properCase name }});
 {{else}}
 export default connect(null, actions)({{ properCase name }});
 {{/if}}
+{{else}}
+export default {{ properCase name }};
 {{/if}}
