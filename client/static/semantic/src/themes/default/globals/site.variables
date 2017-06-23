@@ -6,7 +6,7 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Open Sans', sans-serif;;
+@fontName          : 'Lato';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -14,7 +14,7 @@
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '300,400,300italic,400';
+@googleFontSizes   : '400,700,400italic,700italic';
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
@@ -25,10 +25,10 @@
 --------------------*/
 
 /* This is the single variable that controls them all */
-@emSize   : 25px;
+@emSize   : 14px;
 
 /* The size of page text  */
-@fontSize : 25px;
+@fontSize : 14px;
 
 
 /*-------------------
@@ -47,8 +47,8 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @yellow;
-@secondaryColor      : @blue;
+@primaryColor        : @blue;
+@secondaryColor      : @black;
 
 @lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightBlack;
@@ -57,7 +57,7 @@
   Page Heading
 ---------------*/
 
-@headerFontWeight : 300;
+@headerFontWeight : bold;
 @headerLineHeight : unit((18 / 14), em);
 
 @h1 : unit((28 / 14), rem);
