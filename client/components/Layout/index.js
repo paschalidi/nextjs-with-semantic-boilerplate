@@ -9,10 +9,6 @@
 
 import React from 'react';
 import Head from 'next/head';
-
-import globalStyle from '../../styles/index.css';
-import semantic from '../../semantic/dist/semantic.min.css';
-
 import GoogleTagManager from '../GoogleTagManager';
 import VimcarFooter from '../Footer';
 import NavigationMenu from '../NavigationMenu';
@@ -37,8 +33,9 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
             type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
-          <style dangerouslySetInnerHTML={{ __html: globalStyle }} />
-          <style dangerouslySetInnerHTML={{ __html: semantic }} />
+          <link rel="stylesheet" type="text/css" href="/static/index.css" />
+          <link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.css" />
+
           <title>{ title }</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
