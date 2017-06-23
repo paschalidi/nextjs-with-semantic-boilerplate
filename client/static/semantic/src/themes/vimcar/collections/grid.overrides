@@ -1,0 +1,7 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+//adds collapsed class for no padded single containers
+.collapsed.row.stretched { margin: 0 1rem; }
+.collapsed.row.stretched .column { padding: 0; }

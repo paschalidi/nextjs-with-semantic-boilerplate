@@ -51,13 +51,13 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
 
     return (
       <div className="top-10">
-        <Grid container centered stackable divided="vertically" textAlign="left">
-          <Grid.Row stretched columns={2}>
+        <Grid padded container centered stackable divided="vertically" textAlign="left">
+          <Grid.Row className="collapsed" stretched columns={2}>
             <Grid.Column>
               <Image src={imageUrl} fluid />
             </Grid.Column>
 
-            <Grid.Column>
+            <Grid.Column >
               <div className="background-color-sec">
                 <div className="text-block">
                   <div className="product-title color-prime"><h1>{title}</h1></div>
