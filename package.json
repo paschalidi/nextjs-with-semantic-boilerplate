@@ -14,6 +14,7 @@
   "author": "Vimcar GmbH",
   "license": "All rights reserved",
   "dependencies": {
+    "babel-plugin-inline-react-svg": "^0.4.0",
     "contentful": "^4.4.3",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
@@ -34,10 +35,13 @@
     "react-ga": "^2.2.0",
     "react-google-tag-manager": "^2.1.0",
     "react-redux": "^5.0.5",
+    "react-slick": "^0.14.11",
     "react-test-renderer": "^15.5.4",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.68.5"
+    "semantic-ui": "^2.2.10",
+    "semantic-ui-react": "^0.68.5",
+    "slick-carousel": "^1.6.0"
   },
   "repository": "https://github.com/atlanticventures/new-vimcar-website"
 }
