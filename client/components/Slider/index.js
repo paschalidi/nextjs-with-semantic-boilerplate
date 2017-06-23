@@ -37,7 +37,7 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
                 <div className="slider-img-parent">
                   <img
                     alt="presentation"
-                    src="https://unsplash.it/1200/800/?random"
+                    src="https://source.unsplash.com/random"
                     width="auto"
                     height="500px"
                   />
@@ -45,7 +45,7 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
                 <div className="slider-img-parent">
                   <img
                     alt="presentation"
-                    src="https://unsplash.it/1200/900/?random"
+                    src="https://source.unsplash.com/random"
                     width="auto"
                     height="500px"
                   />
@@ -53,7 +53,7 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
                 <div className="slider-img-parent">
                   <img
                     alt="presentation"
-                    src="https://unsplash.it/1100/800/?random"
+                    src="https://source.unsplash.com/random"
                     width="auto"
                     height="500px"
                   />
