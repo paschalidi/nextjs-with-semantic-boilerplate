@@ -2,16 +2,21 @@
 {
   "env": {
     "development": {
-      "presets": "next/babel"
+      "presets": "next/babel",
+      "plugins": [ "inline-react-svg" ]
+
     },
     "production": {
-      "presets": "next/babel"
+      "presets": "next/babel",
+      "plugins": [ "inline-react-svg" ]
+
     },
     "test": {
       "presets": [
         ["env", { "modules": "commonjs" }],
         "next/babel"
-      ]
+      ],
+      "plugins": [ "inline-react-svg" ]
     }
   }
 }
