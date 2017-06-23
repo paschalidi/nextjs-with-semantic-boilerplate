@@ -15,9 +15,8 @@ import * as contentful from 'contentful'
 import { SPACE_ID, ACCESS_TOKEN, LOGO } from './constants';
 
 import { Menu, Segment, Container, Button, Loader, Dimmer } from 'semantic-ui-react';
-import Loading from '../Loading';
 
-export default class NavigationMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class NavigationMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
   state = { activeItem: 'home' };
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -90,13 +89,10 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
         <Segment className="no-round-corner">
           <Menu size="large" stackable secondary>
             <Container>
-              <Loading isLoading={isLoading} />
-
               <Menu.Item name="logo">
                 <img role="presentation" src={logoUrl} />
                 <div className="navbar-logo">VIMCAR</div>
               </Menu.Item>
-
 
               {this.renderMenuItems(navigationMenuItems, activeItem)}
 
@@ -127,3 +123,5 @@ export default class NavigationMenu extends React.Component { // eslint-disable-
     );
   }
 }
+
+export default NavigationMenu;

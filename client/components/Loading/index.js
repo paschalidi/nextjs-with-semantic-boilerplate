@@ -9,17 +9,22 @@
 
 import React from 'react';
 import { Loader, Dimmer } from 'semantic-ui-react';
-
+import Logo from '../../assets/logo.svg';
 class Loading extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     if (!this.props.isLoading) {
-      return <div></div>;
+      return (
+        <div className="none">
+          NoLoading
+          <style> {` .none{ display: none; } `} </style>
+        </div>
+      );
     }
     return (
-      <Dimmer inverted active>
-        <Loader />
-      </Dimmer>
+        <Dimmer active>
+          <Loader className="color-a" size="medium">Loading Vimcar</Loader>
+        </Dimmer>
     );
   }
 }
