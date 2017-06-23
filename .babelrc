@@ -1,22 +1,10 @@
-//babel is used becasue jest needs to be translated to es5
 {
-  "env": {
-    "development": {
-      "presets": "next/babel",
-      "plugins": [ "inline-react-svg" ]
-
-    },
-    "production": {
-      "presets": "next/babel",
-      "plugins": [ "inline-react-svg" ]
-
-    },
-    "test": {
-      "presets": [
-        ["env", { "modules": "commonjs" }],
-        "next/babel"
-      ],
-      "plugins": [ "inline-react-svg" ]
-    }
-  }
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [ "wrap-in-js", { "extensions": [ "css$", "scss$"]}],
+    "inline-react-svg"
+  ],
+  "ignore": []
 }
