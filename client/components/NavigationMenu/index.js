@@ -86,22 +86,20 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
 
     return (
       <div>
-        <Segment className="no-round-corner">
-          <Menu size="large" stackable secondary>
-            <Container>
-              <Menu.Item name="logo">
-                <img role="presentation" src={logoUrl} />
-                <div className="navbar-logo">VIMCAR</div>
-              </Menu.Item>
+        <Menu size="large" stackable secondary>
+          <Container>
+            <Menu.Item name="logo">
+              <img role="presentation" src={logoUrl} />
+              <div className="navbar-logo">VIMCAR</div>
+            </Menu.Item>
 
-              {this.renderMenuItems(navigationMenuItems, activeItem)}
+            {this.renderMenuItems(navigationMenuItems, activeItem)}
 
-              <Menu.Item className="right">
-                <Button>LOGIN</Button>
-              </Menu.Item>
-            </Container>
-          </Menu>
-        </Segment>
+            <Menu.Item className="right">
+              <Button>LOGIN</Button>
+            </Menu.Item>
+          </Container>
+        </Menu>
         <style>{`
           .no-round-corner {
             border-radius: 0px !important;
