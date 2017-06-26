@@ -23,7 +23,7 @@ class Loading extends React.Component { // eslint-disable-line react/prefer-stat
     }
     return (
         <Dimmer active>
-          <Loader className="color-a" size="medium">Loading Vimcar</Loader>
+          <Loader size="medium">Loading Vimcar</Loader>
         </Dimmer>
     );
   }
