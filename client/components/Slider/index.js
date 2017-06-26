@@ -21,6 +21,8 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
       infinite: true,
       fade: true,
       draggable: false,
+      swipeToSlide: false,
+      arrows: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
