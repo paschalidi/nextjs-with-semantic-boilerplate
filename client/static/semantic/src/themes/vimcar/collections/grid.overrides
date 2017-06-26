@@ -5,7 +5,6 @@
 /*-------------------
         SingleContainer
 --------------------*/
-//adds collapsed class for no padded single containers
 @media only screen and (min-width: @tabletBreakpoint) {
     .right-no-padding-container.column{
         padding-left: 0px !important;
@@ -18,7 +17,6 @@
 /*-------------------
         HeroHeader
 --------------------*/
-
 @media only screen and (max-width: @largestMobileScreen) {
     .ui.responsive.grid > .row > .wide.column,
     .ui.responsive.grid > .wide.column,
@@ -28,9 +26,7 @@
     .ui.responsive.grid > .column:not(.row),
     .ui.grid > .stackable.stackable.row > .column {
         width: 100% !important;
-        margin: 0em 0em !important;
-        box-shadow: none !important;
-        padding: 0rem 0rem 1rem 0rem !important;
+        padding: (@rowSpacing / 2) 0rem !important;
     }
 }
 
@@ -38,13 +34,12 @@
         Slider
 --------------------*/
 .slider.grid {
-    padding-top: 1em !important;
-    padding-bottom: 2em !important;
+    padding-bottom: @rowSpacing 0rem !important;
 }
 
 /*-------------------
         TrustChain
 --------------------*/
 .trust-chain.grid {
-    margin: 1em 0em;
+    margin: @rowSpacing 0em;
 }
