@@ -50,32 +50,36 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
   }
 
   render() {
-    const { isLoading, imageUrl, title, subtitle, anchor } = this.state;
+    const { imageUrl, title, subtitle, anchor } = this.state;
 
     return (
       <div>
-        <Grid
-          className="responsive"
-          stackable
-          textAlign="left"
-          centered
-          columns={1}
-        >
-          <Grid.Column className="text-container">
-            <Image className="background-color-prime" src={imageUrl} fluid />
-            <div className="text-block">
-              <div><h1>{title}</h1></div>
-              <div className="color-sec">{subtitle}</div>
-              <a>{anchor}</a>
+        <Grid className="responsive" centered stretched stackable textAlign="left">
+
+          <Grid.Column
+            className="left-no-padding-container text-container"
+            mobile={16}
+            tablet={8}
+            computer={8}
+          >
+            <div className="background-color-prime">
+              <div className="text-block">
+                <div><h3>{title}</h3></div>
+                <div className="color-sec">{subtitle}</div>
+                <a>{anchor}</a>
+              </div>
             </div>
           </Grid.Column>
+
+          <Grid.Column className="right-no-padding-container " mobile={16} tablet={8} computer={8}>
+            <Image className="background-color-prime" src={imageUrl} fluid />
+          </Grid.Column>
+
         </Grid>
         <style jsx>
           {`
           .text-block {
-              position: absolute;
-              padding-left: 3em;
-              top: 40%;
+          padding-left: 1em;
           }
         `}
         </style>

@@ -56,15 +56,6 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
     return (
       <div>
         <Grid container centered stretched stackable textAlign="left" columns={3}>
-          <Grid.Column>
-            <div className="background-color-sec">
-              <Image src={imageUrl} fluid />
-              <div className="text-block">
-                <div className="product-subtitle"><h3>{title}</h3></div>
-                <a>{anchor}</a>
-              </div>
-            </div>
-          </Grid.Column>
 
           <Grid.Column>
             <div className="background-color-sec">
@@ -85,20 +76,31 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
               </div>
             </div>
           </Grid.Column>
+
+          <Grid.Column>
+            <div className="background-color-sec">
+              <Image src={imageUrl} fluid />
+              <div className="text-block">
+                <div className="product-subtitle"><h3>{title}</h3></div>
+                <a>{anchor}</a>
+              </div>
+            </div>
+          </Grid.Column>
+
         </Grid>
-        <style>
+        <style jsx>
           {`
-        .text-block{
-        position: absolute;
-        bottom: 2em;
-        padding-left: 1em;
-        }
+          .text-block{
+          position: absolute;
+          bottom: 2em;
+          padding-left: 1em;
+          }
 
-        .right-no-padding-container img {
-        position: relative;
-        float: left;
-        width: 100%;
-        }
+          .right-no-padding-container img {
+          position: relative;
+          float: left;
+          width: 100%;
+          }
         `}
         </style>
       </div>

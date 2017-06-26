@@ -51,7 +51,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
 
     return (
       <div>
-        <Grid container centered stretched stackable textAlign="left">
+        <Grid reversed="mobile" container centered stretched stackable textAlign="left">
 
           <Grid.Column className="left-no-padding-container" mobile={16} tablet={8} computer={8}>
             <Image src={imageUrl} fluid />
@@ -66,6 +66,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
             <div className="background-color-sec">
               <div className="text-block">
                 <div className="color-sec"><h3>{title}</h3></div>
+                <div>{subtitle}</div>
                 <a>{anchor}</a>
               </div>
             </div>
@@ -75,9 +76,8 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
         <style jsx>
           {`
           .text-block {
-              position: absolute;
-              padding-left: 3em;
-              top: 40%;
+          padding-left: 1em;
+          top: 40%;
           }
         `}
         </style>
