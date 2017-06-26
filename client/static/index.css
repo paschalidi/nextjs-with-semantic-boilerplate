@@ -9,23 +9,10 @@ body {
 
 .text-container {
     margin: 0 auto;
-    position: relative;
 }
 
 .padding-zero {
     padding: 0 !important;
-}
-
-.product-title {
-    /*font-size: 20px;*/
-}
-
-.product-subtitle {
-    /*font-size: 15px;*/
-}
-
-.color-prime {
-    color: #313541;
 }
 
 .color-sec {

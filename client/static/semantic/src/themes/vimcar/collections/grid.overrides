@@ -2,6 +2,49 @@
          Theme Overrides
 *******************************/
 
+/*-------------------
+        SingleContainer
+--------------------*/
 //adds collapsed class for no padded single containers
-.collapsed.row.stretched { margin: 0 1rem; }
-.collapsed.row.stretched .column { padding: 0; }
+@media only screen and (min-width: @tabletBreakpoint) {
+    .right-no-padding-container.column{
+        padding-left: 0px !important;
+    }
+    .left-no-padding-container.column{
+        padding-right: 0px !important
+    }
+}
+
+/*-------------------
+        HeroHeader
+--------------------*/
+
+@media only screen and (max-width: @largestMobileScreen) {
+    .ui.responsive.grid > .row > .wide.column,
+    .ui.responsive.grid > .wide.column,
+    .ui.responsive.grid > .column.grid > .column,
+    .ui.responsive.grid > .column.row > .column,
+    .ui.responsive.grid > .row > .column,
+    .ui.responsive.grid > .column:not(.row),
+    .ui.grid > .stackable.stackable.row > .column {
+        width: 100% !important;
+        margin: 0em 0em !important;
+        box-shadow: none !important;
+        padding: 0rem 0rem 1rem 0rem !important;
+    }
+}
+
+/*-------------------
+        Slider
+--------------------*/
+.slider.grid {
+    padding-top: 1em !important;
+    padding-bottom: 2em !important;
+}
+
+/*-------------------
+        TrustChain
+--------------------*/
+.trust-chain.grid {
+    margin: 1em 0em;
+}

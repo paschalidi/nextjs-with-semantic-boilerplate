@@ -6,19 +6,15 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Lato';
+@headerFont        : 'Open Sans', sans-serif;
+@pageFont          : 'Open Sans', sans-serif;
 @fontSmoothing     : antialiased;
 
-@headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont          : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-
-@googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '400,700,400italic,700italic';
-@googleSubset      : 'latin';
-
-@googleProtocol    : 'https://';
-@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+@googleFontName    : 'Open Sans';
+@googleFontSizes   : '300,300,300italic,300italic';
+@googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
+@fontWeight        : 100;
 
 /*-------------------
       Base Sizes
@@ -46,8 +42,7 @@
 /*-------------------
     Brand Colors
 --------------------*/
-
-@primaryColor        : @blue;
+@primaryColor        : @vimcarColor;
 @secondaryColor      : @black;
 
 @lightPrimaryColor   : @lightBlue;
@@ -57,7 +52,7 @@
   Page Heading
 ---------------*/
 
-@headerFontWeight : bold;
+@headerFontWeight : lighter;
 @headerLineHeight : unit((18 / 14), em);
 
 @h1 : unit((28 / 14), rem);
@@ -117,11 +112,17 @@
         Page
 --------------------*/
 
-@pageBackground      : #FFFFFF;
+@pageBackground      : #fbfcfc;
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.4285em;
-@textColor           : rgba(0, 0, 0, 0.87);
+@textColor           : #313541;
+
+/*-------------------
+        HeroHeader
+--------------------*/
+
+@heroHeaderBackground: #e3e8ee;
 
 /*-------------------
       Paragraph
@@ -134,7 +135,7 @@
        Links
 --------------------*/
 
-@linkColor           : #4183C4;
+@linkColor           : @vimcarColor;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
@@ -191,6 +192,8 @@
 --------------------*/
 
 /*---  Colors  ---*/
+@vimcarColor      : #1f9ac1;
+
 @red              : #DB2828;
 @orange           : #F2711C;
 @yellow           : #FBBD08;
