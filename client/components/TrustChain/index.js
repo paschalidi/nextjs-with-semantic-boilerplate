@@ -50,16 +50,29 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
   render() {
     const { imageUrl } = this.state;
     return (
-      <div className="top-10">
-        <Grid className="background-color-sec" centered columns={9}>
-          <Grid.Column>
-            <Image src={imageUrl} />
+      <div>
+        <Grid
+          className="trust-chain background-color-sec"
+          verticalAlign="middle"
+          centered
+        >
+          <Grid.Column mobile={8} tablet={4} computer={2}>
+            <Image src={imageUrl} size="small" centered />
           </Grid.Column>
-          <Grid.Column>
-            <Image src={imageUrl} />
+          <Grid.Column mobile={8} tablet={4} computer={2}>
+            <Image src={imageUrl} size="small" centered />
           </Grid.Column>
-          <Grid.Column>
-            <Image src={imageUrl} />
+          <Grid.Column mobile={8} tablet={4} computer={2}>
+            <Image src={imageUrl} size="small" centered />
+          </Grid.Column>
+          <Grid.Column mobile={8} tablet={4} computer={2}>
+            <Image src={imageUrl} size="small" centered />
+          </Grid.Column>
+          <Grid.Column mobile={8} tablet={4} computer={2}>
+            <Image src={imageUrl} size="small" centered />
+          </Grid.Column>
+          <Grid.Column mobile={8} tablet={4} computer={2}>
+            <Image src={imageUrl} size="small" centered />
           </Grid.Column>
         </Grid>
         <style jsx>

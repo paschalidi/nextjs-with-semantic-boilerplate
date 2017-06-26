@@ -29,38 +29,36 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
 
     return (
       // todo make images as props and map them
-      <div className="top-10">
-        <Grid centered stackable textAlign="left">
-          <Grid.Row columns={1}>
-            <Grid.Column>
-              <ImageSlider {...settings}>
-                <div className="slider-img-parent">
-                  <img
-                    alt="presentation"
-                    src="https://source.unsplash.com/random"
-                    width="auto"
-                    height="500px"
-                  />
-                </div>
-                <div className="slider-img-parent">
-                  <img
-                    alt="presentation"
-                    src="https://source.unsplash.com/random"
-                    width="auto"
-                    height="500px"
-                  />
-                </div>
-                <div className="slider-img-parent">
-                  <img
-                    alt="presentation"
-                    src="https://source.unsplash.com/random"
-                    width="auto"
-                    height="500px"
-                  />
-                </div>
-              </ImageSlider>
-            </Grid.Column>
-          </Grid.Row>
+      <div>
+        <Grid className="responsive slider" centered stackable textAlign="left" columns={1}>
+          <Grid.Column>
+            <ImageSlider {...settings}>
+              <div className="slider-img-parent">
+                <img
+                  alt="presentation"
+                  src="https://source.unsplash.com/random"
+                  width="auto"
+                  height="500px"
+                />
+              </div>
+              <div className="slider-img-parent">
+                <img
+                  alt="presentation"
+                  src="https://source.unsplash.com/random"
+                  width="auto"
+                  height="500px"
+                />
+              </div>
+              <div className="slider-img-parent">
+                <img
+                  alt="presentation"
+                  src="https://source.unsplash.com/random"
+                  width="auto"
+                  height="500px"
+                />
+              </div>
+            </ImageSlider>
+          </Grid.Column>
         </Grid>
         <style>
           {`

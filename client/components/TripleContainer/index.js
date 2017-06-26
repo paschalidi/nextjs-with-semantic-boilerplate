@@ -54,39 +54,37 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
     const { isLoading, imageUrl, title, subtitle, anchor } = this.state;
 
     return (
-      <div className="top-10">
-        <Grid container centered stackable textAlign="left">
-          <Grid.Row stretched columns={3}>
-            <Grid.Column>
-              <div className="text-container  background-color-sec">
-                <Image src={imageUrl} fluid />
-                <div className="text-block">
-                  <div className="product-subtitle"><h3>{title}</h3></div>
-                  <div className="anchor color-a">{anchor}</div>
-                </div>
+      <div>
+        <Grid container centered stretched stackable textAlign="left" columns={3}>
+          <Grid.Column>
+            <div className="background-color-sec">
+              <Image src={imageUrl} fluid />
+              <div className="text-block">
+                <div className="product-subtitle"><h3>{title}</h3></div>
+                <a>{anchor}</a>
               </div>
-            </Grid.Column>
+            </div>
+          </Grid.Column>
 
-            <Grid.Column textAlign="left">
-              <div className="text-container  background-color-sec">
-                <Image src={imageUrl} fluid />
-                <div className="text-block">
-                  <div className="product-subtitle"><h3>{title}</h3></div>
-                  <div className="anchor color-a">{anchor}</div>
-                </div>
+          <Grid.Column>
+            <div className="background-color-sec">
+              <Image src={imageUrl} fluid />
+              <div className="text-block">
+                <div className="product-subtitle"><h3>{title}</h3></div>
+                <a>{anchor}</a>
               </div>
-            </Grid.Column>
+            </div>
+          </Grid.Column>
 
-            <Grid.Column textAlign="left">
-              <div className="text-container  background-color-sec">
-                <Image src={imageUrl} fluid />
-                <div className="text-block">
-                  <div className="product-subtitle"><h3>{title}</h3></div>
-                  <div className="color-a">{anchor}</div>
-                </div>
+          <Grid.Column>
+            <div className="background-color-sec">
+              <Image src={imageUrl} fluid />
+              <div className="text-block">
+                <div className="product-subtitle"><h3>{title}</h3></div>
+                <a>{anchor}</a>
               </div>
-            </Grid.Column>
-          </Grid.Row>
+            </div>
+          </Grid.Column>
         </Grid>
         <style>
           {`
@@ -96,7 +94,7 @@ class TripleContainer extends React.Component { // eslint-disable-line react/pre
         padding-left: 1em;
         }
 
-        .text-container img {
+        .right-no-padding-container img {
         position: relative;
         float: left;
         width: 100%;

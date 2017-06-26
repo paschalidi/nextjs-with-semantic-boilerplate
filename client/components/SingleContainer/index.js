@@ -50,29 +50,34 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
     const { imageUrl, isLoading, title, subtitle, anchor } = this.state;
 
     return (
-      <div className="top-10">
-        <Grid padded container centered stackable divided="vertically" textAlign="left">
-          <Grid.Row className="collapsed" stretched columns={2}>
-            <Grid.Column>
-              <Image src={imageUrl} fluid />
-            </Grid.Column>
+      <div>
+        <Grid container centered stretched stackable textAlign="left">
 
-            <Grid.Column >
-              <div className="background-color-sec">
-                <div className="text-block">
-                  <div className="product-title color-prime"><h1>{title}</h1></div>
-                  <div className="product-subtitle color-sec">{subtitle}</div>
-                  <div className="color-a">{anchor}</div>
-                </div>
+          <Grid.Column className="left-no-padding-container" mobile={16} tablet={8} computer={8}>
+            <Image src={imageUrl} fluid />
+          </Grid.Column>
+
+          <Grid.Column
+            className="right-no-padding-container text-container"
+            mobile={16}
+            tablet={8}
+            computer={8}
+          >
+            <div className="background-color-sec">
+              <div className="text-block">
+                <div className="color-sec"><h3>{title}</h3></div>
+                <a>{anchor}</a>
               </div>
-            </Grid.Column>
-          </Grid.Row>
+            </div>
+          </Grid.Column>
+
         </Grid>
         <style jsx>
           {`
           .text-block {
-          width: 90%
-          top: 30%;
+              position: absolute;
+              padding-left: 3em;
+              top: 40%;
           }
         `}
         </style>
