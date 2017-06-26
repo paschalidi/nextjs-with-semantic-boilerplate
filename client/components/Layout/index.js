@@ -42,7 +42,6 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         </Head>
         <GoogleTagManager gtmId="GTM-5N7BT99" />
         <PageLoader />
-        <NavigationMenu />
 
         { children }
 
