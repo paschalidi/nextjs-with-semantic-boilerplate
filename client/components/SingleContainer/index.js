@@ -16,41 +16,17 @@ import { Grid, Image } from 'semantic-ui-react';
 
 class SingleContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      imageUrl: null,
-      title: null,
-      subtitle: null,
-      anchor: null,
-    };
-  }
-
-  componentWillMount() {
-    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN, });
-
-    client.getEntry(ENTRY_ID)
-      .catch(console.error)
-      .then((entry) => {
-        const { title, subtitle, anchor } = entry.fields
-
-        this.setState({ title, subtitle, anchor });
-      });
-
-    client.getAsset(IMAGE_ID)
-      .catch(console.error)
-      .then(asset => this.setState({ imageUrl: `https:${asset.fields.file.url}` }));
-  }
-
-  render() {
-    const { imageUrl, title, subtitle, anchor } = this.state;
-
-    return (
-      <div>
+  renderContainer(imageOnLeft, { image, title, subtitle, anchor }) {
+    if (imageOnLeft) {
+      return (
         <Grid reversed="mobile" container centered stretched stackable textAlign="left">
-
-          <Grid.Column className="left-no-padding-container" mobile={16} tablet={8} computer={8}>
-            <Image src={imageUrl} fluid />
+          <Grid.Column
+            className="left-no-padding-container"
+            mobile={16}
+            tablet={8}
+            computer={8}
+          >
+            <Image className="background-color-sec" src={image} fluid />
           </Grid.Column>
 
           <Grid.Column
@@ -67,8 +43,47 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
               </div>
             </div>
           </Grid.Column>
-
         </Grid>
+      );
+    }
+
+    return (
+      <Grid container centered stretched stackable textAlign="left">
+        <Grid.Column
+          className="left-no-padding-container text-container"
+          mobile={16}
+          tablet={8}
+          computer={8}
+        >
+          <div className="background-color-sec">
+            <div className="text-block">
+              <div className="color-sec"><h3>{title}</h3></div>
+              <div>{subtitle}</div>
+              <a>{anchor}</a>
+            </div>
+          </div>
+        </Grid.Column>
+
+        <Grid.Column
+          className="right-no-padding-container"
+          mobile={16}
+          tablet={8}
+          computer={8}
+        >
+          <Image className="background-color-sec" src={image} fluid />
+        </Grid.Column>
+      </Grid>
+    );
+  }
+
+  render() {
+    const { imageOnLeft } = this.props;
+
+    return (
+      <div>
+
+        {this.renderContainer(imageOnLeft, this.props.contentfulData)}
+
         <style jsx>
           {`
           .text-block {

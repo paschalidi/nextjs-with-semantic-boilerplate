@@ -9,49 +9,15 @@
 
 import React from 'react';
 
-import * as contentful from 'contentful';
-import { SPACE_ID, ACCESS_TOKEN, ENTRY_ID, IMAGE_ID } from './constants';
-
 import { Grid, Image } from 'semantic-ui-react';
 
 class HeroHeader extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props) {
-    super(props);
-    this.state = {
-      imageUrl: null,
-      title: null,
-      subtitle: null,
-      anchor: null,
-    };
-  }
-
-  componentDidMount() {
-    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN });
-
-    client.getEntry(ENTRY_ID)
-      .catch(console.error)
-      .then((entry) => {
-        const { title, subtitle, anchor } = entry.fields;
-
-        this.setState({ title, subtitle, anchor });
-      });
-
-    client.getAsset(IMAGE_ID)
-      .catch(console.error)
-      .then((asset) => {
-        const { url } = asset.fields.file;
-
-        this.setState({ imageUrl: `https:${url}` });
-      });
-  }
-
   render() {
-    const { imageUrl, title, subtitle, anchor } = this.state;
+    const { anchor, title, subtitle, image } = this.props.contentfulData
 
     return (
       <div>
         <Grid className="responsive" centered stretched stackable textAlign="left">
-
           <Grid.Column
             className="left-no-padding-container text-container"
             mobile={16}
@@ -67,8 +33,13 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
             </div>
           </Grid.Column>
 
-          <Grid.Column className="right-no-padding-container " mobile={16} tablet={8} computer={8}>
-            <Image className="background-color-prime" src={imageUrl} fluid />
+          <Grid.Column
+            className="right-no-padding-container"
+            mobile={16}
+            tablet={8}
+            computer={8}
+          >
+            <Image className="background-color-prime" src={image} fluid />
           </Grid.Column>
 
         </Grid>
