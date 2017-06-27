@@ -6,11 +6,10 @@
 /* eslint-disable import/first */
 import React from 'react';
 
-
 import * as contentful from 'contentful';
 import { SPACE_ID, ACCESS_TOKEN } from './constants';
 
-import { Grid, List } from 'semantic-ui-react';
+import { Grid, List, Icon} from 'semantic-ui-react';
 
 export default class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -33,7 +32,7 @@ export default class Footer extends React.Component { // eslint-disable-line rea
     return (
       <div className="footer">
         <div className="top-bottom-padding">
-          <Grid container stackable columns={6}>
+          <Grid container stackable columns={5}>
             <Grid.Row>
               <Grid.Column>
                 <List inverted verticalAlign="middle">
@@ -77,7 +76,7 @@ export default class Footer extends React.Component { // eslint-disable-line rea
 
 
               <Grid.Column floated="right">
-                <List className="footer-inverted-color" inverted verticalAlign="middle">
+                <List verticalAlign="middle">
                   <List.Item>
                     <List.Icon name="phone" />
                     <List.Content className="nowrap">+49 30 55579852</List.Content>
