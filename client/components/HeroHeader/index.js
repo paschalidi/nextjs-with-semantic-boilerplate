@@ -18,7 +18,6 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       imageUrl: null,
       title: null,
       subtitle: null,
@@ -34,7 +33,7 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
       .then((entry) => {
         const { title, subtitle, anchor } = entry.fields;
 
-        this.setState({ isLoading: false, title, subtitle, anchor });
+        this.setState({ title, subtitle, anchor });
       });
 
     client.getAsset(IMAGE_ID)
@@ -42,10 +41,7 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
       .then((asset) => {
         const { url } = asset.fields.file;
 
-        this.setState({
-          isLoading: false,
-          imageUrl: `https:${url}`,
-        });
+        this.setState({ imageUrl: `https:${url}` });
       });
   }
 

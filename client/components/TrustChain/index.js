@@ -19,7 +19,6 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       imageUrl: null,
     };
   }
@@ -40,10 +39,7 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
       .then((asset) => {
         const { url } = asset.fields.file;
 
-        this.setState({
-          isLoading: false,
-          imageUrl: `https:${url}`,
-        });
+        this.setState({ imageUrl: `https:${url}` });
       });
   }
 

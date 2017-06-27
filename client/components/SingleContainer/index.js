@@ -19,7 +19,6 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       imageUrl: null,
       title: null,
       subtitle: null,
@@ -35,19 +34,16 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
       .then((entry) => {
         const { title, subtitle, anchor } = entry.fields
 
-        this.setState({ isLoading: false, title, subtitle, anchor });
+        this.setState({ title, subtitle, anchor });
       });
 
     client.getAsset(IMAGE_ID)
       .catch(console.error)
-      .then(asset => this.setState({
-        isLoading: false,
-        imageUrl: `https:${asset.fields.file.url}`,
-      }));
+      .then(asset => this.setState({ imageUrl: `https:${asset.fields.file.url}` }));
   }
 
   render() {
-    const { imageUrl, isLoading, title, subtitle, anchor } = this.state;
+    const { imageUrl, title, subtitle, anchor } = this.state;
 
     return (
       <div>

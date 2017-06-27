@@ -23,7 +23,6 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       logoUrl: null,
       navigationMenuItems: [],
     }
@@ -34,10 +33,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
 
     client.getEntries()
       .catch(console.error)
-      .then((response) => this.setState({
-        isLoading: false,
-        navigationMenuItems: response.items,
-      }));
+      .then((response) => this.setState({ navigationMenuItems: response.items }));
 
     client.getAsset(LOGO)
       .then((asset) => this.setState({ logoUrl: `https:${asset.fields.file.url}` }))
@@ -82,7 +78,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
   }
 
   render() {
-    const { activeItem, navigationMenuItems, logoUrl, isLoading } = this.state;
+    const { activeItem, navigationMenuItems, logoUrl } = this.state;
 
     return (
       <div>
