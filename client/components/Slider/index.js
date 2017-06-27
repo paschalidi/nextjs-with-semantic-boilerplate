@@ -9,10 +9,41 @@
 
 import React from 'react';
 import ImageSlider from 'react-slick';
-// import styled from 'styled-components';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
 class Slider extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
+  renderSliderImages(items) {
+    return items.map((item) => {
+      return (
+        <div className="slider-img-parent">
+          <img
+            alt="presentation"
+            src={item}
+            width="auto"
+            height="500px"
+          />
+          <style jsx>
+            {`
+              .slider-img-parent {
+                margin: 0 auto;
+                width: 100vw;
+              }
+
+              .slider-img-parent img {
+                width: 100vw;
+                position: relative;
+                left: calc(-50vw + 50%);
+                display: block;
+                object-fit: cover;
+              }
+          `}
+          </style>
+        </div>
+      );
+    });
+  }
+
   render() {
     const settings = {
       dots: true,
@@ -29,61 +60,22 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
       className: 'slider-img-parent',
     };
 
+    const { images } = this.props;
+
     return (
-      // todo make images as props and map them
       <div>
         <Grid className="responsive slider" centered stackable textAlign="left" columns={1}>
           <Grid.Column>
             <ImageSlider {...settings}>
-              <div className="slider-img-parent">
-                <img
-                  alt="presentation"
-                  src="https://source.unsplash.com/random"
-                  width="auto"
-                  height="500px"
-                />
-              </div>
-              <div className="slider-img-parent">
-                <img
-                  alt="presentation"
-                  src="https://source.unsplash.com/random"
-                  width="auto"
-                  height="500px"
-                />
-              </div>
-              <div className="slider-img-parent">
-                <img
-                  alt="presentation"
-                  src="https://source.unsplash.com/random"
-                  width="auto"
-                  height="500px"
-                />
-              </div>
+
+              {this.renderSliderImages(images)}
+
             </ImageSlider>
           </Grid.Column>
         </Grid>
-        <style>
-          {`
-          .slider-img-parent {
-            margin: 0 auto;
-            width: 100vw;
-          }
-
-          .slider-img-parent img {
-            width: 100vw;
-            position: relative;
-            left: calc(-50vw + 50%);
-            display: block;
-            object-fit: cover;
-          }
-          `}
-        </style>
-
       </div>
     );
   }
 }
-
-Slider.propTypes = {};
 
 export default Slider;
