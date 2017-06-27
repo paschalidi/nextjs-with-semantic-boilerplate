@@ -17,14 +17,14 @@ class Loading extends React.Component { // eslint-disable-line react/prefer-stat
       return (
         <div className="none">
           NoLoading
-          <style> {` .none{ display: none; } `} </style>
+          <style jsx> {` .none { display: none; } `} </style>
         </div>
       );
     }
     return (
-        <Dimmer active>
-          <Loader size="medium">Loading Vimcar</Loader>
-        </Dimmer>
+      <Dimmer active>
+        <Loader size="medium">Loading Vimcar</Loader>
+      </Dimmer>
     );
   }
 }
