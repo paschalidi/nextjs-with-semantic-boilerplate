@@ -8,6 +8,7 @@
 /* eslint-disable react/prop-types */
 
 import React from 'react';
+import Text from '../CenteredText';
 
 import { Grid, Image } from 'semantic-ui-react';
 
@@ -24,13 +25,7 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
             tablet={8}
             computer={8}
           >
-            <div className="background-color-prime">
-              <div className="text-block">
-                <div><h3>{title}</h3></div>
-                <div className="color-sec">{subtitle}</div>
-                <a>{anchor}</a>
-              </div>
-            </div>
+            <Text prime title={title} subtitle={subtitle} anchor={anchor} />
           </Grid.Column>
 
           <Grid.Column
@@ -41,15 +36,7 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
           >
             <Image className="background-color-prime" src={image} fluid />
           </Grid.Column>
-
         </Grid>
-        <style jsx>
-          {`
-          .text-block {
-          padding-left: 1em;
-          }
-        `}
-        </style>
       </div>
     );
   }

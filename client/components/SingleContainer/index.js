@@ -9,9 +9,7 @@
 
 import React from 'react';
 
-import * as contentful from 'contentful';
-import { SPACE_ID, ACCESS_TOKEN, ENTRY_ID, IMAGE_ID } from './constants';
-
+import Text from '../CenteredText';
 import { Grid, Image } from 'semantic-ui-react';
 
 class SingleContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -35,13 +33,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
             tablet={8}
             computer={8}
           >
-            <div className="background-color-sec">
-              <div className="text-block">
-                <div className="color-sec"><h3>{title}</h3></div>
-                <div>{subtitle}</div>
-                <a>{anchor}</a>
-              </div>
-            </div>
+            <Text title={title} subtitle={subtitle} anchor={anchor} />
           </Grid.Column>
         </Grid>
       );
@@ -55,13 +47,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
           tablet={8}
           computer={8}
         >
-          <div className="background-color-sec">
-            <div className="text-block">
-              <div className="color-sec"><h3>{title}</h3></div>
-              <div>{subtitle}</div>
-              <a>{anchor}</a>
-            </div>
-          </div>
+          <Text title={title} subtitle={subtitle} anchor={anchor} />
         </Grid.Column>
 
         <Grid.Column
@@ -72,7 +58,9 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
         >
           <Image className="background-color-sec" src={image} fluid />
         </Grid.Column>
+
       </Grid>
+
     );
   }
 
@@ -81,17 +69,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
 
     return (
       <div>
-
         {this.renderContainer(imageOnLeft, this.props.contentfulData)}
-
-        <style jsx>
-          {`
-          .text-block {
-          padding-left: 1em;
-          top: 40%;
-          }
-        `}
-        </style>
       </div>
     );
   }

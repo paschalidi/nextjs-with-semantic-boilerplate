@@ -19,13 +19,13 @@ class Triple extends React.Component { // eslint-disable-line react/prefer-state
       <Grid.Column>
         <div className="background-color-sec">
           <Image src={image} fluid />
-          <div className="text-block">
+          <div className="text-container">
             <div className="product-subtitle"><h3>{title}</h3></div>
             <a>{anchor}</a>
           </div>
         </div>
         <style jsx>{`
-          .text-block{
+          .text-container{
           position: absolute;
           bottom: 2em;
           padding-left: 1em;
