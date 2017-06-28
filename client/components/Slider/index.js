@@ -14,9 +14,9 @@ import { Grid } from 'semantic-ui-react';
 class Slider extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   renderSliderImages(items) {
-    return items.map((item) => {
+    return items.map((item, index) => {
       return (
-        <div className="slider-img-parent">
+        <div className="slider-img-parent" key={index}>
           <img
             alt="presentation"
             src={item}
