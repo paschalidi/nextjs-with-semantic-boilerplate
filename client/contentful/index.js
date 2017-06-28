@@ -20,4 +20,5 @@ export const LEFT_SINGLE_ENTRY_ID = '67YeCJLlwAkGg2OUwesCW2';
 export const RIGHT_SINGLE_ENTRY_ID = '6eiXjAYcwMYqGaqmc6oaeS';
 
 // TrustChain
-export const TRUST_IMAGE_ID = '3WBE4ptF8ImEiWeWEs2sU4';
+export const TRUST_CHAIN_ID = 'QKtEVXiAmsokg4OQ8ECI8';
+

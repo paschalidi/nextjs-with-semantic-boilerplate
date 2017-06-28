@@ -21,7 +21,8 @@ import {
   LEFT_SINGLE_ENTRY_ID,
   FIRST_TRIPLE_ENTRY_ID,
   SECOND_TRIPLE_ENTRY_ID,
-  THIRD_TRIPLE_ENTRY_ID
+  THIRD_TRIPLE_ENTRY_ID,
+  TRUST_CHAIN_ID,
 } from '../contentful';
 
 import Loading from '../components/Loading';
@@ -37,7 +38,7 @@ import TrustChain from '../components/TrustChain';
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static async getInitialProps() {
     const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN });
-    const res = await client.getEntries({ include: 2 });
+    const res = await client.getEntries();
 
     return {
       contentful: {
@@ -60,152 +61,63 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
   componentWillMount() {
     const { entries, assets } = this.state;
 
-    Object.keys(entries).map((entryKey) => {
-      const entry = entries[entryKey];
-      const { anchor, title, subtitle, image } = entry.fields;
-
-      switch (entry.sys.id) {
+    Object.keys(entries).map(async (entryKey) => {
+      const { anchor, title, subtitle, image, trust01, trust02, trust03, trust04 } = entries[entryKey].fields;
+      let imageUrl;
+      switch (entries[entryKey].sys.id) {
         case HEADER_ENTRY_ID:
-          if (image) {
-            const asset = Object.entries(assets)
-              .find(this.assetFromEntry, entry.fields.image.sys.id);
-
-            this.setState({
-              isLoading: false,
-              header: {
-                anchor,
-                title,
-                subtitle,
-                image: `https:${asset[1].fields.file.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              header: { anchor, title, subtitle },
-            });
-          }
-
+          imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({ header: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case LEFT_SINGLE_ENTRY_ID:
-          if (image) {
-            const asset = Object.entries(assets)
-              .find(this.assetFromEntry, entry.fields.image.sys.id);
-
-            this.setState({
-              isLoading: false,
-              leftSingleContainer: {
-                anchor,
-                title,
-                subtitle,
-                image: `https:${asset[1].fields.file.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              leftSingleContainer: { anchor, title, subtitle },
-            });
-          }
+          imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({ leftSingleContainer: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case RIGHT_SINGLE_ENTRY_ID:
-          if (image) {
-            const asset = Object.entries(assets)
-              .find(this.assetFromEntry, entry.fields.image.sys.id);
-
-            this.setState({
-              isLoading: false,
-              rightSingleContainer: {
-                anchor,
-                title,
-                subtitle,
-                image: `https:${asset[1].fields.file.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              rightSingleContainer: { anchor, title, subtitle },
-            });
-          }
+          imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({ rightSingleContainer: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case FIRST_TRIPLE_ENTRY_ID:
-          if (image) {
-            const asset = Object.entries(assets)
-              .find(this.assetFromEntry, entry.fields.image.sys.id);
-
-            this.setState({
-              isLoading: false,
-              firstTriple: {
-                anchor,
-                title,
-                subtitle,
-                image: `https:${asset[1].fields.file.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              firstTriple: { anchor, title, subtitle },
-            });
-          }
+          imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({ firstTriple: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case SECOND_TRIPLE_ENTRY_ID:
-          if (image) {
-            const asset = Object.entries(assets)
-              .find(this.assetFromEntry, entry.fields.image.sys.id);
-
-            this.setState({
-              isLoading: false,
-              secondTriple: {
-                anchor,
-                title,
-                subtitle,
-                image: `https:${asset[1].fields.file.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              secondTriple: { anchor, title, subtitle },
-            });
-          }
+          imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({ secondTriple: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case THIRD_TRIPLE_ENTRY_ID:
-          if (image) {
-            const asset = Object.entries(assets)
-              .find(this.assetFromEntry, entry.fields.image.sys.id);
-
-            this.setState({
-              isLoading: false,
-              thirdTriple: {
-                anchor,
-                title,
-                subtitle,
-                image: `https:${asset[1].fields.file.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              thirdTriple: { anchor, title, subtitle },
-            });
-          }
+          imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({ thirdTriple: { anchor, title, subtitle, image: imageUrl } });
+          break;
+        case TRUST_CHAIN_ID:
+          console.log("trust01")
+          console.log(trust01)
+          console.log(trust02)
+          console.log(trust03)
+          console.log(trust04)
+          const imageUrl01 = this.getImageUrlFromAssets(assets, trust01.sys.id);
+          const imageUrl02 = this.getImageUrlFromAssets(assets, trust02.sys.id);
+          const imageUrl03 = this.getImageUrlFromAssets(assets, trust03.sys.id);
+          const imageUrl04 = this.getImageUrlFromAssets(assets, trust04.sys.id);
+          const ImageUrls = [imageUrl01, imageUrl02, imageUrl03, imageUrl04]
+          this.setState({ trustChain: { image: ImageUrls } });
           break;
 
         default:
           return true;
       }
     });
+    this.setState({ isLoading: false });
   }
 
-  assetFromEntry(asset) {
-    return asset[1].sys.id === this;
+  getImageUrlFromAssets(assets, id) {
+    const asset = Object.entries(assets).find((asset) => asset[1].sys.id === id);
+    return `https:${asset[1].fields.file.url}`;
   }
 
   render() {
@@ -217,6 +129,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       firstTriple,
       secondTriple,
       thirdTriple,
+      trustChain,
     } = this.state;
 
     return (
@@ -229,10 +142,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
             <Triple contentfulData={secondTriple} />
             <Triple contentfulData={thirdTriple} />
           </TripleContainer>
-
           <SingleContainer imageOnLeft contentfulData={leftSingleContainer} />
           <SingleContainer contentfulData={rightSingleContainer} />
-
           <Slider
             images={[
               'https://source.unsplash.com/random',
@@ -243,7 +154,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
               'https://source.unsplash.com/random',
             ]}
           />
-          <TrustChain />
+          <TrustChain contentfulData={trustChain} />
         </div>
       </Layout>
     );
