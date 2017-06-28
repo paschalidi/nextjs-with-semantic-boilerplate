@@ -95,11 +95,6 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
           this.setState({ thirdTriple: { anchor, title, subtitle, image: imageUrl } });
           break;
         case TRUST_CHAIN_ID:
-          console.log("trust01")
-          console.log(trust01)
-          console.log(trust02)
-          console.log(trust03)
-          console.log(trust04)
           const imageUrl01 = this.getImageUrlFromAssets(assets, trust01.sys.id);
           const imageUrl02 = this.getImageUrlFromAssets(assets, trust02.sys.id);
           const imageUrl03 = this.getImageUrlFromAssets(assets, trust03.sys.id);
