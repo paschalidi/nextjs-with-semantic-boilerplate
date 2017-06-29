@@ -22,6 +22,9 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
       <div>
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+          <link
+            rel="stylesheet prefetch"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css" />
 
           <link
             rel="stylesheet"
