@@ -64,12 +64,10 @@ class Slider extends React.Component { // eslint-disable-line react/prefer-state
 
     return (
       <div>
-        <Grid className="responsive-s" centered stackable textAlign="left" columns={1}>
+        <Grid className="slider-s responsive-s" centered stackable textAlign="left" columns={1}>
           <Grid.Column>
             <ImageSlider {...settings}>
-
               {this.renderSliderImages(images)}
-
             </ImageSlider>
           </Grid.Column>
         </Grid>
