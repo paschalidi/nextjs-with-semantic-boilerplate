@@ -8,6 +8,7 @@
 /* eslint-disable react/prop-types */
 
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 
 class TextLeft extends React.Component { // eslint-disable-line react/prefer-stateless-function
   renderText({ title, subtitle, anchor, prime }) {
@@ -17,7 +18,7 @@ class TextLeft extends React.Component { // eslint-disable-line react/prefer-sta
           <div className="floating-text-content">
             <h1>{title}</h1>
             <div className="color-sec">{subtitle}</div>
-            <a>{anchor}</a>
+            <Button>{anchor}</Button>
           </div>
         </div>
       );
@@ -27,7 +28,7 @@ class TextLeft extends React.Component { // eslint-disable-line react/prefer-sta
         <div className="floating-text-content">
           <h1>{title}</h1>
           <div className="color-sec">{subtitle}</div>
-          <a>{anchor}</a>
+          <Button>{anchor}</Button>
         </div>
       </div>
     );
