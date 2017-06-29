@@ -73,10 +73,29 @@ export default class Footer extends React.Component { // eslint-disable-line rea
               <br />
               <br />
               <List floated="right" className="padding-top nowrap" link inverted horizontal>
-                <List.Item as="a"><Icon name="facebook f" /></List.Item>
-                <List.Item as="a"><Icon name="twitter" /></List.Item>
-                <List.Item as="a"><Icon name="google plus" /></List.Item>
+                <List.Item>
+                  <List.Content>
+                    <List.Header as="a" className="list-header-pad-s">
+                      <Icon name="facebook f" />
+                    </List.Header>
+                  </List.Content>
+                </List.Item>
+                <List.Item >
+                  <List.Content>
+                    <List.Header as="a" className="list-header-pad-s">
+                      <Icon name="twitter" />
+                    </List.Header>
+                  </List.Content>
+                </List.Item>
+                <List.Item >
+                  <List.Content>
+                    <List.Header as="a" className="list-header-pad-s">
+                      <Icon name="google plus" />
+                    </List.Header>
+                  </List.Content>
+                </List.Item>
               </List>
+
             </Grid.Column>
           </Grid.Row>
 
