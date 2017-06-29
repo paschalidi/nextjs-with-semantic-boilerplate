@@ -8,7 +8,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import { Grid, List, Divider, Icon } from 'semantic-ui-react';
+import { Grid, List, Icon } from 'semantic-ui-react';
 
 export default class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
