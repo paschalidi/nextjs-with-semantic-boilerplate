@@ -33,7 +33,9 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
             tablet={8}
             computer={8}
           >
-            <Text title={title} subtitle={subtitle} anchor={anchor} />
+            <div className="background-color-sec">
+              <Text title={title} subtitle={subtitle} anchor={anchor} />
+            </div>
           </Grid.Column>
         </Grid>
       );
@@ -47,7 +49,10 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
           tablet={8}
           computer={8}
         >
-          <Text title={title} subtitle={subtitle} anchor={anchor} />
+          <div className="background-color-sec">
+            <Text title={title} subtitle={subtitle} anchor={anchor} />
+          </div>
+
         </Grid.Column>
 
         <Grid.Column
