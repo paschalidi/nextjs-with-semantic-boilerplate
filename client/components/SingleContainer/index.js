@@ -19,7 +19,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
       return (
         <Grid reversed="mobile" container centered stretched stackable textAlign="left">
           <Grid.Column
-            className="left-no-padding-container"
+            className="left-no-padding-container top-s"
             mobile={16}
             tablet={8}
             computer={8}
@@ -28,7 +28,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
           </Grid.Column>
 
           <Grid.Column
-            className="right-no-padding-container text-container"
+            className="right-no-padding-container bottom-s text-container"
             mobile={16}
             tablet={8}
             computer={8}
@@ -42,7 +42,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
     return (
       <Grid container centered stretched stackable textAlign="left">
         <Grid.Column
-          className="left-no-padding-container text-container"
+          className="left-no-padding-container bottom-s text-container"
           mobile={16}
           tablet={8}
           computer={8}
@@ -51,7 +51,7 @@ class SingleContainer extends React.Component { // eslint-disable-line react/pre
         </Grid.Column>
 
         <Grid.Column
-          className="right-no-padding-container"
+          className="right-no-padding-container top-s"
           mobile={16}
           tablet={8}
           computer={8}

@@ -18,18 +18,20 @@ class HeroHeader extends React.Component { // eslint-disable-line react/prefer-s
 
     return (
       <div>
-        <Grid className="responsive" centered stretched stackable textAlign="left">
+        <Grid className="responsive-s" centered stretched stackable textAlign="left">
           <Grid.Column
-            className="left-no-padding-container text-container"
+            className="left-no-padding-container bottom-s text-container"
             mobile={16}
             tablet={8}
             computer={8}
           >
-            <Text prime title={title} subtitle={subtitle} anchor={anchor} />
+            <div className="background-color-prime">
+              <Text prime title={title} subtitle={subtitle} anchor={anchor} />
+            </div>
           </Grid.Column>
 
           <Grid.Column
-            className="right-no-padding-container"
+            className="right-no-padding-container top-s"
             mobile={16}
             tablet={8}
             computer={8}

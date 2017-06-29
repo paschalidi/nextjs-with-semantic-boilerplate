@@ -4,8 +4,10 @@
 
 /* Inherited From Site */
 
-// @mobileBreakpoint
-// @tabletBreakpoint
-// @computerBreakpoint
-// @largeMonitorBreakpoint
-// @widescreenMonitorBreakpoint
+/*******************************
+            Grid
+*******************************/
+
+@gutterWidth: 1.5rem;
+@rowSpacing: 1.5rem;
+@sliderPadding: 4em;

@@ -14,7 +14,7 @@ class TextLeft extends React.Component { // eslint-disable-line react/prefer-sta
     if (prime) {
       return (
         <div className="background-color-prime text-block pad-left">
-          <div className="content">
+          <div className="floating-text-content">
             <h1>{title}</h1>
             <div className="color-sec">{subtitle}</div>
             <a>{anchor}</a>
@@ -24,7 +24,7 @@ class TextLeft extends React.Component { // eslint-disable-line react/prefer-sta
     }
     return (
       <div className="background-color-sec text-block pad-left">
-        <div className="content">
+        <div className="floating-text-content">
           <h1>{title}</h1>
           <div className="color-sec">{subtitle}</div>
           <a>{anchor}</a>

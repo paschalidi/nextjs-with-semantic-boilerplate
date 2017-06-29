@@ -14,32 +14,70 @@
     }
 }
 
+@media only screen and (max-width: @largestMobileScreen) {
+    .ui.grid > .row > .wide.top-s.column,
+    .ui.grid > .wide.top-s.column,
+    .ui.grid > .column.grid > top-s.column,
+    .ui.grid > .column.row > top-s.column,
+    .ui.grid > .row > top-s.column,
+    .ui.grid > .column:not(.row),
+    .ui.grid > .stackable.stackable.row > top-s.column {
+        padding: 0 (@rowSpacing / 2) (@rowSpacing / 2) (@rowSpacing / 2) !important;
+    }
+
+    .ui.grid > .row > .wide.bottom-s.column,
+    .ui.grid > .wide.bottom-s.column,
+    .ui.grid > .column.grid > bottom-s.column,
+    .ui.grid > .column.row > bottom-s.column,
+    .ui.grid > .row > bottom-s.column,
+    .ui.grid > .column:not(.row),
+    .ui.grid > .stackable.stackable.row > bottom-s.column {
+        padding: (@rowSpacing / 2) (@rowSpacing / 2) 0 (@rowSpacing / 2) !important;
+    }
+
+}
+
 /*-------------------
         HeroHeader
 --------------------*/
 @media only screen and (max-width: @largestMobileScreen) {
-    .ui.responsive.grid > .row > .wide.column,
-    .ui.responsive.grid > .wide.column,
-    .ui.responsive.grid > .column.grid > .column,
-    .ui.responsive.grid > .column.row > .column,
-    .ui.responsive.grid > .row > .column,
-    .ui.responsive.grid > .column:not(.row),
-    .ui.grid > .stackable.stackable.row > .column {
+//removes bottom paddinf when on mobile with classes responsive-s and bottom-s
+    .ui.responsive-s.grid > .row > .wide.bottom-s.column,
+    .ui.responsive-s.grid > .wide.bottom-s.column,
+    .ui.responsive-s.grid > .column.grid > .bottom-s.column,
+    .ui.responsive-s.grid > .column.row > .bottom-s.column,
+    .ui.responsive-s.grid > .row > .bottom-s.column,
+    .ui.responsive-s.grid > .column:not(.row),
+    .ui.grid > .stackable.stackable.row > .bottom-s.column {
         width: 100% !important;
-        padding: (@rowSpacing / 2) 0rem !important;
+        padding: (@rowSpacing / 2)  0 0 0 !important;
+    }
+//removes top paddinf when on mobile with classes responsive-s and top-s
+    .ui.responsive-s.grid > .row > .wide.top-s.column,
+    .ui.responsive-s.grid > .wide.top-s.column,
+    .ui.responsive-s.grid > .column.grid > .top-s.column,
+    .ui.responsive-s.grid > .column.row > .top-s.column,
+    .ui.responsive-s.grid > .row > .top-s.column,
+    .ui.responsive-s.grid > .column:not(.row),
+    .ui.grid > .stackable.stackable.row > .top-s.column {
+        width: 100% !important;
+        padding: 0 0 (@rowSpacing / 2) 0 !important;
     }
 }
 
 /*-------------------
         Slider
 --------------------*/
-.slider.grid {
-    padding-bottom: @rowSpacing 0rem !important;
-}
 
 /*-------------------
         TrustChain
 --------------------*/
 .trust-chain.grid {
-    margin: @rowSpacing 0em;
+    margin: 4em 0 2em 0;
+}
+
+.ui.centered.grid,
+.ui.centered.grid > .row,
+.ui.grid > .centered.row {
+    padding: 0 0 1.5em 0;
 }
