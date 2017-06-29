@@ -131,7 +131,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       <Layout title="Vimcar">
         <Loading isLoading={isLoading} />
         <HeroHeader contentfulData={header} />
-        <div className="top-10">
+        {/*todo add top-10 class*/}
+        <div className="">
           <TripleContainer >
             <Triple contentfulData={firstTriple} />
             <Triple contentfulData={secondTriple} />
