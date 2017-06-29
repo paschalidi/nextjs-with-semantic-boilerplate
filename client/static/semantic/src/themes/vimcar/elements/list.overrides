@@ -1,0 +1,15 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+.ui.link.list .sm-pad-s.item,
+.ui.link.list a.sm-pad-s.item,
+.ui.link.list .sm-pad-s.item a:not(.ui){
+  padding: 1em ! important
+}
+
+.ui.inverted.list .list > .item .list-header-pad-s.header, .ui.inverted.list > .item .list-header-pad-s.header{
+  padding: 0.5em ! important
+
+}

@@ -42,7 +42,7 @@
 /*-------------------
     Brand Colors
 --------------------*/
-@primaryColor        : @vimcarColor;
+@primaryColor        : @blue;
 @secondaryColor      : @black;
 
 @lightPrimaryColor   : @lightBlue;
@@ -135,7 +135,7 @@
        Links
 --------------------*/
 
-@linkColor           : @vimcarColor;
+@linkColor           : @blue;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
@@ -409,7 +409,9 @@
 
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
+@hoveredTextColorVimcar      : #fff;
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
+@pressedTextColorVimcar      : rgba(0, 0, 0, 0.9);
 @selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 

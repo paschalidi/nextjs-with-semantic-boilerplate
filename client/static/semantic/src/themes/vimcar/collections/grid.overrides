@@ -65,19 +65,28 @@
     }
 }
 
+
 /*-------------------
         Slider
 --------------------*/
-
+.slider-s.grid {
+    margin: (@rowSpacing/2) 0 (@rowSpacing) 0 !important;
+}
 /*-------------------
         TrustChain
 --------------------*/
 .trust-chain.grid {
-    margin: 4em 0 2em 0;
+    margin: (@rowSpacing / 2) 0 (@rowSpacing) 0;
 }
 
-.ui.centered.grid,
-.ui.centered.grid > .row,
-.ui.grid > .centered.row {
-    padding: 0 0 1.5em 0;
+/*-------------------
+        Footer
+--------------------*/
+.ui.grid > .pad-top-s.row {
+    padding: 5em 0 3em 0 !important ;
+}
+@media only screen and (max-width: @largestMobileScreen) {
+    .ui.grid > .pad-top-s.row {
+        padding: (@rowSpacing / 2) 0 !important ;
+    }
 }
