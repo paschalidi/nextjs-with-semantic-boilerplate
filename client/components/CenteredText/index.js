@@ -23,7 +23,7 @@ class TextLeft extends React.Component { // eslint-disable-line react/prefer-sta
           <div className="image-block pad-left">
             <div className="floating-image-content pad-left">
               <Image.Group size="mini">
-                {this.renderImages(["http://placehold.it/50x50"])}
+                {this.renderImages(["http://placehold.it/50x50", "http://placehold.it/50x50", "http://placehold.it/50x50"])}
               </Image.Group>
             </div>
           </div>
@@ -43,7 +43,7 @@ class TextLeft extends React.Component { // eslint-disable-line react/prefer-sta
         <div className="image-block pad-left">
           <div className="floating-image-content pad-left">
             <Image.Group size="mini">
-              {this.renderImages(["http://placehold.it/50x50"])}
+              {this.renderImages(["http://placehold.it/50x50", "http://placehold.it/50x50", "http://placehold.it/50x50", "http://placehold.it/50x50",])}
             </Image.Group>
           </div>
         </div>
