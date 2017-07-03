@@ -11,6 +11,7 @@ import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 import 'isomorphic-fetch';
+import { Grid } from 'semantic-ui-react';
 
 import * as contentful from 'contentful';
 import {
@@ -29,7 +30,6 @@ import Loading from '../components/Loading';
 
 import Layout from '../components/Layout/index';
 import HeroHeader from '../components/HeroHeader';
-import TripleContainer from '../components/TripleContainer';
 import Triple from '../components/Triple';
 import SingleContainer from '../components/SingleContainer';
 import Slider from '../components/Slider';
@@ -94,6 +94,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
           imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
           this.setState({ thirdTriple: { anchor, title, subtitle, image: imageUrl } });
           break;
+
         case TRUST_CHAIN_ID:
           const imageUrl01 = this.getImageUrlFromAssets(assets, trust01.sys.id);
           const imageUrl02 = this.getImageUrlFromAssets(assets, trust02.sys.id);
@@ -104,7 +105,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
           break;
 
         default:
-          return true;
+          return;
       }
     });
     this.setState({ isLoading: false });
@@ -133,11 +134,11 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
         <HeroHeader contentfulData={header} />
         {/*todo add top-10 class*/}
         <div className="">
-          <TripleContainer >
+          <Grid container centered stretched stackable textAlign="left" columns={3}>
             <Triple contentfulData={firstTriple} />
             <Triple contentfulData={secondTriple} />
             <Triple contentfulData={thirdTriple} />
-          </TripleContainer>
+          </Grid>
           <SingleContainer imageOnLeft contentfulData={leftSingleContainer} />
           <SingleContainer contentfulData={rightSingleContainer} />
           <Slider
