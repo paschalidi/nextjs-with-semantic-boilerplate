@@ -15,32 +15,33 @@ the new vimcar website. including a CMS
     ``` sh
     git clone https://github.com/atlanticventures/new-vimcar-website.git <your-project-folder> 
     cd <your-project-folder> 
-    yarn install
+    npm run install
     ```
 The above commands will install all the dependencies you need in order to run the project.
 
-In case YARN is not installed in your machine go [here](https://yarnpkg.com/lang/en/docs/install/).
+In case npm run is not installed in your machine go [here](https://yarnpkg.com/lang/en/docs/install/).
 
 ## Run
 * To run the application for developent purposes 
     ``` sh
-    yarn dev
+    npm run dev
     ```
 * To run the application for production porpuses 
     ``` sh
-    yarn start
+    npm run start
     ```
 ## Deploy 
 * To deploy using now follow the next steps
 
     ``` sh
-    yarn build && yarn start
+    npm run build  
+    npm run start
     ```
     Leave the server running.
     Open a new terminal or a tab and then run the follow command
     
     ``` sh
-    yarn deploy
+    npm run deploy
     ```
 * To delete deployed instances [here](https://zeit.co/blog/now-rm-is-here-and-more)
 
