@@ -13,7 +13,7 @@ import { Button, Image } from 'semantic-ui-react';
 class TextLeft extends React.Component { // eslint-disable-line react/prefer-stateless-function
   renderImages(images) {
     if (!images) return <div></div>
-    return images.map(image => <Image src={image} size="mini" />)
+    return images.map((image, index) => <Image key={index} src={image} size="mini" />)
   }
 
   renderText({ title, subtitle, anchor, prime, images }) {
