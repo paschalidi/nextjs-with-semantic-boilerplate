@@ -120,7 +120,6 @@ export default class Footer extends React.Component { // eslint-disable-line rea
 
         <Grid divided inverted stackable columns={4}>
           <Grid.Row
-            inverted
             only="mobile"
             textAlign="center"
             className="footer-inverted-color"
