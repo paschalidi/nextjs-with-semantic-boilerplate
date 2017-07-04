@@ -30,6 +30,7 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
         <Grid
           className="trust-chain background-color-sec"
           verticalAlign="middle"
+          centered
         >
           <Grid.Row>
             {this.renderTrustChain(image)}
