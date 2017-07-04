@@ -9,8 +9,7 @@
     "test": "NODE_ENV=test jest --coverage",
     "build": "next build client",
     "deploy": "now --public ",
-    "generate": "plop --plopfile client/tools/generators/index.js",
-    "heroku-postbuild": "next build"
+    "generate": "plop --plopfile client/tools/generators/index.js"
   },
   "author": "Vimcar GmbH",
   "license": "All rights reserved",
