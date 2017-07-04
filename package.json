@@ -10,7 +10,7 @@
     "build": "next build client",
     "deploy": "now --public ",
     "generate": "plop --plopfile client/tools/generators/index.js",
-    "heroku": "next build client"
+    "heroku-postbuild": "next build"
   },
   "author": "Vimcar GmbH",
   "license": "All rights reserved",
