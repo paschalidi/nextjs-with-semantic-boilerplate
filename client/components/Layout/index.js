@@ -11,19 +11,18 @@ import React from 'react';
 import Head from 'next/head';
 import GoogleTagManager from '../GoogleTagManager';
 import VimcarFooter from '../Footer';
-import NavigationMenu from '../NavigationMenu';
 import PageLoader from '../PageLoader';
+import NavigationMenu from '../NavigationMenu';
+import { StickyContainer } from 'react-sticky';
 
 class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     const { title, children } = this.props;
     return (
-      <div>
+      <StickyContainer>
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-          <link rel="stylesheet"
-                href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css" />
 
           <link
             rel="stylesheet prefetch"
@@ -48,11 +47,12 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         </Head>
         <GoogleTagManager gtmId="GTM-5N7BT99" />
         <PageLoader />
+        <NavigationMenu />
 
         { children }
 
         <VimcarFooter />
-      </div>
+      </StickyContainer>
     );
   }
 }
