@@ -14,9 +14,7 @@ import GoogleTagManager from '../GoogleTagManager';
 import VimcarFooter from '../Footer';
 import PageLoader from '../PageLoader';
 import NavigationBar from '../../containers/NavigationBar';
-import NavigationMenuSecondary from '../../containers/NavigationBar/NavigationMenuSecondary';
-import { Menu, Container, Button } from 'semantic-ui-react';
-import Link from 'next/link';
+import { Grid } from 'semantic-ui-react';
 
 class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 

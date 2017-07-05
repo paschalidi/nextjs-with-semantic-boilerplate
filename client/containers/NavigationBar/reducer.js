@@ -9,7 +9,7 @@ import {
   HANDLE_PIN,
 } from './constants';
 
-const initialState = false;
+const initialState = true;
 
 function navigationBarReducer(state = initialState, action) {
   switch (action.type) {

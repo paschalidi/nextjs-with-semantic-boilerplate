@@ -84,6 +84,14 @@ class NavigationMenuPrimary extends React.Component { // eslint-disable-line rea
             </Menu.Item>
           </Container>
         </Menu>
+        <style jsx>{
+          `
+          .navbar-logo{
+            color: #1f9ac1;
+            font-size: 30px;
+            padding-left: 0.5em;
+          } `
+        }</style>
       </div>
     );
   }

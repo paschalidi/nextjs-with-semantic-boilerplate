@@ -16,6 +16,44 @@ class NavigationMenuSecondary extends React.Component { // eslint-disable-line r
   state = { activeItem: 'home' }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  renderMenuItems(items, activeItem) {
+    return items.map((key, index) => {
+      if (index === 0)
+        return (
+          <Link key={index} href="/about">
+            <Menu.Item
+              className="right"
+              name={key}
+              active={activeItem === { key }}
+              onClick={this.handleItemClick}
+              onMouseEnter={() => {
+                Router.prefetch(`/${key}`);
+                console.log(`Prefetching /${key}!`)
+              }}>
+              {key.toUpperCase()}
+            </Menu.Item>
+          </Link>
+        );
+      else
+        return (
+          <Link key={index} href="/">
+            <Menu.Item
+              as="a"
+              name={key}
+              active={activeItem === { key }}
+              onClick={this.handleItemClick}
+              onMouseEnter={() => {
+                Router.prefetch(`/${key}`);
+                console.log(`Prefetching /${key}!`)
+              }}>
+
+              {key.toUpperCase()}
+            </Menu.Item>
+          </Link>
+        )
+    })
+  }
+
   render() {
     const { activeItem } = this.state;
     const menuItems = ["fahrtenbuch", "fleet managment", "steuerberater", "magazin", "support"]
@@ -24,28 +62,12 @@ class NavigationMenuSecondary extends React.Component { // eslint-disable-line r
       <div>
         <Menu className="mini-s" size="mini" inverted stackable>
           <Container>
-            <Link href='/'>
-              <Menu.Item
-                className="right"
-                name=''
-                active={activeItem === ''}
-                onClick={this.handleItemClick}
-              >
-                Home
-              </Menu.Item>
-            </Link>
-            <Link href='/about'>
-              <Menu.Item
-                name='about'
-                active={activeItem === 'about'}
-                onClick={this.handleItemClick}
-              >
-                About
-              </Menu.Item>
-            </Link>
+
+            {this.renderMenuItems(menuItems, activeItem)}
+
 
             <Menu.Item className="right">
-              <Button secondary>LOGIN</Button>
+              <Button secondary>JEST BESTELEN</Button>
             </Menu.Item>
           </Container>
         </Menu>
