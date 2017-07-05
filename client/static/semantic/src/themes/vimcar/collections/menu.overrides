@@ -16,3 +16,9 @@
 .ui.mini.menu{
   min-height: (@itemVerticalPadding * 2) + 1em;
 }
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.menu:not(.secondary):not(.text):not(.tabular):not(.borderless) > .container > .item:not(.right):not(.borderless):first-child {
+    border-left: none;
+  }
+}
