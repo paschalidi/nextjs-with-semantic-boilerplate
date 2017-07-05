@@ -49,7 +49,19 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         <GoogleTagManager gtmId="GTM-5N7BT99" />
         <PageLoader />
         <StickyContainer>
-          <NavigationBar />
+          {/*TODO make that loopk better */}
+          <Grid>
+            <Grid.Row columns={1} only="mobile">
+              <Grid.Column>
+                MOBILE MENU GOES HERE
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={1} only="tablet computer">
+              <Grid.Column>
+                <NavigationBar />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
           { children }
           <VimcarFooter />
         </StickyContainer>
