@@ -20,10 +20,11 @@ export class NavigationBar extends React.Component { // eslint-disable-line reac
 
   render() {
     const { isPinned } = this.props;
-
     return (
       <div>
         <Headroom
+          upTolerance={1}
+          downTolerance={1}
           pinStart={100}
           onPin={() => this.handlePin(true)}
           onUnpin={() => this.handlePin(false)} />
