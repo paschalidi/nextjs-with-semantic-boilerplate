@@ -71,16 +71,18 @@ class NavigationMenuPrimary extends React.Component { // eslint-disable-line rea
     return (
       <div>
         <Menu size="small" stackable>
-          <Menu.Item name="logo">
-            <img role="presentation" src={logoUrl} />
-            <div className="navbar-logo">VIMCAR</div>
-          </Menu.Item>
+          <Container>
+            <Menu.Item name="logo">
+              <img role="presentation" src={logoUrl} />
+              <div className="navbar-logo">VIMCAR</div>
+            </Menu.Item>
 
-          {this.renderMenuItems(menuItems, activeItem)}
+            {this.renderMenuItems(menuItems, activeItem)}
 
-          <Menu.Item className="right">
-            <Button>LOGIN</Button>
-          </Menu.Item>
+            <Menu.Item className="right">
+              <Button>LOGIN</Button>
+            </Menu.Item>
+          </Container>
         </Menu>
       </div>
     );

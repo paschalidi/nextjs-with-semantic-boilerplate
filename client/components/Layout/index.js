@@ -9,18 +9,21 @@
 
 import React from 'react';
 import Head from 'next/head';
+import { StickyContainer, Sticky } from 'react-sticky';
 import GoogleTagManager from '../GoogleTagManager';
 import VimcarFooter from '../Footer';
 import PageLoader from '../PageLoader';
-import NavigationMenu from '../NavigationMenu';
-import { StickyContainer } from 'react-sticky';
+import NavigationBar from '../../containers/NavigationBar';
+import NavigationMenuSecondary from '../../containers/NavigationBar/NavigationMenuSecondary';
+import { Menu, Container, Button } from 'semantic-ui-react';
+import Link from 'next/link';
 
 class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     const { title, children } = this.props;
     return (
-      <StickyContainer>
+      <div>
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
 
@@ -47,12 +50,12 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         </Head>
         <GoogleTagManager gtmId="GTM-5N7BT99" />
         <PageLoader />
-        <NavigationMenu />
-
-        { children }
-
-        <VimcarFooter />
-      </StickyContainer>
+        <StickyContainer>
+          <NavigationBar />
+          { children }
+          <VimcarFooter />
+        </StickyContainer>
+      </div>
     );
   }
 }
