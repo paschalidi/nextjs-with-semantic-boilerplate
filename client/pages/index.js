@@ -132,7 +132,6 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       <Layout title="Vimcar">
         <Loading isLoading={isLoading} />
         <HeroHeader contentfulData={header} />
-        {/*todo add top-10 class*/}
         <div className="top-10">
           <Grid container centered stretched stackable textAlign="left" columns={3}>
             <Triple contentfulData={firstTriple} />
@@ -151,8 +150,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
               'https://source.unsplash.com/random',
             ]}
           />
-          <TrustChain contentfulData={trustChain} />
         </div>
+        <TrustChain contentfulData={trustChain} />
       </Layout>
     );
   }
