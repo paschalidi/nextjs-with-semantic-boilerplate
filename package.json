@@ -7,7 +7,7 @@
     "dev": "node server",
     "start": "NODE_ENV=production node server",
     "test": "NODE_ENV=test jest --coverage",
-    "build": "next build client",
+    "build": "cd client/static/semantic/ && gulp build && cd ../../../ && next build client",
     "deploy": "now --public ",
     "generate": "plop --plopfile client/tools/generators/index.js"
   },
