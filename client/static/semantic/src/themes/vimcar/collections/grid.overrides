@@ -48,12 +48,6 @@
 .slider-s.grid {
     margin: (@rowSpacing/2) 0 (@rowSpacing) 0 !important;
 }
-/*-------------------
-        TrustChain
---------------------*/
-.trust-chain.grid {
-    margin: (@rowSpacing / 2) 0 (@rowSpacing) 0;
-}
 
 /*-------------------
         Footer

@@ -26,16 +26,17 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
   render() {
     const { image } = this.props.contentfulData
     return (
-      <div>
-        <Grid
-          className="trust-chain background-color-sec"
-          verticalAlign="middle"
-          centered
-        >
-          <Grid.Row>
-            {this.renderTrustChain(image)}
-          </Grid.Row>
-        </Grid>
+      <div style={{ marginBottom: '2em' }}>
+        <div className="background-color-sec" style={{ padding: '1.5em' }}>
+          <Grid
+            verticalAlign="middle"
+            centered
+          >
+            <Grid.Row>
+              {this.renderTrustChain(image)}
+            </Grid.Row>
+          </Grid>
+        </div>
       </div>
     );
   }
