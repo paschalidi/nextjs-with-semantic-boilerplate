@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import SingleContainer from '../index';
+// import SectionTop from '../index';
 
-describe('<SingleContainer />', () => {
+describe('<SectionTop />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });
