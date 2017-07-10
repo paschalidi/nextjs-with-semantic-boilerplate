@@ -33,15 +33,14 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
 
   render() {
     const { imageArray } = this.props.contentfulData
-    const { bottom, colorPrime } = this.props
+    const { bottom, hasColorPrime } = this.props
 
-    console.log(imageArray)
     if (imageArray.length === 0) return <div>TrustChain needs some data here</div>
 
     return (
       <div style={{ marginBottom: `${bottom}` }}>
         <div
-          className={colorPrime ? "background-color-prime" : "background-color-sec"}
+          className={hasColorPrime ? "background-color-prime" : "background-color-sec"}
           style={{ padding: '1.5em' }}>
           <Grid
             columns={10}
