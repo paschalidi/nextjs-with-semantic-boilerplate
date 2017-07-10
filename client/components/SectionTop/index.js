@@ -35,12 +35,26 @@ class SectionTop extends React.Component { // eslint-disable-line react/prefer-s
     return (
       <div className="background-color-prime" style={{ paddingTop: '10em' }}>
         <style jsx>{``}</style>
-        <Grid container centered stretched stackable textAlign="center">
-          <Grid.Row columns={1}><h5 className="color-sec">{sectionTitle}</h5></Grid.Row>
-          <Grid.Row columns={1}><h1>{title}</h1></Grid.Row>
-          <Grid.Column textAlign="center" width={7}>
-            <p className="color-sec">{subtitle}</p>
-          </Grid.Column>
+        <Grid container centered stackable textAlign="center">
+          <Grid.Row columns={1}>
+            <Grid.Column textAlign="center" width={10}>
+              <h5 className="color-sec">{sectionTitle}</h5>
+            </Grid.Column>
+
+          </Grid.Row>
+
+          <Grid.Row columns={1}>
+            <Grid.Column textAlign="center" width={10}>
+              <h1>{title}</h1>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row columns={1}>
+            <Grid.Column textAlign="center" width={6}>
+              <p className="color-sec">{subtitle}</p>
+            </Grid.Column>
+          </Grid.Row>
+
           {imageArray
             ?
             <Grid.Row columns={1}>
@@ -53,14 +67,6 @@ class SectionTop extends React.Component { // eslint-disable-line react/prefer-s
           }
           <Grid.Row columns={1}> <a>{anchor}</a> </Grid.Row>
 
-          <Grid.Row>
-            <Grid.Column width={10}>
-              <Image src="http://placehold.it/520x500" />
-            </Grid.Column>
-            <Grid.Column width={6}>
-              <Image src="http://placehold.it/520x500 " />
-            </Grid.Column>
-          </Grid.Row>
         </Grid>
       </div>
     );
