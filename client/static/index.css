@@ -36,9 +36,10 @@ body {
     margin: auto;
 }
 
-.pad-left {
+.text-pad-left {
     padding-left: 3.2vw !important;
 }
+
 .text-container {
     margin: 0 auto;
 }
@@ -62,3 +63,23 @@ body {
 .background-color-sec {
     background-color: #f2f2f2 !important;
 }
+
+.container-overlay {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	width: 100%;
+	padding-bottom: 50%; /* 2:1 */
+}
+
+
+@media only screen and (max-width: 480px) {
+
+	.container-overlay {
+        padding-bottom: 0;
+    }
+}
+
+
+
