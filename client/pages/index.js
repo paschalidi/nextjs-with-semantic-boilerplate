@@ -100,8 +100,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
           const imageUrl02 = this.getImageUrlFromAssets(assets, trust02.sys.id);
           const imageUrl03 = this.getImageUrlFromAssets(assets, trust03.sys.id);
           const imageUrl04 = this.getImageUrlFromAssets(assets, trust04.sys.id);
-          const ImageUrls = [imageUrl01, imageUrl02, imageUrl03, imageUrl04]
-          this.setState({ trustChain: { image: ImageUrls } });
+          const imageUrls = [imageUrl01, imageUrl02, imageUrl03, imageUrl04]
+          this.setState({ trustChain: { imageArray: imageUrls } });
           break;
 
         default:
