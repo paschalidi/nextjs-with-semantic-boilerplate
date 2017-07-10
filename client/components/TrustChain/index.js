@@ -12,11 +12,19 @@ import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
 
 class TrustChain extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  static defaultProps = {
+    contentfulData: {
+      imageArray: [],
+      title: null,
+      subtitle: null,
+      image: null,
+    }
+  };
 
-  renderTrustChain(items) {
-    return items.map((item, index) => {
+  renderTrustChain(imageArray) {
+    return imageArray.map((item, index) => {
       return (
-        <Grid.Column key={index} mobile={8} tablet={4} computer={2}>
+        <Grid.Column key={index} mobile={8} tablet={2} computer={1}>
           <Image src={item} size="tiny" centered />
         </Grid.Column>
       );
@@ -24,16 +32,24 @@ class TrustChain extends React.Component { // eslint-disable-line react/prefer-s
   }
 
   render() {
-    const { image } = this.props.contentfulData
+    const { imageArray } = this.props.contentfulData
+    const { bottom, colorPrime } = this.props
+
+    console.log(imageArray)
+    if (imageArray.length === 0) return <div>TrustChain needs some data here</div>
+
     return (
-      <div style={{ marginBottom: '2em' }}>
-        <div className="background-color-sec" style={{ padding: '1.5em' }}>
+      <div style={{ marginBottom: `${bottom}` }}>
+        <div
+          className={colorPrime ? "background-color-prime" : "background-color-sec"}
+          style={{ padding: '1.5em' }}>
           <Grid
+            columns={10}
             verticalAlign="middle"
             centered
           >
             <Grid.Row>
-              {this.renderTrustChain(image)}
+              {this.renderTrustChain(imageArray)}
             </Grid.Row>
           </Grid>
         </div>
