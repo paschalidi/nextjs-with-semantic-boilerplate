@@ -19,16 +19,26 @@ import {
   ACCESS_TOKEN,
   HEADER_ENTRY_ID,
   TRUST_CHAIN_ID,
-  HARDWARE_SECTION_ID,
-  SOFTWARE_SECTION_ID,
-  EXPORT_SECTION_ID,
+
+  TOP_HARDWARE_SECTION_ID,
+  MIDDLE_HARDWARE_SECTION_ID,
+  BOTTOM_HARDWARE_SECTION_ID,
+
+  TOP_SOFTWARE_SECTION_ID,
+  MIDDLE_SOFTWARE_SECTION_ID,
+  BOTTOM_SOFTWARE_SECTION_ID,
+
+  TOP_EXPORT_SECTION_ID,
+  MIDDLE_EXPORT_SECTION_ID,
 } from '../contentful/fahrtenbuch';
 
 import Layout from '../components/Layout/index';
 import Single from '../components/Single';
 import TrustChain from '../components/TrustChain';
 import SectionTop from '../components/SectionTop';
+import SectionMiddle from '../components/SectionMiddle';
 import SectionBottom from '../components/SectionBottom';
+import { Grid } from 'semantic-ui-react';
 
 class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static async getInitialProps() {
@@ -61,10 +71,16 @@ class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-
         title,
         subtitle,
         sectionTitle,
+        paragraph,
+        listContent,
+
+        buttonText,
         anchor,
+        anchor01,
 
         image,
         image02,
+        imageMobile,
 
         trustIcon,
         trustIcon01,
@@ -75,11 +91,15 @@ class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-
         case HEADER_ENTRY_ID:
           const imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
           const imageUrl02 = this.getImageUrlFromAssets(assets, image02.sys.id);
+          const imageUrlMobile = this.getImageUrlFromAssets(assets, imageMobile.sys.id);
+          console.log("imageUrlMobile")
+          console.log(imageUrlMobile)
           this.setState({
             header: {
               title,
               imageLeft: imageUrl,
               imageRight: imageUrl02,
+              image: imageUrlMobile,
             },
           });
           break;
@@ -87,7 +107,7 @@ class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-
           const trustIconUrl = this.getImageUrlFromAssets(assets, trustIcon.sys.id);
           const trustIconUrl01 = this.getImageUrlFromAssets(assets, trustIcon01.sys.id);
           const trustIconUrl02 = this.getImageUrlFromAssets(assets, trustIcon02.sys.id);
-          const trustIconUrls = [trustIconUrl, trustIconUrl01, trustIconUrl02]
+          const trustIconUrls = [trustIconUrl, trustIconUrl01, trustIconUrl02, "http://placehold.it/200x50"]
           this.setState({
             trustChain: {
               title,
@@ -95,27 +115,66 @@ class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-
             },
           });
           break;
-        case HARDWARE_SECTION_ID:
+
+        ///HARDWARE
+        case TOP_HARDWARE_SECTION_ID:
           this.setState({
-            sectionHardware: {
+            topSectionHardware: {
               sectionTitle,
               title,
               imageArray: ["http://placehold.it/200x50", "http://placehold.it/200x50"],
             },
           });
           break;
-        case SOFTWARE_SECTION_ID:
+        case MIDDLE_HARDWARE_SECTION_ID:
+          const middleHardwareImageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
           this.setState({
-            sectionSoftware: {
+            middleSectionHardware: {
+              image: middleHardwareImageUrl,
+              listContent,
+            },
+          });
+          break;
+        case BOTTOM_HARDWARE_SECTION_ID:
+          this.setState({
+            bottomSectionHardware: {
+              buttonText,
+            },
+          });
+          break;
+
+        ///SOFTWARE
+        case TOP_SOFTWARE_SECTION_ID:
+          this.setState({
+            topSectionSoftware: {
               sectionTitle,
               title,
               subtitle,
             },
           });
           break;
-        case EXPORT_SECTION_ID:
+        case MIDDLE_SOFTWARE_SECTION_ID:
+          const middleSoftwareImageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
           this.setState({
-            sectionExport: {
+            middleSectionSoftware: {
+              image: middleSoftwareImageUrl,
+            },
+          });
+          break;
+        case BOTTOM_SOFTWARE_SECTION_ID:
+          this.setState({
+            bottomSectionSoftware: {
+              paragraph,
+              anchor,
+              anchor01,
+            },
+          });
+          break;
+
+        ///EXPORT
+        case TOP_EXPORT_SECTION_ID:
+          this.setState({
+            topSectionExport: {
               sectionTitle,
               title,
               subtitle,
@@ -123,9 +182,17 @@ class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-
             },
           });
           break;
+        case MIDDLE_EXPORT_SECTION_ID:
+          const middleExportImageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+          this.setState({
+            middleSectionExport: {
+              image: middleExportImageUrl,
+            },
+          });
+          break;
 
         default:
-          return;
+          break;
       }
     });
     this.setState({ isLoading: false });
@@ -139,34 +206,49 @@ class Fahrtenbuch extends React.Component { // eslint-disable-line react/prefer-
   render() {
     const {
       header,
+      headerMobile,
       trustChain,
-      sectionHardware,
-      sectionSoftware,
-      sectionExport,
+      topSectionHardware,
+      middleSectionHardware,
+      bottomSectionHardware,
+
+      topSectionSoftware,
+      middleSectionSoftware,
+      bottomSectionSoftware,
+
+      topSectionExport,
+      middleSectionExport,
     } = this.state;
-
-
-    console.log("header")
-    console.log(header)
 
     return (
       <Layout title="Fahrtenbuch">
-        <style jsx>{``}</style>
-        <Single hasNoContainer hasColorPrime hasDoubleImage contentfulData={header} />
-        <TrustChain hasColorPrime contentfulData={trustChain} />
         <section>
-          <SectionTop contentfulData={sectionHardware} />
-          <SectionBottom />
+          <Grid>
+            <Grid.Row only="tablet computer">
+              <Single hasNoContainer hasColorPrime hasDoubleImage contentfulData={header} />
+            </Grid.Row>
+            <Grid.Row only="mobile">
+              <Single hasNoContainer hasColorPrime hasImageOnRight contentfulData={header} />
+            </Grid.Row>
+          </Grid>
+          <TrustChain hasColorPrime contentfulData={trustChain} />
         </section>
 
         <section>
-          <SectionTop contentfulData={sectionSoftware} />
-          <SectionBottom />
+          <SectionTop contentfulData={topSectionHardware} />
+          <SectionMiddle hasNoContainer hasColorPrime contentfulData={middleSectionHardware} />
+          <SectionBottom contentfulData={bottomSectionHardware} />
         </section>
 
         <section>
-          <SectionTop contentfulData={sectionExport} />
-          <SectionBottom />
+          <SectionTop contentfulData={topSectionSoftware} />
+          <SectionMiddle hasOnlyImage hasColorPrime contentfulData={middleSectionSoftware} />
+          <SectionBottom contentfulData={bottomSectionSoftware} />
+        </section>
+
+        <section>
+          <SectionTop contentfulData={topSectionExport} />
+          <SectionMiddle hasOnlyImage hasColorPrime contentfulData={middleSectionExport} />
         </section>
       </Layout>
     );

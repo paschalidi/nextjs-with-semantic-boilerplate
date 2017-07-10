@@ -30,7 +30,6 @@ import { Grid } from 'semantic-ui-react';
 import Loading from '../components/Loading';
 
 import Layout from '../components/Layout/index';
-import HeroHeader from '../components/HeroHeader';
 import Triple from '../components/Triple';
 import Single from '../components/Single';
 import Slider from '../components/Slider';
@@ -129,10 +128,6 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       trustChain,
     } = this.state;
 
-    console.log("index/header")
-    console.log("index/header")
-    console.log("index/header")
-    console.log(header)
     return (
       <Layout title="Vimcar">
         <Loading isLoading={isLoading} />
