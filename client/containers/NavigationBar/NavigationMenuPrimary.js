@@ -23,7 +23,7 @@ class NavigationMenuPrimary extends React.Component { // eslint-disable-line rea
     return items.map((key, index) => {
       if (index === 0)
         return (
-          <Link key={index} href="/about">
+          <Link key={index} href={ key }>
             <Menu.Item
               className="right"
               name={key}
@@ -39,7 +39,7 @@ class NavigationMenuPrimary extends React.Component { // eslint-disable-line rea
         );
       else
         return (
-          <Link key={index} href="/">
+          <Link key={index} href={key}>
             <Menu.Item
               as="a"
               name={key}
