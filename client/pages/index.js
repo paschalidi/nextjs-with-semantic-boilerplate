@@ -129,6 +129,10 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       trustChain,
     } = this.state;
 
+    console.log("index/header")
+    console.log("index/header")
+    console.log("index/header")
+    console.log(header)
     return (
       <Layout title="Vimcar">
         <Loading isLoading={isLoading} />
@@ -139,8 +143,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
             <Triple contentfulData={secondTriple} />
             <Triple contentfulData={thirdTriple} />
           </Grid>
-          <Single hasNoContainer contentfulData={leftSingle} />
-          <Single hasNoContainer hasImageOnRight contentfulData={rightSingle} />
+          <Single contentfulData={leftSingle} />
+          <Single hasImageOnRight contentfulData={rightSingle} />
           <Slider
             images={[
               'https://source.unsplash.com/random',
