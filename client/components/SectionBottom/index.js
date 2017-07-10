@@ -28,7 +28,7 @@ class SectionBottom extends React.Component { // eslint-disable-line react/prefe
         <Grid container centered stackable textAlign="center">
           <Grid.Row columns={1}><p className="color-sec">{paragraph}</p></Grid.Row>
           {buttonText ? <Button>{buttonText}</Button> : <span></span>}
-          <Grid.Row centered stackable columns={2}>
+          <Grid.Row centered columns={2}>
             <Grid.Column width={3}> <a> {anchor} </a> </Grid.Column>
             <Grid.Column width={3}> <a> {anchor01} </a> </Grid.Column>
           </Grid.Row> </Grid>

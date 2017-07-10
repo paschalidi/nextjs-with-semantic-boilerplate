@@ -32,8 +32,6 @@ class SectionTop extends React.Component { // eslint-disable-line react/prefer-s
   render() {
     const { title, sectionTitle, imageArray, subtitle, anchor } = this.props.contentfulData;
 
-    console.log("imageArray")
-    console.log(imageArray)
     return (
       <div className="background-color-prime" style={{ paddingTop: '10em' }}>
         <style jsx>{``}</style>
@@ -45,7 +43,7 @@ class SectionTop extends React.Component { // eslint-disable-line react/prefer-s
           </Grid.Column>
           {imageArray
             ?
-            <Grid.Row padded relaxed columns={1}>
+            <Grid.Row columns={1}>
               <Image.Group size="tiny">
                 {this.renderImages(imageArray)}
               </Image.Group>
@@ -53,7 +51,7 @@ class SectionTop extends React.Component { // eslint-disable-line react/prefer-s
             :
             <span></span>
           }
-          <Grid.Row padded relaxed columns={1}> <a>{anchor}</a> </Grid.Row>
+          <Grid.Row columns={1}> <a>{anchor}</a> </Grid.Row>
 
           <Grid.Row>
             <Grid.Column width={10}>
