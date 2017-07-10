@@ -50,13 +50,13 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         <PageLoader />
         <StickyContainer>
           {/*TODO make that loopk better */}
-          <Grid>
-            <Grid.Row columns={1} only="mobile">
+          <Grid className="menu-s">
+            <Grid.Row className="menu-s" columns={1} only="mobile">
               <Grid.Column>
                 MOBILE MENU GOES HERE
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columns={1} only="tablet computer">
+            <Grid.Row className="menu-s" columns={1} only="tablet computer">
               <Grid.Column>
                 <NavigationBar />
               </Grid.Column>
