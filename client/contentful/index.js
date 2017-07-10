@@ -15,7 +15,7 @@ export const FIRST_TRIPLE_ENTRY_ID = '6CgVM8q7pmiY26gAO4C8Im';
 export const SECOND_TRIPLE_ENTRY_ID = '66tlFhmzbUysc24iMQk824';
 export const THIRD_TRIPLE_ENTRY_ID = '2ZfcH1bX3yUEMUKSyQCiK2';
 
-// SingleContainer
+// Single
 export const LEFT_SINGLE_ENTRY_ID = '67YeCJLlwAkGg2OUwesCW2';
 export const RIGHT_SINGLE_ENTRY_ID = '6eiXjAYcwMYqGaqmc6oaeS';
 

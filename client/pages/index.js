@@ -10,8 +10,8 @@
 import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
+
 import 'isomorphic-fetch';
-import { Grid } from 'semantic-ui-react';
 
 import * as contentful from 'contentful';
 import {
@@ -26,12 +26,13 @@ import {
   TRUST_CHAIN_ID,
 } from '../contentful';
 
+import { Grid } from 'semantic-ui-react';
 import Loading from '../components/Loading';
 
 import Layout from '../components/Layout/index';
 import HeroHeader from '../components/HeroHeader';
 import Triple from '../components/Triple';
-import SingleContainer from '../components/SingleContainer';
+import Single from '../components/Single';
 import Slider from '../components/Slider';
 import TrustChain from '../components/TrustChain';
 
@@ -72,12 +73,12 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
 
         case LEFT_SINGLE_ENTRY_ID:
           imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
-          this.setState({ leftSingleContainer: { anchor, title, subtitle, image: imageUrl } });
+          this.setState({ leftSingle: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case RIGHT_SINGLE_ENTRY_ID:
           imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
-          this.setState({ rightSingleContainer: { anchor, title, subtitle, image: imageUrl } });
+          this.setState({ rightSingle: { anchor, title, subtitle, image: imageUrl } });
           break;
 
         case FIRST_TRIPLE_ENTRY_ID:
@@ -112,16 +113,16 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
   }
 
   getImageUrlFromAssets(assets, id) {
-    const asset = Object.entries(assets).find((asset) => asset[1].sys.id === id);
-    return `https:${asset[1].fields.file.url}`;
+    const theAsset = Object.entries(assets).find((asset) => asset[1].sys.id === id);
+    return `https:${theAsset[1].fields.file.url}`;
   }
 
   render() {
     const {
       isLoading,
       header,
-      leftSingleContainer,
-      rightSingleContainer,
+      leftSingle,
+      rightSingle,
       firstTriple,
       secondTriple,
       thirdTriple,
@@ -131,15 +132,15 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
     return (
       <Layout title="Vimcar">
         <Loading isLoading={isLoading} />
-        <HeroHeader contentfulData={header} />
+        <Single hasNoContainer hasColorPrime hasImageOnRight contentfulData={header} />
         <div className="top-10">
           <Grid container centered stretched stackable textAlign="left" columns={3}>
             <Triple contentfulData={firstTriple} />
             <Triple contentfulData={secondTriple} />
             <Triple contentfulData={thirdTriple} />
           </Grid>
-          <SingleContainer imageOnLeft contentfulData={leftSingleContainer} />
-          <SingleContainer contentfulData={rightSingleContainer} />
+          <Single hasNoContainer contentfulData={leftSingle} />
+          <Single hasNoContainer hasImageOnRight contentfulData={rightSingle} />
           <Slider
             images={[
               'https://source.unsplash.com/random',
@@ -151,7 +152,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
             ]}
           />
         </div>
-        <TrustChain contentfulData={trustChain} />
+        <TrustChain bottom="2em" contentfulData={trustChain} />
       </Layout>
     );
   }
