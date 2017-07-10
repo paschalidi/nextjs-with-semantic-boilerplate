@@ -21,7 +21,7 @@ module.exports = {
       type: 'confirm',
       name: 'wantContentful',
       message: 'Are you gonna use Contentful',
-      default: true,
+      default: false,
       choices: () => ['Yes', 'No'],
     },
     {
