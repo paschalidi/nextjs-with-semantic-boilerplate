@@ -10,10 +10,67 @@
 import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
+{{#if wantContentful}}
+import 'isomorphic-fetch';
+
+import * as contentful from 'contentful';
+import {
+  SPACE_ID,
+  ACCESS_TOKEN,
+} from '../contentful';
+{{/if}}
 
 import Layout from '../components/Layout/index';
 
 class {{ properCase name }} extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
+{{#if wantContentful}}
+  static async getInitialProps() {
+    const client = contentful.createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN });
+    const res = await client.getEntries();
+
+    return {
+      contentful: {
+        res,
+        entry: res.includes.Entry,
+        asset: res.includes.Asset,
+      },
+    };
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      entries: props.contentful.entry,
+      assets: props.contentful.asset,
+      isLoading: true,
+    };
+  }
+
+  componentWillMount() {
+    const { entries, assets } = this.state;
+
+    Object.keys(entries).map(async (entryKey) => {
+      const { anchor, title, subtitle, image, trust01, trust02, trust03, trust04 } = entries[entryKey].fields;
+      let imageUrl;
+      switch (entries[entryKey].sys.id) {
+        // case HEADER_ENTRY_ID:
+        //   imageUrl = this.getImageUrlFromAssets(assets, image.sys.id);
+        //   this.setState({ header: { anchor, title, subtitle, image: imageUrl } });
+        //   break;
+
+        default:
+          return;
+      }
+    });
+  }
+
+  getImageUrlFromAssets(assets, id) {
+    const theAsset = Object.entries(assets).find((asset) => asset[1].sys.id === id);
+    return `https:${theAsset[1].fields.file.url}`;
+  }
+{{/if}}
+
   render() {
     return (
       <Layout title="{{ properCase name }}">

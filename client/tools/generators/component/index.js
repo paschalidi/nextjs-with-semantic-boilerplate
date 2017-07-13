@@ -13,7 +13,7 @@ module.exports = {
   prompts: [
     {
       type: 'confirm',
-      name: 'isContiner',
+      name: 'isContainer',
       message: 'Is container:',
       default: false,
     },
