@@ -4,3 +4,4 @@ import NavigationBarReducer from './containers/NavigationBar/reducer';
 export default combineReducers({
   NavigationBarReducer,
 });
+
