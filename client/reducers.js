@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
-import NavigationBarReducer from './containers/NavigationBar/reducer';
 
+<<<<<<< Updated upstream
 export default combineReducers({
   NavigationBarReducer,
 });
 
+=======
+export default combineReducers({});
+>>>>>>> Stashed changes

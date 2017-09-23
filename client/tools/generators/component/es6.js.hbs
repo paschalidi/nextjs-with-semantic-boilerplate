@@ -28,6 +28,9 @@ export class {{ properCase name }} extends React.{{{ component }}} { // eslint-d
 {{else}}
 class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
 {{/if}}
+  static defaultProps = {
+    hasColorPrime: false,
+  };
 {{#if wantContentful}}
   constructor(props) {
     super(props);
@@ -60,10 +63,12 @@ class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-
   }
 {{/if}}
   render() {
+    const { } = this.props.contentfulData;
+
     return (
       <div>
-        <p>{{ properCase name }}!!</p>
         <style jsx>{``}</style>
+        <p>{{ properCase name }}!!</p>
       </div>
     );
   }

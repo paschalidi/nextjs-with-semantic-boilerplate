@@ -35,7 +35,6 @@ module.exports = {
   actions: (data) => {
     // Generate index.js and index.test.js
     const pageTemplate = './page/page.hbs';
-    const constantsTemplate = './page/constants.js.hbs';
 
     const actions = [{
       type: 'add',
@@ -43,16 +42,6 @@ module.exports = {
       templateFile: pageTemplate,
       abortOnFail: true,
     }];
-
-    if (data.wantContentful) {
-      // Constants
-      actions.push({
-        type: 'add',
-        path: '../../contentful/{{name}}.js',
-        templateFile: constantsTemplate,
-        abortOnFail: true,
-      });
-    }
 
     return actions;
   },

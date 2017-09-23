@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import Loading from '../index';
+// import Responsive from '../index';
 
-describe('<Loading />', () => {
+describe('<Responsive />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

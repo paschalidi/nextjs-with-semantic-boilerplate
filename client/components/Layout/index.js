@@ -9,25 +9,26 @@
 
 import React from 'react';
 import Head from 'next/head';
-import { StickyContainer, Sticky } from 'react-sticky';
-import GoogleTagManager from '../GoogleTagManager';
-import VimcarFooter from '../Footer';
-import PageLoader from '../PageLoader';
-import NavigationBar from '../../containers/NavigationBar';
-import { Grid } from 'semantic-ui-react';
+
+import Computer from '../Responsive/Computer';
+import MobileAndTablet from '../Responsive/MobileAndTablet';
 
 class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
-    const { title, children } = this.props;
+    const { title, children, pageId } = this.props;
     return (
       <div>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200"
+            rel="stylesheet"
+          />
 
           <link
             rel="stylesheet prefetch"
-            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css" />
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css"
+          />
 
           <link
             rel="stylesheet"
@@ -39,34 +40,23 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
             type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
+
           <link rel="stylesheet" type="text/css" href="/static/index.css" />
           <link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.css" />
 
-          <title>{ title }</title>
+          <title>{title}</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <GoogleTagManager gtmId="GTM-5N7BT99" />
-        <PageLoader />
-        <StickyContainer>
-          {/*TODO make that loopk better */}
-          <Grid className="menu-s">
-            <Grid.Row className="menu-s" columns={1} only="mobile">
-              <Grid.Column>
-                MOBILE MENU GOES HERE
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row className="menu-s" columns={1} only="tablet computer">
-              <Grid.Column>
-                <NavigationBar />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-          { children }
-          <VimcarFooter />
-        </StickyContainer>
+        <Computer>
+        </Computer>
+
+        <MobileAndTablet>
+        </MobileAndTablet>
+        {children}
       </div>
     );
   }
 }
+
 export default Layout;
