@@ -9,10 +9,10 @@
 @backgroundColor: transparent;
 
 //hover
-@hoverColor: @hoveredTextColorVimcar;
+@hoverColor: @hoveredTextColorBoilerplate;
 @hoverBackgroundColor: @blue;
-@focusColor: @hoveredTextColorVimcar;
-@basicHoverTextColor: @hoveredTextColorVimcar;
+@focusColor: @hoveredTextColorBoilerplate;
+@basicHoverTextColor: @hoveredTextColorBoilerplate;
 //todo change downcolor (the color that text has when button is presed)
 @downColor: #fff;
 

@@ -6,7 +6,6 @@
          View
 --------------------*/
 /* Header */
-@itemHeaderFontWeight: Normal;
 
 @invertedLinkListItemColor: @invertedHoveredTextColor;
 @invertedSelectionListColor: @invertedHoveredTextColor;

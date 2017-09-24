@@ -1,0 +1,38 @@
+/*******************************
+         Theme Overrides
+*******************************/
+.header-align.header {
+  text-align: center;
+}
+.ui.modal > .actions {
+     background: transparent;
+}
+@media only screen and (max-width: 768px) {
+    .ui.large.modal {
+        width: 100% !important;
+    }
+}
+@media only screen and (min-width: 992px){
+    .ui.modal > .modal-content-s {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      resize: vertical;
+      overflow: auto;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .ui.modal > .modal-content-s {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      resize: vertical !important;
+      overflow: auto !important;
+    }
+    .modals.dimmer .ui.scrolling.modal {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}

@@ -1,0 +1,10 @@
+/*******************************
+         Theme Overrides
+*******************************/
+.ui.blue.input input {
+  border-color: transparent !important;
+  background-color: @blueHover !important;
+  padding: 1em !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}

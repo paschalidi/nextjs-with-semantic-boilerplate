@@ -1,0 +1,180 @@
+/*******************************
+         Theme Overrides
+*******************************/
+/*-------------------
+       Columns
+--------------------*/
+
+.ui.grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Vertical padding when no rows */
+.ui.grid > .row {
+  padding-top: (@rowSpacing /2);
+  padding-bottom: (@rowSpacing / 2);
+}
+/* Vertical padding when no rows */
+.ui.grid > .column:not(.row) {
+  padding-top: (@rowSpacing /2);
+  padding-bottom: (@rowSpacing /2);
+}
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .ui.grid > .doubling.row > .column,
+  .ui.doubling.grid > .row > .column {
+    padding-top: (@rowSpacing /2) !important;
+    padding-bottom: (@rowSpacing /2) !important;
+  }
+}
+@media only screen and (max-width: @largestMobileScreen) {
+
+  .ui.grid > .doubling.row > .column,
+  .ui.doubling.grid > .row > .column {
+    padding-top: (@rowSpacing /2) !important;
+    padding-bottom: (@rowSpacing /2) !important;
+  }
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.stackable.grid {
+    width: auto;
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+  }
+  .ui.stackable.grid > .row > .wide.column,
+  .ui.stackable.grid > .wide.column,
+  .ui.stackable.grid > .column.grid > .column,
+  .ui.stackable.grid > .column.row > .column,
+  .ui.stackable.grid > .row > .column,
+  .ui.stackable.grid > .column:not(.row),
+  .ui.grid > .stackable.stackable.row > .column {
+    padding: (@stackableRowSpacing /2) (@stackableGutter / 2) !important;
+  }
+}
+
+/*-------------------
+        Triple
+--------------------*/
+@media only screen and (max-width: @tabletBreakpoint) {
+    .ui.stackable.grid > .row > .wide.no-padding-on-mobile-s.column, .ui.stackable.grid > .wide.no-padding-on-mobile-s.column, .ui.stackable.grid > .no-padding-on-mobile-s.column.grid > .no-padding-on-mobile-s.column, .ui.stackable.grid > .no-padding-on-mobile-s.column.row > .no-padding-on-mobile-s.column, .ui.stackable.grid > .row > .no-padding-on-mobile-s.column, .ui.stackable.grid > .no-padding-on-mobile-s.column:not(.row), .ui.grid > .stackable.stackable.row > .no-padding-on-mobile-s.column{
+        padding: 0 !important
+    }
+}
+/*-------------------
+        Single
+--------------------*/
+.ui.grid > .no-padding-on-left-s.column:not(.row), .ui.grid > .row > .no-padding-on-left-s.column{
+    padding-left: 0 !important;
+}
+.ui.grid > .no-padding-on-right-s.column:not(.row), .ui.grid > .row > .no-padding-on-right-s.column{
+    padding-right: 0 !important;
+}
+.ui.grid > .no-padding-on-top-s.row{
+    padding-top: 0 !important;
+}
+.ui.grid > .no-padding-on-bottom-s.row{
+    padding-bottom: 0 !important;
+}
+/*-------------------
+        Header
+--------------------*/
+.ui.header-full-width-s.grid > .row > .wide.mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .wide.mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .column.grid > .mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .column.row > .mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .row > .mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .column:not(.row), .ui.grid > .stackable.stackable.row > .mobile-zero-bottom-padding-s.column,
+.ui.header-full-width-s.grid > .row > .wide.mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .wide.mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .column.grid > .mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .column.row > .mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .row > .mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .column:not(.row), .ui.grid > .stackable.stackable.row > .mobile-zero-top-padding-s.column {
+    padding: 0 0 0 0 !important;
+}
+@media only screen and (max-width: @largestMobileScreen) {
+    //removes bottom paddinf when on mobile with classes header-full-width-s and mobile-zero-bottom-padding-s
+    .ui.header-full-width-s.grid > .row > .wide.mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .wide.mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .column.grid > .mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .column.row > .mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .row > .mobile-zero-bottom-padding-s.column, .ui.header-full-width-s.grid > .column:not(.row), .ui.grid > .stackable.stackable.row > .mobile-zero-bottom-padding-s.column {
+        width: 100% !important;
+        padding: 0 0 0 0 !important;
+    }
+    //removes top paddinf when on mobile with classes header-full-width-s and mobile-zero-top-padding-s
+    .ui.header-full-width-s.grid > .row > .wide.mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .wide.mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .column.grid > .mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .column.row > .mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .row > .mobile-zero-top-padding-s.column, .ui.header-full-width-s.grid > .column:not(.row), .ui.grid > .stackable.stackable.row > .mobile-zero-top-padding-s.column {
+        width: 100% !important;
+        padding: 0 0 0 0 !important;
+    }
+}
+
+/*-------------------
+        navigationBar
+--------------------*/
+.ui.grid > .padding-zero-s.row{
+    padding-top: 0em;
+    padding-bottom: 0em;
+}
+
+/*-------------------
+        Slider
+--------------------*/
+/* adds some extra margin because of dots in slider */
+.slider-s.grid {
+    margin-bottom : (@rowSpacing * 2) !important;
+    margin-top : (@rowSpacing / 2) !important;
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+    .slider-s.grid {
+        margin-bottom : 0 !important;
+        margin-top : 0 !important;
+        padding-bottom : (@rowSpacing * 2 ) !important;
+        padding-top : 0 !important;
+    }
+}
+
+
+
+/*-------------------
+        Footer
+--------------------*/
+.ui.grid > .pad-top-s.row {
+    padding: (@rowSpacing * 2) 0 (@rowSpacing * 2) 0 !important ;
+}
+@media only screen and (max-width: @largestMobileScreen) {
+    .ui.grid > .pad-top-s.row {
+        padding: (@rowSpacing / 2) 0 !important ;
+    }
+}
+
+/*-------------------
+           Rotation
+--------------------*/
+.ui.grid > .rotated-s.row{
+    -webkit-transform-origin: top right;
+      -ms-transform-origin: top right;
+      transform-origin: top right;
+      -webkit-transform: skewY(20deg);
+      -ms-transform: skewY(20deg);
+      transform: skewY(20deg);
+}
+
+
+/*-------------------
+           SectionWithRotation
+--------------------*/
+.column.move-bottom-s{
+    bottom: -27vw;
+}
+
+
+
+/*double padding*/
+.ui.grid > .row > .double-padding-s.column{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+/*-------------------
+           ComponentListItem
+--------------------*/
+@media only screen and (max-width: @largestMobileScreen) {
+    .row.padding-mobile-s {
+        padding-left: 5em !important;
+    }
+}
+
+/*-------------------
+           Transparent Column
+--------------------*/
+.column.transparent-s{
+    background-color: transparent !important;
+}

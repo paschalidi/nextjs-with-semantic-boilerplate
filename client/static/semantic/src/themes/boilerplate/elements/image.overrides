@@ -1,0 +1,11 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+.image.mobile-image-absolute-positioning-s {
+    position: absolute;
+    z-index: 0;
+    top: -107px;
+    left: 4px;
+}

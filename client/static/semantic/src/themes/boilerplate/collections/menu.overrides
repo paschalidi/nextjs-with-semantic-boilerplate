@@ -1,0 +1,77 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+/* Border */
+.ui.menu .item:before {
+  background: transparent;
+  width: 0px
+}
+
+/* Mini */
+.ui.mini.menu {
+  font-size: @mini;
+}
+
+.ui.mini.menu{
+  min-height: (@itemVerticalPadding * 2) + 1em;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.menu:not(.secondary):not(.text):not(.tabular):not(.borderless) > .container > .item:not(.right-s):not(.borderless):first-child {
+    border-left: none;
+  }
+}
+
+
+.ui.menu .item.primary-menu-item-s {
+    letter-spacing: 0.18em;
+    font-weight: 600;
+}
+
+.ui.menu .item.secondary-menu-item-s {
+    letter-spacing: 0.13em;
+    font-size: 1em;
+}
+
+.ui.menu .item.primary-menu-item-s button,
+.ui.menu .item.secondary-menu-item-s button{
+
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.ui.menu:not(.vertical) .right-s.item, .ui.menu:not(.vertical) .right-s.menu{
+    margin-left: 13.5vw;
+}
+
+/*mobile*/
+@media only screen and (max-width: @largestMobileScreen) {
+}
+/*tablet*/
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+    .ui.menu:not(.vertical) .right-s.item, .ui.menu:not(.vertical) .right-s.menu{
+        margin-left: 0 !important;
+    }
+    .ui.menu:not(.vertical) .right-secondary-s.item, .ui.menu:not(.vertical) .right-secondary-s.menu{
+        margin-left: 0 !important;
+    }
+}
+/*computer*/
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largeMonitorBreakpoint) {
+    .ui.menu:not(.vertical) .right-s.item, .ui.menu:not(.vertical) .right-s.menu{
+        margin-left: 5vw;
+    }
+    .ui.menu:not(.vertical) .right-secondary-s.item, .ui.menu:not(.vertical) .right-secondary-s.menu{
+        margin-left: 7vw;
+    }
+}
+/*largeMonitor*/
+@media only screen and (min-width: @largeMonitorBreakpoint){
+    .ui.menu:not(.vertical) .right-s.item, .ui.menu:not(.vertical) .right-s.menu{
+        margin-left: 13.5vw;
+    }
+    .ui.menu:not(.vertical) .right-secondary-s.item, .ui.menu:not(.vertical) .right-secondary-s.menu{
+        margin-left: 15.2vw;
+    }
+}

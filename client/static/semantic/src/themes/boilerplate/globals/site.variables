@@ -6,15 +6,14 @@
        Fonts
 --------------------*/
 
-@headerFont        : 'Open Sans', sans-serif;
-@pageFont          : 'Open Sans', sans-serif;
+@headerFont        : 'Source Code Pro', monospace;
+@pageFont          : 'Source Code Pro', monospace;
 @fontSmoothing     : antialiased;
-
 @importGoogleFonts : true;
-@googleFontName    : 'Open Sans';
+@googleFontName    : 'Source Code Pro';
 @googleFontSizes   : '300,300,300italic,300italic';
 @googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
-@fontWeight        : 100;
+@fontWeight        : 300;
 
 /*-------------------
       Base Sizes
@@ -52,7 +51,7 @@
   Page Heading
 ---------------*/
 
-@headerFontWeight : lighter;
+@headerFontWeight : 300;
 @headerLineHeight : unit((18 / 14), em);
 
 @h1 : unit((28 / 14), rem);
@@ -182,9 +181,9 @@
 --------------------*/
 
 @mobileBreakpoint            : 320px;
-@tabletBreakpoint            : 768px;
+@tabletBreakpoint            : 769px;
 @computerBreakpoint          : 992px;
-@largeMonitorBreakpoint      : 1200px;
+@largeMonitorBreakpoint      : 1500px;
 @widescreenMonitorBreakpoint : 1920px;
 
 /*-------------------
@@ -409,9 +408,9 @@
 
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
-@hoveredTextColorVimcar      : #fff;
+@hoveredTextColorBoilerplate      : #fff;
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@pressedTextColorVimcar      : rgba(0, 0, 0, 0.9);
+@pressedTextColorBoilerplate      : rgba(0, 0, 0, 0.9);
 @selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 

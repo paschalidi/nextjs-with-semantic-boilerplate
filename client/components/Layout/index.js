@@ -10,8 +10,11 @@
 import React from 'react';
 import Head from 'next/head';
 
+import PageLoader from '../PageLoader';
 import Computer from '../Responsive/Computer';
 import MobileAndTablet from '../Responsive/MobileAndTablet';
+
+import NavigationMenu from '../NavigationMenu';
 
 class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -20,10 +23,7 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
     return (
       <div>
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
 
           <link
             rel="stylesheet prefetch"
@@ -48,6 +48,10 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
+        <PageLoader />
+
+        <NavigationMenu />
+
         <Computer>
         </Computer>
 

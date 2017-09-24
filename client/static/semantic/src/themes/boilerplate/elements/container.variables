@@ -1,0 +1,9 @@
+/* Coupling (Add Negative Margin to container size) */
+@gridGutterWidthTablet: 17vw;
+@gridGutterWidthComputer: 20vw;
+@gridGutterWidthLargeMonitor: 6vw;
+
+@mobileGridWidth: @mobileWidth;
+@tabletGridWidth: ~"calc("@tabletWidth~" + "@gridGutterWidthTablet~")";
+@computerGridWidth: ~"calc("@computerWidth~" + "@gridGutterWidthComputer~")";
+@largeMonitorGridWidth: ~"calc("@largeMonitorWidth~" + "@gridGutterWidthLargeMonitor~")";

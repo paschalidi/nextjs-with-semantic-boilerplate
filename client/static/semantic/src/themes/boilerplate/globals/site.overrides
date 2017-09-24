@@ -1,0 +1,38 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+
+/*-------------------
+        Global font
+--------------------*/
+
+html {
+  font-weight: @fontWeight;
+}
+/*-------------------
+        Links
+--------------------*/
+
+a:hover {
+  cursor: pointer;
+}
+
+/*-------------------
+        Fonts
+--------------------*/
+/*******************************
+         Theme Overrides
+*******************************/
+h1,h2,h3{
+    line-height: 1.1em;
+}
+a {
+    cursor: pointer;
+}
+
+/*global*/
+div.header-s.header,
+div.description-s.description{
+    font-size: 1.250em;
+}

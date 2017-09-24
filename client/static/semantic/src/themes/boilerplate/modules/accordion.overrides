@@ -1,0 +1,35 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.accordion .active.title .plus.icon, .ui.accordion .accordion .active.title .plus.icon{
+    transform: rotate(45deg);
+}
+
+.ui.accordion .title.title-white-s {
+    color: white;
+    font-size: 1.6em !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+div.content .content-white-s{
+    color: white;
+
+}
+
+.title.no-padding-s{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.accordion.border-bottom-s{
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.ui.accordion.full-width-s {
+    width: 100% !important
+}
+
+.ui.accordion .active.title .rotated {
+    transform: rotate(45deg) !important;
+}
