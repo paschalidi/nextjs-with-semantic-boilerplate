@@ -1,0 +1,20 @@
+/*******************************
+            Button
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+@fontWeight: 200;
+@backgroundColor: transparent;
+
+//hover
+@hoverColor: @hoveredTextColorBoilerplate;
+@hoverBackgroundColor: @blue;
+@focusColor: @hoveredTextColorBoilerplate;
+@basicHoverTextColor: @hoveredTextColorBoilerplate;
+//todo change downcolor (the color that text has when button is presed)
+@downColor: #fff;
+
+@buttonBorder : 1px;
+@downBackgroundColor: @blueActive;

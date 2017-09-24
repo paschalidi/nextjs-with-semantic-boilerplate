@@ -2,84 +2,394 @@ body {
     background-color: #fbfcfc;
 }
 
-.top-10 {
-    position: relative;
-    top: -7em;
+.trust-chain-padding {
+    padding: 4em 0 3em 0;
 }
 
-.text-block {
-    width: 100%;
-    height: 100%;
-    float: left;
-    padding: 15% 0;
+.top-home {
+    margin-top: -16.5vw;
 }
 
-.image-block {
-    position: relative;
+.top-streuerberater {
+    margin-top: -10vw;
 }
 
-.floating-text-content {
-    width: 100%;
-    height: 100%;
-    padding: 5% 0;
-    max-height: 300px
+.top-funktionen {
+    margin-top: -18vw;
 }
 
-.floating-image-content {
-    position: absolute;
-    top: 45px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 30%;
-    margin: auto;
+.top-conformance {
+    margin-top: -9vw;
 }
 
-.text-pad-left {
-    padding-left: 3.2vw !important;
+.top-support-page {
+    margin-top: -8vw !important;
 }
 
+video {
+    margin: 0 auto !important;
+    /*width: 50% !important*/
+}
+
+.big-number {
+    font-size: 160px;
+    font-weight: 800;
+}
+
+/*mobile*/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .big-number {
+        font-size: 100px;
+        font-weight: 800;
+    }
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.svg-arrow {
+    width: 40px;
+    height: 11px;
+}
+
+/*todo remove this if not needed*/
 .text-container {
     margin: 0 auto;
-}
-
-.padding-zero {
-    padding: 0 !important;
 }
 
 .color-sec {
     color: #777f8e;
 }
 
+.color-white {
+    color: #fff !important;
+}
+
+.color-black {
+    color: #313541 !important;
+}
+
 .color-a {
-    color: #1f9ac1;
+    color: #1f9ac1 !important;
+}
+
+.background-color-white {
+    background-color: #fbfcfc !important;
+}
+
+.background-color-boilerplate {
+    background-color: #1f9ac1 !important;
+}
+
+.background-color-angled-orange {
+    background: linear-gradient(60deg, #ffd635, #ff8925) !important;
+}
+
+.background-color-angled-blue {
+    background: linear-gradient(60deg, #299ebf, #b1d7e1) !important;
+}
+
+.background-color-angle90-blue {
+    background: linear-gradient(90deg, #299ebf, #fff) !important;
 }
 
 .background-color-prime {
     background-color: #e3e8ee !important;
 }
 
+.background-color-dark {
+    background-color: #313541 !important;
+}
+
+.background-color-prime-split {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background: -moz-linear-gradient(top, transparent 0%, transparent 20%, #e3e8ee 20%, #e3e8ee 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, transparent), color-stop(20%, transparent), color-stop(20%, #e3e8ee), color-stop(100%, #e3e8ee));
+    background: -webkit-linear-gradient(top, transparent 0%, transparent 20%, #e3e8ee 20%, #e3e8ee 100%);
+    background: -o-linear-gradient(top, transparent 0%, transparent 20%, #e3e8ee 20%, #e3e8ee 100%);
+    background: -ms-linear-gradient(top, transparent 0%, transparent 20%, #e3e8ee 20%, #e3e8ee 100%);
+    background: linear-gradient(to bottom, transparent 0%, transparent 20%, #e3e8ee 20%, #e3e8ee 100%);
+}
+
+.background-color-dark-prime {
+    background-color: #777f8e !important;
+}
+
 .background-color-sec {
     background-color: #f2f2f2 !important;
 }
 
-.container-overlay {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	position: relative;
-	width: 100%;
-	padding-bottom: 50%; /* 2:1 */
-}
-
-
-@media only screen and (max-width: 480px) {
-
-	.container-overlay {
-        padding-bottom: 0;
+/*mobile*/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .top-funktionen {
+        margin-top: -36vw !important;
     }
 }
 
+/*tablet*/
+@media screen and (min-width: 769px) and (max-width: 992px) {
+}
 
+/*computer*/
+@media screen and (min-width: 992px) and (max-width: 1500px) {
+}
 
+/*large screen*/
+@media screen and (min-width: 1500px) {
+}
+
+/*---------------------IMAGE CONTAINERS AS ICONS---------------------*/
+.svg-container {
+    margin: 0 auto;
+    height: 5vw !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .svg-container {
+        height: 3.5em !important;
+    }
+}
+
+/*---------------------FONTS---------------------*/
+/*HEADERS*/
+.header-lg-s p,
+.header-s p,
+.header-sm-s p {
+    line-height: 1.12em !important;
+}
+
+.paragraph-lg-s p,
+.paragraph-s p,
+.paragraph-sm-s p {
+    line-height: 1.58em !important;
+
+}
+
+h1,
+h1.ui.header,
+.header-lg-s {
+    font-size: 60px !important;
+}
+
+h2,
+h2.ui.header,
+.header-s {
+    font-size: 50px !important;
+}
+
+h3,
+h3.ui.header,
+.header-sm-s {
+    font-size: 1.8vw;
+}
+
+/*PARAGRAPH*/
+.paragraph-lg-s,
+.paragraph-s,
+.paragraph-sm-s {
+    line-height: 1.5em !important;
+}
+
+.paragraph-lg-s,
+.anchor-as-paragraph-lg-s {
+    font-size: 20px;
+}
+
+.paragraph-s,
+.anchor-as-paragraph-s {
+    font-size: 18px;
+}
+
+.paragraph-white-s {
+    color: white;
+    font-size: 18px;
+}
+
+.paragraph-sm-s,
+.anchor-as-paragraph-sm-s {
+    font-size: 15px;
+}
+
+/*ANCHOR*/
+.anchor-as-paragraph-lg-s,
+.anchor-as-paragraph-s,
+.anchor-as-paragraph-sm-s {
+    cursor: pointer;
+}
+
+/*SECTION TITLE*/
+.section-title-s {
+    letter-spacing: 0.15vw;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+/*BUTTON*/
+button > p,
+button-s {
+    font-size: 15px;
+}
+
+@media screen and (min-width: 770px) and (max-width: 992px) {
+    h1,
+    h1.ui.header,
+    .header-lg-s {
+        font-size: 50px !important;
+    }
+
+    h2,
+    h2.ui.header,
+    .header-s {
+        font-size: 27px !important;
+    }
+
+    h3,
+    h3.ui.header,
+    .header-sm-s {
+        font-size: 20px !important;
+    }
+
+    /*PARAGRAPH*/
+    .paragraph-lg-s,
+    .anchor-as-paragraph-lg-s {
+        font-size: 20px !important;
+    }
+
+    .paragraph-s,
+    .anchor-as-paragraph-s {
+        font-size: 17px !important;
+    }
+
+    /*todo please refactor that this class is not really needed.*/
+    .paragraph-white-s {
+        color: white;
+        font-size: 15px !important;
+    }
+
+    .paragraph-sm-s,
+    .anchor-as-paragraph-sm-s {
+        font-size: 12px !important;
+    }
+
+    /*ANCHOR*/
+    .anchor-as-paragraph-lg-s,
+    .anchor-as-paragraph-s,
+    .anchor-as-paragraph-sm-s {
+        cursor: pointer;
+    }
+
+    /*SECTION TITLE*/
+    .section-title-s {
+        letter-spacing: 0.15vw;
+        padding-bottom: 10px;
+        font-size: 1.8vw !important;
+    }
+
+    /*BUTTON*/
+    button > p,
+    button-s {
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+}
+
+/*mobile*/
+@media only screen and (max-width: 768px) {
+    h1, h1.ui.header, .header-lg-s {
+        font-size: 2.4em !important;
+    }
+
+    h2, h2.ui.header, .header-s {
+        font-size: 1.6em !important;
+    }
+
+    h3, h3.ui.header, .header-sm-s {
+        font-size: 1.2em !important;
+    }
+
+    /*PARAGRAPH*/
+    /*todo need to change this font size for lg*/
+    .paragraph-lg-s,
+    .anchor-as-paragraph-lg-s {
+        font-size: 1.35em !important;
+    }
+
+    .paragraph-s,
+    .anchor-as-paragraph-s {
+        font-size: 1.35em !important;
+    }
+
+    .paragraph-white-s {
+        color: white !important;
+        font-size: 1.35em !important;
+    }
+
+    .paragraph-sm-s,
+    .anchor-as-paragraph-sm-s {
+        font-size: 0.8em !important;
+    }
+
+    /*ANCHOR*/
+    .anchor-as-paragraph-lg-s,
+    .anchor-as-paragraph-s,
+    .anchor-as-paragraph-sm-s {
+        cursor: pointer;
+    }
+
+    /*SECTION TITLE*/
+    .section-title-s {
+        letter-spacing: 0.20vw;
+        padding-bottom: 5px;
+        font-size: 14px;
+    }
+
+    /*BUTTON*/
+    button > p, .button-s {
+        font-size: 1em;
+    }
+
+    .mobile-button-padding {
+        padding-top: 2.5em;
+        padding-bottom: 5.5em;
+    }
+
+    .mobile-button-padding-top {
+        padding-top: 4.5em;
+        padding-bottom: 5.5em;
+    }
+
+    .mobile-button-padding-triple {
+        padding-top: 2em !important;
+        padding-bottom: 4em !important;
+    }
+
+    .menu-items {
+        font-size: 1.4em !important;
+    }
+
+}
+
+/*---------------------HEIGHT 100vh for headers---------------------*/
+@media screen and (min-width: 320px) and (max-width: 769px) {
+    .full-height {
+        height: 94.5vh !important
+    }
+}
+
+/*tablet*/
+@media screen and (min-width: 770px) and (max-width: 992px) {
+    .full-height {
+        height: 94.5vh !important
+    }
+}
+
+/*largeScreen*/
+.full-height {
+    height: 92vh
+}

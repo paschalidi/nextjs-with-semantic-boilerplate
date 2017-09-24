@@ -1,0 +1,7 @@
+/*******************************
+            Segment
+*******************************/
+@borderWidth: 0px;
+@boxShadow: none;
+
+@verticalMargin: 0;

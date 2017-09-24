@@ -21,6 +21,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
     return (
       <Layout pageId={this.props.url.pathname} title="Made with React">
         <style jsx>{``}</style>
+        <div>hello from new page and font!</div>
         <Link href="/" name="me">Me</Link>
       </Layout>
     );

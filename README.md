@@ -1,5 +1,5 @@
-# new-vimcar-website 
-the new vimcar website. including a CMS  
+# new-boilerplate-website 
+the new boilerplate website. including a CMS  
 
 ## Contents
 
@@ -13,7 +13,7 @@ the new vimcar website. including a CMS
 ## Installation
 * To manually install the project to your local machine please follow the next steps.
     ``` sh
-    git clone https://github.com/atlanticventures/new-vimcar-website.git <your-project-folder> 
+    git clone https://github.com/atlanticventures/new-boilerplate-website.git <your-project-folder> 
     cd <your-project-folder> 
     npm run install
     ```

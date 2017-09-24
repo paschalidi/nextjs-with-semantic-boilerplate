@@ -1,0 +1,31 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+.ui.link.list .sm-pad-s.item,
+.ui.link.list a.sm-pad-s.item,
+.ui.link.list .sm-pad-s.item a:not(.ui){
+  padding: 0.7em ! important
+}
+
+.ui.inverted.list .list > .item .list-header-pad-s.header, .ui.inverted.list > .item .list-header-pad-s.header{
+  padding: 0.5em ! important
+
+}
+
+.ui.list .list > .item .color-prime-s.header, .ui.list > .item .color-prime-s.header{
+    color: @blue;
+}
+
+.ui.list .list > .item .color-prime-s.description, .ui.list > .item .color-prime-s.description{
+    color: @blue;
+}
+
+.ui.list .list > .item > .image + .color-prime-s.content, .ui.list .list > .item > .icon + .color-prime-s.content, .ui.list > .item > .image + .color-prime-s.content, .ui.list > .item > .icon + .color-prime-s.content{
+    color: @blue;
+}
+
+.ui.list.width-s {
+    width: 100% !important;
+}

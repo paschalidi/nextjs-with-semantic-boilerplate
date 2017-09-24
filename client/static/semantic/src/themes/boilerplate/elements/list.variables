@@ -1,0 +1,11 @@
+/*******************************
+             List
+*******************************/
+
+/*-------------------
+         View
+--------------------*/
+/* Header */
+
+@invertedLinkListItemColor: @invertedHoveredTextColor;
+@invertedSelectionListColor: @invertedHoveredTextColor;

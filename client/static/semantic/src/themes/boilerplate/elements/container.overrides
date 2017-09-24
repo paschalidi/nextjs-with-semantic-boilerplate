@@ -1,0 +1,34 @@
+#/*******************************
+         Theme Overrides
+*******************************/
+/* Mobile */
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.container.primary-menu-s{
+    width: @mobileGridWidth !important;
+  }
+  .ui.container{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .ui.container.primary-menu-s{
+    width: @tabletGridWidth !important;
+  }
+}
+
+/* Small Monitor */
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+  .ui.container.primary-menu-s{
+      width: @computerGridWidth !important;
+  }
+}
+
+/* Large Monitor */
+@media only screen and (min-width: @largeMonitorBreakpoint) {
+  .ui.container.primary-menu-s{
+      width: @largeMonitorGridWidth !important;
+  }
+}

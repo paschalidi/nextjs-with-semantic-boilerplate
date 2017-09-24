@@ -1,0 +1,122 @@
+/*******************************
+         Theme Overrides
+*******************************/
+.ui.button {
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+  display: inline-block;
+
+  min-height: 1em;
+
+  outline: none;
+  border: @buttonBorder solid @blue;
+  vertical-align: @verticalAlign;
+  background: @background;
+  color: @blue;
+
+  font-family: @fontFamily;
+
+  margin: 0em @horizontalMargin @verticalMargin 0em;
+  padding: @verticalPadding @horizontalPadding (@verticalPadding + @shadowOffset);
+
+  text-transform: @textTransform;
+  text-shadow: @textShadow;
+  font-weight: 200;
+  line-height: @lineHeight;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: @borderRadius;
+  box-shadow: @boxShadow;
+
+  user-select: none;
+  transition: @transition;
+  will-change: @willChange;
+
+  -webkit-tap-highlight-color: @tapColor;
+}
+
+.ui.button.white-s {
+  color: #fff;
+  border: @buttonBorder solid #fff;
+}
+
+.ui.button.white-s:hover {
+  border: @buttonBorder solid #fff;
+  background: #fff;
+  color: @blue;
+}
+.ui.white-s.buttons .button:focus,
+.ui.white-s.button:focus {
+  border: @buttonBorder solid #fff;
+  background-color: @whiteHover;
+  color: @blue;
+}
+.ui.white-s.buttons .active.button,
+.ui.white-s.buttons .active.button:active,
+.ui.white-s.active.button,
+.ui.white-s.button .active.button:active {
+  border: @buttonBorder solid @whiteHover;
+
+  background-color: @white;
+  color: @blue;
+}
+
+/*-------------------
+      Secondary
+--------------------*/
+/* Standard */
+.ui.secondary.buttons .button,
+.ui.secondary.button {
+  background-color: @blue;
+  color: #fff;
+}
+.ui.secondary.buttons .button:hover,
+.ui.secondary.button:hover {
+  border: @buttonBorder solid @blueHover;
+
+  background-color: @blueHover;
+  color: #fff;
+}
+.ui.secondary.buttons .button:focus,
+.ui.secondary.button:focus {
+  border: @buttonBorder solid @blueHover;
+  background-color: @blueHover;
+  color: #fff;
+}
+.ui.secondary.buttons .button:active,
+.ui.secondary.button:active {
+  border: @buttonBorder solid @blueHover;
+
+  background-color: @blueHover;
+  color: #fff;
+}
+.ui.secondary.buttons .active.button,
+.ui.secondary.buttons .active.button:active,
+.ui.secondary.active.button,
+.ui.secondary.button .active.button:active {
+  border: @buttonBorder solid @blueHover;
+
+  background-color: @blueHover;
+  color: #fff;
+}
+
+
+/*-------------------
+      Secondary
+--------------------*/
+.button.mobile-burger-button-s {
+    border: 0px !important;
+}
+.button.mobile-burger-button-in-drawer-s {
+    border: 0px !important;
+    color: white;
+}
+.button.mobile-burger-button-s:hover {
+    color: white;
+}
+.button.mobile-burger-button-in-drawer-s:hover {
+    color: blue;
+}

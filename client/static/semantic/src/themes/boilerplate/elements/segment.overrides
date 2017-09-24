@@ -1,0 +1,85 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.transparent-s.segment{
+    background: transparent;
+}
+.ui.vertical-middle-s.segment{
+    display: flex !important;
+    align-items: center !important;
+}
+.ui.background-color-sec-s.segment{
+    background: #f2f2f2 !important;
+}
+
+.ui.scale-s.segment{
+    transition: all .2s ease-in-out;
+}
+.ui.padding-none-s.segment{
+    padding: 0;
+}
+.ui.margin-none-s.segment{
+    margin: 0;
+}
+
+.ui.padding-top-without-trustIcons-s.segment {
+    padding-top: 9%;
+}
+.ui.padding-top-with-trustIcons-s.segment {
+    padding-top: 16%;
+}
+
+.ui.scale-s.segment:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.ui.width-s.segment{
+    width:140%;
+    z-index:2;
+}
+.no-padding.segment {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.margin-top-s.segment{
+    margin-top: -95px !important;
+}
+.padded-left-right.segment {
+    padding: 0 5em
+}
+
+.white-color.segment {
+color:white;
+}
+.blue-color.segment {
+color:#1f9ac1;
+}
+
+.pad.segment{
+    padding-top: 4.5em !important;
+    padding-bottom: 4.5em !important;
+}
+
+.pad-very-triple.segment{
+    padding-left: 1.5em !important;
+    padding-right: 1.5em !important;
+    padding-top: 5.5em !important;
+    padding-bottom: 3em !important;
+}
+
+.ui.segment-margin-bottom-s.segment{
+    margin-bottom: 5em;
+}
+@media only screen and (max-width: @largestMobileScreen) {
+    .ui.segment-margin-bottom-s.segment{
+        margin-bottom: 2em;
+    }
+}
+
+.ui.segment-into-rail-on-bottom-s.segment{
+    margin-top: auto !important;
+}
