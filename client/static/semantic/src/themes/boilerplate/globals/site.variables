@@ -114,8 +114,8 @@
 @pageBackground      : #fbfcfc;
 @pageOverflowX       : hidden;
 
-@lineHeight          : 1.4285em;
-@textColor           : #313541;
+@lineHeight          : 1.2;
+@textColor           : #212121;
 
 /*-------------------
         HeroHeader
@@ -143,10 +143,10 @@
   Highlighted Text
 --------------------*/
 
-@highlightBackground      : #CCE2FF;
-@highlightColor           : @textColor;
+@highlightBackground      : #212121;
+@highlightColor           : #ffd635;
 
-@inputHighlightBackground : rgba(100, 100, 100, 0.4);
+@inputHighlightBackground : rgba(255, 0, 0, 0.4);
 @inputHighlightColor      : @textColor;
 
 
@@ -192,7 +192,7 @@
 
 /*---  Colors  ---*/
 
-@blue             : #1f9ac1;
+@blue             : #212121;
 @red              : #DB2828;
 @orange           : #F2711C;
 @yellow           : #FBBD08;
@@ -204,7 +204,8 @@
 @pink             : #E03997;
 @brown            : #A5673F;
 @grey             : #767676;
-@black            : #1B1C1D;
+@black            : #313541;
+@white            : #fff;
 
 /*---  Light Colors  ---*/
 @lightBlue        : #54C8FF;
