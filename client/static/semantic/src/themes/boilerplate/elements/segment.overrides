@@ -56,7 +56,7 @@
 color:white;
 }
 .blue-color.segment {
-color:#1f9ac1;
+color:#212121;
 }
 
 .pad.segment{

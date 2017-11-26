@@ -1,0 +1,12 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+.ui.menu a.item:hover {
+    cursor: pointer;
+    background: #212121;
+    color: #ffd635;
+}
+.ui.menu .active.item {
+    background: #212121 !important;
+    color: #ffd635 !important;
+}

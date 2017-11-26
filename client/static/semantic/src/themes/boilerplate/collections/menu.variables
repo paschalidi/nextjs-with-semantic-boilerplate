@@ -14,8 +14,8 @@
 /* Menu */
 @border: 0px;
 @borderRadius: 0;
-@background: #e3e8ee;
-@fontWeight: 400;
+@background: #FFEA03;
+@fontWeight: 200;
 @borderWidth: 0px;
 @boxShadow: none;
 @minHeight: (@itemVerticalPadding * 2) + 3em;

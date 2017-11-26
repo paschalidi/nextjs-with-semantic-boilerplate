@@ -5,3 +5,10 @@
 
 /*******************************
 
+i.black.facebook.f.large.fitted.icon:hover {
+    color: pink !important;
+}
+
+i.icon:hover {
+    color: pink !important;
+}
