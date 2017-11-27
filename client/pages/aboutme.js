@@ -132,9 +132,9 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Posponer timer={0.3}>
                           <Animations>
                             <br />
-                            I like to work in projects that fill me with <span
+                            I am Christos Paschalidis, <span
                             className="invert-colors"
-                          >joy</span>.
+                          >a web developer.</span>
                           </Animations>
                         </Posponer>
                       </div>
@@ -213,7 +213,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Animations>
 
                           <div
-                            style={{ lineHeight: '1.2',textAlign: "center"}}
+                            style={{ lineHeight: '1.2', textAlign: "center" }}
                             className="header-lg-s invert-colors"
                           >
                             did you like what you read?
