@@ -14,7 +14,7 @@ import Router from 'next/router';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 
-import { Grid } from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 
 import Layout from '../components/Layout/index';
 import Animations from '../components/Animations/index';
@@ -24,6 +24,7 @@ import Header from '../components/SingleDesktop/index';
 import Posponer from '../components/Posponer/index';
 import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
+import BounchingArrow from '../components/BounchingArrow/index';
 
 class Aboutme extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
@@ -61,7 +62,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
         `}</style>
         <div className="background-color-yellow">
           <SingleDesktop>
-            <div className="section-style">
+            <div className="section-style ">
               <Grid centered container>
                 <Grid.Row textAlign="center" columns="equal">
                   <Grid.Column width={10}>
@@ -73,7 +74,9 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Posponer timer={0.3}>
                           <Animations>
                             <br />
-                            I am Christos Paschalidis, a web developer.
+                            I am Christos Paschalidis, <span
+                            className="invert-colors"
+                          >a web developer.</span>
                           </Animations>
                         </Posponer>
                       </div>
@@ -81,8 +84,11 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
+
             </div>
           </SingleDesktop>
+          <BounchingArrow />
+
 
           <SingleDesktop hasFullScreen={false}>
             <ParallaxEffect>

@@ -15,7 +15,7 @@ import Computer from '../Responsive/Computer';
 import MobileAndTablet from '../Responsive/MobileAndTablet';
 
 import NavigationMenu from '../NavigationMenu';
-import MovingShadow from '../MovingShadow/index';
+import MovingShadow from '../TextShadow/index';
 import Footer from '../Footer/index';
 import SocialLinks from '../SocialLinks/index';
 import Animations from '../Animations/index';

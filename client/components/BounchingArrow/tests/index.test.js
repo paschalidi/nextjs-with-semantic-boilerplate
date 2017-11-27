@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import Button from '../index';
+// import BounchingArrow from '../index';
 
-describe('<Button />', () => {
+describe('<BounchingArrow />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

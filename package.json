@@ -1,7 +1,7 @@
 {
   "name": "Vimcar",
   "version": "1.0.0",
-  "description": "New Vimcar website",
+  "description": "New Portfolio website",
   "main": "index.js",
   "scripts": {
     "dev": "node server",
@@ -11,7 +11,7 @@
     "deploy": "now --public ",
     "generate": "plop --plopfile client/tools/generators/index.js"
   },
-  "author": "Vimcar GmbH",
+  "author": "Portfolio GmbH",
   "license": "All rights reserved",
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
@@ -24,7 +24,6 @@
     "eslint-plugin-react": "^7.0.1",
     "express": "^4.15.3",
     "fullpage-react": "^3.0.7",
-    "hover.css": "^2.2.1",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^20.0.0",
     "marked": "^0.3.6",
@@ -46,11 +45,8 @@
     "react-responsive": "^1.3.4",
     "react-router-transition": "^1.0.1",
     "react-scroll-parallax": "^1.1.1",
-    "react-slick": "^0.14.11",
-    "react-springy-parallax": "^1.1.0",
-    "react-sticky": "^6.0.1",
+    "react-springy-parallax": "^1.2.0",
     "react-test-renderer": "^15.5.4",
-    "react-typist": "^1.1.1",
     "react-visibility-sensor": "^3.11.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",

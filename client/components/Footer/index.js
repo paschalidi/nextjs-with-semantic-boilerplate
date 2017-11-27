@@ -15,7 +15,6 @@ import { Grid } from 'semantic-ui-react';
 import SingleDesktop from '../SingleDesktop/index';
 import ComponentParagraph from '../ComponentParagraph/index';
 
-
 class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
     hasColorPrime: false,
@@ -105,7 +104,8 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                 "retina_detect": true
               }}
             />
-            <div style={{ marginTop: '-15vw' }}>
+            <div className="flex" style={{ minHeight: '20vw' }}>
+              <div className='bottom'/>
               <Grid container centered stretched stackable>
                 <Grid.Row columns="equal">
                   <Grid.Column width={2}>

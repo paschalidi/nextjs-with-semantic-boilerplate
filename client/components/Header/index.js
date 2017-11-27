@@ -9,21 +9,13 @@
 
 import React from 'react';
 
-import { Grid, Segment } from 'semantic-ui-react';
-import Typist from 'react-typist';
+import { Grid } from 'semantic-ui-react';
 
 import Mobile from '../Responsive/Mobile';
 import TabletAndComputer from '../Responsive/TabletAndComputer';
 
-import ComponentTitle from '../ComponentTitle';
-import MovingShadow from '../MovingShadow/index';
-
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   state = { renderMsg: false, }
-
-  onHeaderTyped = () => {
-    this.setState({ renderMsg: true });
-  }
 
   render() {
     const { children } = this.props;

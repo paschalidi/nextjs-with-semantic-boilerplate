@@ -7,6 +7,16 @@ p {
     display: inline-block;
 }
 
+/*---------------------FOR BOTTOM FLEX---------------------*/
+.flex {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    flex-grow: 1;
+}
 /*---------------------HEIGHT 100vh for headers---------------------*/
 .aligner {
     display: -webkit-box;
@@ -401,7 +411,7 @@ a:hover,
 }
 
 .footer {
-    cursor: auto !important;
+    cursor: url('svgs/whitemouse.ico'), auto !important;
 }
 
 .footer a {
@@ -410,9 +420,11 @@ a:hover,
 
 .footer a,
 .mouse-on-link-hover-footer {
-    cursor: pointer !important;
+    cursor: url('svgs/whitecursor.ico'), auto !important;
 }
 
 canvas {
-    height: 25vw !important;
+    position: absolute;
+    bottom: 0;
+    height: 20vw !important;
 }

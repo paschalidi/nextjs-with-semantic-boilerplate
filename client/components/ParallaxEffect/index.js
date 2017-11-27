@@ -13,8 +13,8 @@ import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 class ParallaxEffect extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
-    max: 100,
-    min: -100,
+    max: 50,
+    min: -50,
   };
 
   constructor() {
