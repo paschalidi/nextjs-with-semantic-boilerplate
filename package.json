@@ -1,6 +1,9 @@
 {
   "name": "Vimcar",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.12.0"
+  },
   "description": "New Portfolio website",
   "main": "index.js",
   "scripts": {
