@@ -2,7 +2,7 @@
   "name": "Vimcar",
   "version": "1.0.0",
   "engines": {
-    "node": "6.12.0",
+    "node": "6.12.x",
     "npm": "3.10.x"
   },
   "description": "New Portfolio website",
