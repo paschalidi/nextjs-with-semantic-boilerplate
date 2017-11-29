@@ -1,6 +1,6 @@
 body {
     background-color: #fbfcfc;
-    cursor: url('svgs/simple-mouse.ico'), auto !important;
+    cursor: url('ico/mouse.ico'), auto !important;
 }
 
 p {
@@ -382,7 +382,7 @@ button-s {
 }
 
 .invert-on-hover:hover {
-    cursor: url('svgs/simple-cursor.ico'), auto !important;
+    cursor: url('ico/cursor.ico'), auto !important;
     display: inline-block;
     background-color: #212121 !important;
     color: #FFEA03 !important;
@@ -403,7 +403,7 @@ button-s {
 a:hover,
 .mouse-on-link-hover,
 .custom-hover {
-    cursor: url('svgs/simple-cursor.ico'), auto !important;
+    cursor: url('ico/cursor.ico'), auto !important;
 }
 
 .anchor-link {
@@ -411,7 +411,7 @@ a:hover,
 }
 
 .footer {
-    cursor: url('svgs/whitemouse.ico'), auto !important;
+    cursor: url('ico/whitemouse.ico'), auto !important;
 }
 
 .footer a {
@@ -420,7 +420,7 @@ a:hover,
 
 .footer a,
 .mouse-on-link-hover-footer {
-    cursor: url('svgs/whitecursor.ico'), auto !important;
+    cursor: url('ico/whitecursor.ico'), auto !important;
 }
 
 canvas {

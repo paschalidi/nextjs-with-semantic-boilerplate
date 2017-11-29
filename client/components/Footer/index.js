@@ -142,7 +142,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                       style={ColumnStyle}
                       className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
                     >
-                      <ComponentParagraph hasTextVerySm hasTextAlignCenter children="CONTACT" />
+                      <ComponentParagraph hasTextVerySm hasTextAlignCenter children="GET IN TOUCH" />
                     </a>
                   </Grid.Column>
                   <Grid.Column width={2}>

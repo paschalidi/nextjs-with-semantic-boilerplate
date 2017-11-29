@@ -16,6 +16,17 @@ import initStore from '../store';
 
 import { Grid, Segment } from 'semantic-ui-react';
 
+
+var Scroll = require('react-scroll');
+
+var Link = Scroll.Link;
+var DirectLink = Scroll.DirectLink;
+var Element = Scroll.Element;
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
+var scroller = Scroll.scroller;
+
 import Layout from '../components/Layout/index';
 import Animations from '../components/Animations/index';
 import ComponentTitle from '../components/ComponentTitle/index';
@@ -25,6 +36,7 @@ import Posponer from '../components/Posponer/index';
 import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
 import BounchingArrow from '../components/BounchingArrow/index';
+
 
 class Aboutme extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
@@ -36,13 +48,22 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
 
   handleClick(name) {
     Router.push(`/${name}`).then(() => window.scrollTo(0, 0));
-    Router.prefetch(`/${name}`)
+    Router.prefetch(`/${name}`);
   }
 
-  handleHoverOn = () => this.setState({ reveal: true })
+  handleHoverOn = () => this.setState({ reveal: true });
+
+  scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 2000,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -150,
+    });
+  }
 
   render() {
-    const sectionStyle = { textAlign: 'center' }
+    const sectionStyle = { textAlign: 'center' };
     return (
       <Layout pageId={this.props.url.pathname} title="Aboutme">
         {/* language=CSS */}
@@ -68,7 +89,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                   <Grid.Column width={10}>
                     <div style={{ textAlign: 'center' }} className="paragraph-s">
                       <Animations>
-                        <ComponentTitle hasTextAlignCenter children={"hello"} />
+                        <ComponentTitle hasTextAlignCenter children={'hello'} />
                       </Animations>
                       <div className="paragraph-padding">
                         <Posponer timer={0.3}>
@@ -84,10 +105,42 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-
             </div>
           </SingleDesktop>
-          <BounchingArrow />
+          <div className="mouse-on-link-hover" onClick={() => this.scrollTo()}>
+            <BounchingArrow />
+          </div>
+
+          <Element name="scroll-to-element" className="element">
+            <SingleDesktop hasFullScreen={false}>
+              <ParallaxEffect>
+                <div className="section-style">
+                  <Grid centered container>
+                    <Grid.Row textAlign="center" columns="equal">
+                      <Grid.Column width={10}>
+                        <div style={sectionStyle} className="paragraph-s">
+                          <Animations>
+                            <ComponentTitle hasTextAlignCenter children={'who am I'} />
+                          </Animations>
+                          <div className="paragraph-padding">
+                            <Posponer timer={0.3}>
+                              <Animations>
+                                <br />
+                                I am Christos Paschalidis, <span
+                                className="invert-colors"
+                              >a web developer.</span>
+                              </Animations>
+                            </Posponer>
+                          </div>
+                        </div>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </div>
+              </ParallaxEffect>
+              <ComponentDivider />
+            </SingleDesktop>
+          </Element>
 
 
           <SingleDesktop hasFullScreen={false}>
@@ -95,10 +148,16 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
               <div className="section-style">
                 <Grid centered container>
                   <Grid.Row textAlign="center" columns="equal">
-                    <Grid.Column width={10}>
-                      <div style={sectionStyle} className="paragraph-s">
+                    <Grid.Column
+                      width={10}
+                      onMouseEnter={this.handleHoverOn}
+                    >
+                      <div style={sectionStyle} className="reveal paragraph-s">
                         <Animations>
-                          <ComponentTitle hasTextAlignCenter children={"who am I"} />
+                          <ComponentTitle
+                            hasTextAlignCenter
+                            children={'what kind of projects I like'}
+                          />
                         </Animations>
                         <div className="paragraph-padding">
                           <Posponer timer={0.3}>
@@ -124,49 +183,18 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
               <div className="section-style">
                 <Grid centered container>
                   <Grid.Row textAlign="center" columns="equal">
-                    <Grid.Column
-                      width={10}
-                      onMouseEnter={this.handleHoverOn}
-                    >
-                      <div style={sectionStyle} className="reveal paragraph-s">
-                        <Animations>
-                          <ComponentTitle
-                            hasTextAlignCenter
-                            children={"what kind of projects I like"}
-                          />
-                        </Animations>
-                        <Posponer timer={0.3}>
-                          <Animations>
-                            <br />
-                            I am Christos Paschalidis, <span
-                            className="invert-colors"
-                          >a web developer.</span>
-                          </Animations>
-                        </Posponer>
-                      </div>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
-              </div>
-            </ParallaxEffect>
-            <ComponentDivider />
-          </SingleDesktop>
-
-          <SingleDesktop hasFullScreen={false}>
-            <ParallaxEffect>
-              <div className="section-style">
-                <Grid centered container>
-                  <Grid.Row textAlign="center" columns="equal">
                     <Grid.Column width={10}>
                       <div style={sectionStyle} className="paragraph-s">
                         <Animations>
-                          <ComponentTitle hasTextAlignCenter children={"what I am proud of "} />
+                          <ComponentTitle hasTextAlignCenter children={'what I am proud of '} />
                         </Animations>
                         <div className="paragraph-padding">
                           <Posponer timer={0.3}>
                             <Animations>
                               <br />
-                              I am Christos Paschalidis, a web developer.
+                              I am Christos Paschalidis, <span
+                              className="invert-colors"
+                            >a web developer.</span>
                             </Animations>
                           </Posponer>
                         </div>
@@ -189,14 +217,16 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Animations>
                           <ComponentTitle
                             hasTextAlignCenter
-                            children={"how do I see myself in the future"}
+                            children={'how do I see myself in the future'}
                           />
                         </Animations>
                         <div className="paragraph-padding">
                           <Posponer timer={0.3}>
                             <Animations>
                               <br />
-                              I am Christos Paschalidis, a web developer.
+                              I am Christos Paschalidis, <span
+                              className="invert-colors"
+                            >a web developer.</span>
                             </Animations>
                           </Posponer>
                         </div>
@@ -208,6 +238,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
             </ParallaxEffect>
             <ComponentDivider />
           </SingleDesktop>
+
 
           <SingleDesktop hasFullScreen={false}>
             <ParallaxEffect>
@@ -219,7 +250,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Animations>
 
                           <div
-                            style={{ lineHeight: '1.2', textAlign: "center" }}
+                            style={{ lineHeight: '1.2', textAlign: 'center' }}
                             className="header-lg-s invert-colors"
                           >
                             did you like what you read?
@@ -230,7 +261,9 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                           <Posponer timer={0.3}>
                             <Animations>
                               <br />
-                              I am Christos Paschalidis, a web developer.
+                              I am Christos Paschalidis, <span
+                              className="invert-colors"
+                            >a web developer.</span>
                             </Animations>
                           </Posponer>
                         </div>
@@ -251,7 +284,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                     <Animations classes="fadeInLeft">
                       <div className="paragraph-s">
                         Find out more about my <span
-                        onClick={this.handleClick.bind(this, "work")}
+                        onClick={this.handleClick.bind(this, 'work')}
                         className="invert-on-hover anchor-link"
                       >work</span>
                       </div>

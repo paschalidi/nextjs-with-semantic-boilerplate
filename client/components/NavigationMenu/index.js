@@ -10,9 +10,10 @@
 import React from 'react';
 import Router from 'next/router';
 
-import Logo from '../../static/svgs/logo.svg';
+import Logo from '../../static/svgs/mylogo.svg';
 import { Menu, Item, Grid } from 'semantic-ui-react';
 import ComponentSvg from '../ComponentSvg/index';
+
 
 class NavigationMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
@@ -22,7 +23,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
       lastScrollPos: 1,
       changedPos: 0,
       screenHeight: 0,
-    }
+    };
     this.handleScroll = this.handleScroll.bind(this);
   }
 
@@ -49,18 +50,18 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
   }
 
   handleClick(name) {
-    this.setState({ activeItem: name })
+    this.setState({ activeItem: name });
     Router.push(`/${name}`).then(() => window.scrollTo(0, 0));
-    Router.prefetch(`/${name}`)
+    Router.prefetch(`/${name}`);
   }
 
   render() {
-    const { activeItem } = this.state
+    const { activeItem } = this.state;
 
     return (
-      <div style={{ height: "68px" }}>
+      <div style={{ height: '68px' }}>
         <div
-          style={{ position: "fixed", zIndex: 999, borderBottom: '1px solid' }}
+          style={{ position: 'fixed', zIndex: 999 }}
           className="fixed-navigation background-color-yellow"
         >
           {/* language=CSS */}
@@ -75,17 +76,18 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
           <Grid container>
             <Menu fluid stackable style={{ margin: 0 }}>
               <Item
+                style={{ padding: '0.2vw 0' }}
                 className={`primary-menu-item-s mou#se-on-link-hover`}
-                onClick={this.handleClick.bind(this, "")}
+                onClick={this.handleClick.bind(this, '')}
               >
                 <div style={{ transform: `rotate(${this.state.lastScrollPos}deg)` }}>
-                  <ComponentSvg width={30} children={<Logo />} />
+                  <ComponentSvg width={50} children={<Logo />} />
                 </div>
                 <div style={{ paddingLeft: '2vw' }}>Christos Paschalidis</div>
               </Item>
 
               <Menu.Item
-                onClick={this.handleClick.bind(this, "start")}
+                onClick={this.handleClick.bind(this, 'start')}
                 className={`primary-menu-item-s right`}
                 name='start'
                 active={activeItem === 'start'}
@@ -94,7 +96,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
               </Menu.Item>
 
               <Menu.Item
-                onClick={this.handleClick.bind(this, "work")}
+                onClick={this.handleClick.bind(this, 'work')}
                 className={`primary-menu-item-s`}
                 name='work'
                 active={activeItem === 'work'}
@@ -106,7 +108,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
                 className={`primary-menu-item-s`}
                 name='aboutme'
                 active={activeItem === 'aboutme'}
-                onClick={this.handleClick.bind(this, "aboutme")}
+                onClick={this.handleClick.bind(this, 'aboutme')}
               >
                 ABOUT
               </Menu.Item>
@@ -114,7 +116,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
           </Grid>
         </div>
       </div>
-    )
+    );
   }
 }
 
