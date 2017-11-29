@@ -8,17 +8,17 @@ const app = next({ dir: './client', dev });
 const handle = app.getRequestHandler();
 
 app.prepare()
-  .then(() => {
-    const server = express();
+.then(() => {
+  const server = express();
 
-    server.get('*', (req, res) => handle(req, res));
+  server.get('*', (req, res) => handle(req, res));
 
-    server.listen(3000, (err) => {
-      if (err) throw err;
-      console.log('> Ready on http://localhost:3000');
-    });
-  })
-  .catch((ex) => {
-    console.error(ex.stack);
-    process.exit(1);
+  server.(5000, (err) => {
+    if (err) throw err;
+    console.log('> Ready on http://localhost:5000');
   });
+})
+.catch((ex) => {
+  console.error(ex.stack);
+  process.exit(1);
+});
