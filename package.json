@@ -11,7 +11,7 @@
     "dev": "node server",
     "start": "NODE_ENV=production node server",
     "test": "NODE_ENV=test jest --coverage",
-    "build": "next build client && cd client/static/semantic && gulp build",
+    "build": "next build client",
     "deploy": "now --public ",
     "generate": "plop --plopfile client/tools/generators/index.js"
   },
@@ -55,7 +55,6 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "semantic-ui": "^2.2.13",
-    "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.68.5",
     "slick-carousel": "^1.6.0"
   },

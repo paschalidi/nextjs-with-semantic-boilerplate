@@ -1,5 +1,4 @@
 {
-  "autoInstall": true,
   "base": "/client/static/semantic",
   "paths": {
     "source": {
@@ -16,8 +15,6 @@
     },
     "clean": "dist/"
   },
-  "permission": false,
-  "rtl": false,
   "version": "2.2.10",
   "components": [
     "reset",
@@ -69,5 +66,8 @@
     "form",
     "state",
     "visibility"
-  ]
+  ],
+  "permission": false,
+  "autoInstall": true,
+  "rtl": false
 }
