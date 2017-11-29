@@ -12,6 +12,7 @@
     "start": "NODE_ENV=production node server",
     "test": "NODE_ENV=test jest --coverage",
     "build": "next build client",
+    "heroku-postbuild": "npm run build",
     "deploy": "now --public ",
     "generate": "plop --plopfile client/tools/generators/index.js"
   },
