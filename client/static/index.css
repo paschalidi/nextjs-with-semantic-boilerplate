@@ -401,7 +401,6 @@ button-s {
     color: #FFEA03 !important;
 }
 
-a:hover,
 .mouse-on-link-hover,
 .custom-hover {
     cursor: url('ico/cursor.ico'), auto !important;
@@ -431,6 +430,7 @@ canvas {
 }
 
 .scale:hover {
+    transition: all 500ms;
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari */
     transform: scale(1.1);

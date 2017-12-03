@@ -15,102 +15,103 @@ import { Grid } from 'semantic-ui-react';
 import SingleDesktop from '../SingleDesktop/index';
 import ComponentParagraph from '../ComponentParagraph/index';
 
+
 class Footer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
-    hasColorPrime: false,
+    hasColorPrime: false
   };
 
   handleClick(name) {
     Router.push(`/${name}`).then(() => window.scrollTo(0, 0));
-    Router.prefetch(`/${name}`)
+    Router.prefetch(`/${name}`);
   }
 
   render() {
-    const ColumnStyle = { margin: '0 auto' }
+    const ColumnStyle = { margin: '0 auto' };
     return (
       <div>
         <div className="footer background-color-black">
           <SingleDesktop hasPaddingTop={false} hasFullScreen={false}>
             <Particles
               params={{
-                "particles": {
-                  "number": {
-                    "value": 15,
-                    "density": {
-                      "enable": true,
-                      "value_area": 800
+                'particles': {
+                  'number': {
+                    'value': 15,
+                    'density': {
+                      'enable': true,
+                      'value_area': 800
                     }
                   },
-                  "color": {
-                    "value": "#ffffff"
+                  'color': {
+                    'value': '#ffffff'
                   },
-                  "shape": {
-                    "type": "circle",
-                    "stroke": {
-                      "width": 0,
-                      "color": "#000000"
+                  'shape': {
+                    'type': 'circle',
+                    'stroke': {
+                      'width': 0,
+                      'color': '#000000'
                     },
-                    "polygon": {
-                      "nb_sides": 10
+                    'polygon': {
+                      'nb_sides': 10
                     },
-                    "image": {
-                      "src": "img/github.svg",
-                      "width": 100,
-                      "height": 100
+                    'image': {
+                      'src': 'img/github.svg',
+                      'width': 100,
+                      'height': 100
                     }
                   },
-                  "opacity": {
-                    "value": 0.06313181133058181,
-                    "random": true,
-                    "anim": {
-                      "enable": true,
-                      "speed": 0.4795204795204795,
-                      "opacity_min": 0.03196803196803197,
-                      "sync": true
+                  'opacity': {
+                    'value': 0.06313181133058181,
+                    'random': true,
+                    'anim': {
+                      'enable': true,
+                      'speed': 0.4795204795204795,
+                      'opacity_min': 0.03196803196803197,
+                      'sync': true
                     }
                   },
-                  "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                      "enable": false,
-                      "speed": 20,
-                      "size_min": 0.1,
-                      "sync": false
+                  'size': {
+                    'value': 3,
+                    'random': true,
+                    'anim': {
+                      'enable': false,
+                      'speed': 20,
+                      'size_min': 0.1,
+                      'sync': false
                     }
                   },
-                  "line_linked": {
-                    "enable": true,
-                    "distance": 80.17060304327615,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
+                  'line_linked': {
+                    'enable': true,
+                    'distance': 80.17060304327615,
+                    'color': '#ffffff',
+                    'opacity': 0.4,
+                    'width': 1
                   },
-                  "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                      "enable": false,
-                      "rotateX": 600,
-                      "rotateY": 1200
+                  'move': {
+                    'enable': true,
+                    'speed': 6,
+                    'direction': 'none',
+                    'random': false,
+                    'straight': false,
+                    'out_mode': 'out',
+                    'bounce': false,
+                    'attract': {
+                      'enable': false,
+                      'rotateX': 600,
+                      'rotateY': 1200
                     }
                   }
                 },
-                "retina_detect": true
+                'retina_detect': true
               }}
             />
             <div className="flex" style={{ minHeight: '20vw' }}>
-              <div className='bottom'/>
+              <div className='bottom' />
               <Grid container centered stretched stackable>
                 <Grid.Row columns="equal">
                   <Grid.Column width={2}>
                     <div
-                      onClick={this.handleClick.bind(this, "")}
+                      onClick={this.handleClick.bind(this, '')}
                       style={ColumnStyle}
                       className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
                     >
@@ -119,7 +120,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                   </Grid.Column>
                   <Grid.Column width={2}>
                     <div
-                      onClick={this.handleClick.bind(this, "work")}
+                      onClick={this.handleClick.bind(this, 'work')}
                       style={ColumnStyle}
                       className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
                     >
@@ -128,7 +129,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                   </Grid.Column>
                   <Grid.Column width={2}>
                     <div
-                      onClick={this.handleClick.bind(this, "aboutme")}
+                      onClick={this.handleClick.bind(this, 'aboutme')}
                       style={ColumnStyle}
                       className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
                     >
@@ -136,14 +137,17 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                     </div>
                   </Grid.Column>
                   <Grid.Column width={2}>
-                    <a
-                      href={`mailto:paschalidi@outlook.com?Subject=Hello%20Christos%20I%20saw%20your%portfolio`}
-                      target="_top"
+                    <div
+                      onClick={this.handleClick.bind(this, 'contact')}
                       style={ColumnStyle}
                       className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
                     >
-                      <ComponentParagraph hasTextVerySm hasTextAlignCenter children="GET IN TOUCH" />
-                    </a>
+                      <ComponentParagraph
+                        hasTextVerySm
+                        hasTextAlignCenter
+                        children="GET IN TOUCH"
+                      />
+                    </div>
                   </Grid.Column>
                   <Grid.Column width={2}>
                     <div
