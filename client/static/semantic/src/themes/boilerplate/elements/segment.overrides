@@ -5,6 +5,11 @@
 .ui.transparent-s.segment{
     background: transparent;
 }
+
+.ui.horizontal.segments.transparent-s {
+    background: transparent;
+
+}
 .ui.vertical-middle-s.segment{
     display: flex !important;
     align-items: center !important;

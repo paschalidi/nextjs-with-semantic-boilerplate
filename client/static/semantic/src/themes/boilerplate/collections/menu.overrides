@@ -12,7 +12,9 @@
 .ui.mini.menu {
   font-size: @mini;
 }
-
+.ui.fluid.stackable.transparent-s.menu{
+  background: transparent !important;
+}
 .ui.mini.menu{
   min-height: (@itemVerticalPadding * 2) + 1em;
 }
