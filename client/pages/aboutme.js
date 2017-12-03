@@ -75,7 +75,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
             }
 
             .section-style {
-                padding: 6vw 0;
+                padding: 9vw 0;
             }
         `}</style>
         <div className="background-color-yellow">
