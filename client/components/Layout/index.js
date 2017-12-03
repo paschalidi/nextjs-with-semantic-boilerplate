@@ -29,7 +29,7 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
       <div>
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
-          <link rel='shortcut icon' type='image/x-icon' href='../../static/favicon.png' />
+          <link rel='shortcut icon' type='image/x-icon' href='../../static/favicon.svg' />
 
           <link
             rel="stylesheet prefetch"
@@ -49,7 +49,9 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         <MovingShadow>
           <NavigationMenu pageId={this.props.pageId} />
           {children}
-          <SocialLinks />
+          {
+            this.props.pageId === '/contact' ? null : <SocialLinks />
+          }
         </MovingShadow>
         <Footer />
       </div>
