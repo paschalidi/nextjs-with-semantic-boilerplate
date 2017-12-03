@@ -426,6 +426,18 @@ canvas {
     height: 20vw !important;
 }
 
+video {
+    /*  making the video fullscreen  */
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
 .scale:hover {
     transition: all 500ms;
     -ms-transform: scale(1.1); /* IE 9 */
