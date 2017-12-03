@@ -76,7 +76,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
           <Menu className="transparent-s" fluid stackable style={{ margin: 0 }}>
             <Item
               style={{ padding: '0.2vw 0' }}
-              className={`primary-menu-item-s mouse-on-link-hover-footer`}
+              className={`primary-menu-item-s mouse-on-link-hover`}
               onClick={this.handleClick.bind(this, '')}
             >
               <div style={{ transform: `rotate(${this.state.lastScrollPos}deg)` }}>
