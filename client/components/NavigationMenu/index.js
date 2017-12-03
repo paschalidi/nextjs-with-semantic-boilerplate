@@ -59,63 +59,70 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
     const { activeItem } = this.state;
 
     return (
-      <div style={{ height: '68px' }}>
-        <div
-          style={{ position: 'fixed', zIndex: 999 }}
-          className="fixed-navigation background-color-yellow"
-        >
-          {/* language=CSS */}
-          <style>{`
-              .fixed-navigation {
-                  width: 100%;
-                  position: fixed;
-                  overflow: hidden;
-                  z-index: 5;
-              }
-          `}</style>
-          <Grid container>
-            <Menu fluid stackable style={{ margin: 0 }}>
-              <Item
-                style={{ padding: '0.2vw 0' }}
-                className={`primary-menu-item-s mouse-on-link-hover`}
-                onClick={this.handleClick.bind(this, '')}
-              >
-                <div style={{ transform: `rotate(${this.state.lastScrollPos}deg)` }}>
-                  <ComponentSvg width={50} children={<Logo />} />
-                </div>
-                <div style={{ paddingLeft: '2vw' }}>Christos Paschalidis</div>
-              </Item>
+      <div
+        style={{ position: 'fixed', zIndex: 999 }}
+        className="fixed-navigation"
+      >
+        {/* language=CSS */}
+        <style>{`
+            .fixed-navigation {
+                width: 100%;
+                position: fixed;
+                overflow: hidden;
+                z-index: 5;
+            }
+        `}</style>
+        <Grid container>
+          <Menu className="transparent-s" fluid stackable style={{ margin: 0 }}>
+            <Item
+              style={{ padding: '0.2vw 0' }}
+              className={`primary-menu-item-s mouse-on-link-hover-footer`}
+              onClick={this.handleClick.bind(this, '')}
+            >
+              <div style={{ transform: `rotate(${this.state.lastScrollPos}deg)` }}>
+                <ComponentSvg width={50} children={<Logo />} />
+              </div>
+              <div style={{ paddingLeft: '2vw' }}>Christos Paschalidis</div>
+            </Item>
 
-              <Menu.Item
-                onClick={this.handleClick.bind(this, 'start')}
-                className={`primary-menu-item-s mouse-on-link-hover-footer right`}
-                name='start'
-                active={activeItem === 'start'}
-              >
-                START
-              </Menu.Item>
+            <Menu.Item
+              onClick={this.handleClick.bind(this, 'start')}
+              className={`primary-menu-item-s right mouse-on-link-hover-footer`}
+              name='start'
+              active={activeItem === 'start'}
+            >
+              START
+            </Menu.Item>
 
-              <Menu.Item
-                onClick={this.handleClick.bind(this, 'work')}
-                className={`primary-menu-item-s mouse-on-link-hover-footer`}
-                name='work'
-                active={activeItem === 'work'}
-              >
-                WORK
-              </Menu.Item>
+            <Menu.Item
+              onClick={this.handleClick.bind(this, 'work')}
+              className={`primary-menu-item-s mouse-on-link-hover-footer`}
+              name='work'
+              active={activeItem === 'work'}
+            >
+              WORK
+            </Menu.Item>
 
-              <Menu.Item
-                className={`primary-menu-item-s mouse-on-link-hover-footer`}
-                name='aboutme'
-                active={activeItem === 'aboutme'}
-                onClick={this.handleClick.bind(this, 'aboutme')}
-              >
-                ABOUT
-              </Menu.Item>
-            </Menu>
-          </Grid>
-        </div>
+            <Menu.Item
+              className={`primary-menu-item-s mouse-on-link-hover-footer`}
+              name='aboutme'
+              active={activeItem === 'aboutme'}
+              onClick={this.handleClick.bind(this, 'aboutme')}
+            >
+              ABOUT
+            </Menu.Item>
+            <Menu.Item
+              className={`primary-menu-item-s mouse-on-link-hover-footer`}
+              name='contact'
+              active={activeItem === 'contact'}
+              onClick={this.handleClick.bind(this, 'contact')}
+            >
+              CONTACT
+            </Menu.Item>
+          </Menu>
+        </Grid>
       </div>
+
     );
   }
 }
