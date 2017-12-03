@@ -113,7 +113,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                     <div
                       onClick={this.handleClick.bind(this, '')}
                       style={ColumnStyle}
-                      className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
+                      className="mouse-on-link-hover invert-on-hover--footer color-white"
                     >
                       <ComponentParagraph hasTextVerySm hasTextAlignCenter children="PROFILE" />
                     </div>
@@ -122,7 +122,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                     <div
                       onClick={this.handleClick.bind(this, 'work')}
                       style={ColumnStyle}
-                      className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
+                      className="mouse-on-link-hover invert-on-hover--footer color-white"
                     >
                       <ComponentParagraph hasTextVerySm hasTextAlignCenter children="WORK" />
                     </div>
@@ -131,7 +131,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                     <div
                       onClick={this.handleClick.bind(this, 'aboutme')}
                       style={ColumnStyle}
-                      className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
+                      className="mouse-on-link-hover invert-on-hover--footer color-white"
                     >
                       <ComponentParagraph hasTextVerySm hasTextAlignCenter children="ABOUT ME" />
                     </div>
@@ -140,7 +140,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                     <div
                       onClick={this.handleClick.bind(this, 'contact')}
                       style={ColumnStyle}
-                      className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
+                      className="mouse-on-link-hover invert-on-hover--footer color-white"
                     >
                       <ComponentParagraph
                         hasTextVerySm
@@ -152,7 +152,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                   <Grid.Column width={2}>
                     <div
                       style={ColumnStyle}
-                      className="mouse-on-link-hover-footer invert-on-hover--footer color-white"
+                      className="mouse-on-link-hover invert-on-hover--footer color-white"
                     >
                       <ComponentParagraph hasTextVerySm hasTextAlignCenter children="LEGAL" />
                     </div>
@@ -165,7 +165,7 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                       className="color-white paragraph-very-sm-s"
                     >
                       YOU SHOULD FOLLOW ME ON <a
-                      className="mouse-on-link-hover-footer invert-on-hover--footer"
+                      className="mouse-on-link-hover invert-on-hover--footer"
                       target="_blank"
                       href="https://github.com/paschalidi"
                     >
@@ -173,11 +173,11 @@ class Footer extends React.Component { // eslint-disable-line react/prefer-state
                     </a>, <a
                       target="_blank"
                       href="https://www.linkedin.com/in/christos-paschalidis/"
-                      className="mouse-on-link-hover-footer invert-on-hover--footer"
+                      className="mouse-on-link-hover invert-on-hover--footer"
                     >LINKEDIN</a> OR <a
                       target="_blank"
                       href="https://stackoverflow.com/users/6013423/paschalidis-christos"
-                      className="mouse-on-link-hover-footer invert-on-hover--footer"
+                      className="mouse-on-link-hover invert-on-hover--footer"
                     >STACK OVERFLOW</a>.
                     </div>
                   </Grid.Column>
