@@ -17,6 +17,7 @@ p {
 .bottom {
     flex-grow: 1;
 }
+
 /*---------------------HEIGHT 100vh for headers---------------------*/
 .aligner {
     display: -webkit-box;
@@ -418,7 +419,7 @@ a:hover,
     color: #fcfcfc;
 }
 
-.footer a,
+.footer a:hover,
 .mouse-on-link-hover-footer {
     cursor: url('ico/whitecursor.ico'), auto !important;
 }
@@ -427,4 +428,10 @@ canvas {
     position: absolute;
     bottom: 0;
     height: 20vw !important;
+}
+
+.scale:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
+    transform: scale(1.1);
 }

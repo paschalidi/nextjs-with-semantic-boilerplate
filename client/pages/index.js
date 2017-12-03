@@ -16,7 +16,7 @@ import initStore from '../store';
 import 'isomorphic-fetch';
 import { Grid, Icon } from 'semantic-ui-react';
 
-import Header from '../components/Header'
+import Header from '../components/Header';
 
 import Layout from '../components/Layout/index';
 import Animations from '../components/Animations/index';
@@ -24,11 +24,13 @@ import ComponentTitle from '../components/ComponentTitle/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
 import AnimateOnce from '../components/AnimateOnce/index';
 import Posponer from '../components/Posponer/index';
+import AnimateTest from '../components/AnimateVertical/index';
+
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
   handleClick(name) {
     Router.push(`/${name}`).then(() => window.scrollTo(0, 0));
-    Router.prefetch(`/${name}`)
+    Router.prefetch(`/${name}`);
   }
 
   render() {

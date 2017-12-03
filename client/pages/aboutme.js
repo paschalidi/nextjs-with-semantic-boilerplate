@@ -14,24 +14,21 @@ import Router from 'next/router';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 
-import { Grid, Segment } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
+import Nerd from '../static/svgs/nerd.svg';
+import Smile from '../static/svgs/smile.svg';
+import Happy from '../static/svgs/happy.svg';
 
-var Scroll = require('react-scroll');
+import Scroll from 'react-scroll'; // Imports all Mixins
 
-var Link = Scroll.Link;
-var DirectLink = Scroll.DirectLink;
-var Element = Scroll.Element;
-var Events = Scroll.Events;
-var scroll = Scroll.animateScroll;
-var scrollSpy = Scroll.scrollSpy;
-var scroller = Scroll.scroller;
+let Element = Scroll.Element;
+let scroller = Scroll.scroller;
 
 import Layout from '../components/Layout/index';
 import Animations from '../components/Animations/index';
 import ComponentTitle from '../components/ComponentTitle/index';
 import SingleDesktop from '../components/SingleDesktop/index';
-import Header from '../components/SingleDesktop/index';
 import Posponer from '../components/Posponer/index';
 import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
@@ -42,7 +39,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
   constructor(props) {
     super(props);
     this.state = {
-      reveal: false,
+      reveal: false
     };
   }
 
@@ -58,7 +55,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
       duration: 2000,
       delay: 0,
       smooth: 'easeInOutQuart',
-      offset: -150,
+      offset: -150
     });
   }
 
@@ -83,7 +80,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
         `}</style>
         <div className="background-color-yellow">
           <SingleDesktop>
-            <div className="section-style ">
+            <div className="section-style">
               <Grid centered container>
                 <Grid.Row textAlign="center" columns="equal">
                   <Grid.Column width={10}>
@@ -92,7 +89,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <ComponentTitle hasTextAlignCenter children={'hello'} />
                       </Animations>
                       <div className="paragraph-padding">
-                        <Posponer timer={0.3}>
+                        <Posponer timer={0.4}>
                           <Animations>
                             <br />
                             I am Christos Paschalidis, <span
@@ -107,6 +104,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
               </Grid>
             </div>
           </SingleDesktop>
+
           <div className="mouse-on-link-hover" onClick={() => this.scrollTo()}>
             <BounchingArrow />
           </div>
@@ -123,7 +121,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                             <ComponentTitle hasTextAlignCenter children={'who am I'} />
                           </Animations>
                           <div className="paragraph-padding">
-                            <Posponer timer={0.3}>
+                            <Posponer timer={0.4}>
                               <Animations>
                                 <br />
                                 I am Christos Paschalidis, <span
@@ -160,7 +158,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                           />
                         </Animations>
                         <div className="paragraph-padding">
-                          <Posponer timer={0.3}>
+                          <Posponer timer={0.4}>
                             <Animations>
                               <br />
                               I am Christos Paschalidis, <span
@@ -175,7 +173,6 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                 </Grid>
               </div>
             </ParallaxEffect>
-            <ComponentDivider />
           </SingleDesktop>
 
           <SingleDesktop hasFullScreen={false}>
@@ -189,7 +186,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                           <ComponentTitle hasTextAlignCenter children={'what I am proud of '} />
                         </Animations>
                         <div className="paragraph-padding">
-                          <Posponer timer={0.3}>
+                          <Posponer timer={0.4}>
                             <Animations>
                               <br />
                               I am Christos Paschalidis, <span
@@ -221,7 +218,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                           />
                         </Animations>
                         <div className="paragraph-padding">
-                          <Posponer timer={0.3}>
+                          <Posponer timer={0.4}>
                             <Animations>
                               <br />
                               I am Christos Paschalidis, <span
@@ -258,7 +255,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
 
                         </Animations>
                         <div className="paragraph-padding">
-                          <Posponer timer={0.3}>
+                          <Posponer timer={0.4}>
                             <Animations>
                               <br />
                               I am Christos Paschalidis, <span
@@ -274,7 +271,9 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
               </div>
             </ParallaxEffect>
             <ComponentDivider />
+
           </SingleDesktop>
+
 
           <SingleDesktop hasFullScreen={false}>
             <Grid centered container>

@@ -10,6 +10,7 @@
 import React from 'react';
 import ComponentSvg from '../ComponentSvg/index';
 import Arrow from '../../static/svgs/arrowGrey.svg';
+import ArrowPixeled from '../../static/svgs/arrow.svg';
 
 class BounchingArrow extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -44,7 +45,7 @@ class BounchingArrow extends React.Component { // eslint-disable-line react/pref
                 }
             }`}</style>
         <div className="bounch">
-          <ComponentSvg width={50} isRotated270 children={<Arrow />} />
+          <ComponentSvg width={50} isRotated90 children={<Arrow />} />
         </div>
       </div>
     );

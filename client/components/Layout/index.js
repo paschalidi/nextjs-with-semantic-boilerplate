@@ -20,6 +20,7 @@ import Footer from '../Footer/index';
 import SocialLinks from '../SocialLinks/index';
 import Animations from '../Animations/index';
 
+
 class Layout extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
@@ -28,6 +29,7 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
       <div>
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
+          <link rel='shortcut icon' type='image/x-icon' href='../../static/favicon.png' />
 
           <link
             rel="stylesheet prefetch"

@@ -22,7 +22,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
       activeItem: props.pageId.replace(/[^a-zA-Z ]/g, ''),
       lastScrollPos: 1,
       changedPos: 0,
-      screenHeight: 0,
+      screenHeight: 0
     };
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -45,7 +45,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
       lastScrollPos: thisPos,
       changedPos,
       isScrollingDown,
-      screenHeight,
+      screenHeight
     });
   }
 
@@ -77,7 +77,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
             <Menu fluid stackable style={{ margin: 0 }}>
               <Item
                 style={{ padding: '0.2vw 0' }}
-                className={`primary-menu-item-s mou#se-on-link-hover`}
+                className={`primary-menu-item-s mouse-on-link-hover`}
                 onClick={this.handleClick.bind(this, '')}
               >
                 <div style={{ transform: `rotate(${this.state.lastScrollPos}deg)` }}>
@@ -88,7 +88,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
 
               <Menu.Item
                 onClick={this.handleClick.bind(this, 'start')}
-                className={`primary-menu-item-s right`}
+                className={`primary-menu-item-s mouse-on-link-hover-footer right`}
                 name='start'
                 active={activeItem === 'start'}
               >
@@ -97,7 +97,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
 
               <Menu.Item
                 onClick={this.handleClick.bind(this, 'work')}
-                className={`primary-menu-item-s`}
+                className={`primary-menu-item-s mouse-on-link-hover-footer`}
                 name='work'
                 active={activeItem === 'work'}
               >
@@ -105,7 +105,7 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
               </Menu.Item>
 
               <Menu.Item
-                className={`primary-menu-item-s`}
+                className={`primary-menu-item-s mouse-on-link-hover-footer`}
                 name='aboutme'
                 active={activeItem === 'aboutme'}
                 onClick={this.handleClick.bind(this, 'aboutme')}
