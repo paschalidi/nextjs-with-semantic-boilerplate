@@ -49,9 +49,6 @@ class Layout extends React.Component { // eslint-disable-line react/prefer-state
         <MovingShadow>
           <NavigationMenu pageId={this.props.pageId} />
           {children}
-          {
-            this.props.pageId === '/contact' ? null : <SocialLinks />
-          }
         </MovingShadow>
         <Footer />
       </div>

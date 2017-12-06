@@ -71,7 +71,10 @@ class NavigationMenu extends React.Component { // eslint-disable-line react/pref
                 overflow: hidden;
                 z-index: 5;
             }
+
+
         `}</style>
+
         <Grid container>
           <Menu className="transparent-s" fluid stackable style={{ margin: 0 }}>
             <Item

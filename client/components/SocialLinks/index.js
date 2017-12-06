@@ -18,18 +18,19 @@ import SocialEmail from '../SocialEmail/index';
 import SocialLinkedin from '../SocialLinkedin/index';
 import Animations from '../Animations/index';
 
+
 class SocialLinks extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
-    hasColorPrime: false,
+    hasColorPrime: false
   };
 
   handleClick(name) {
     Router.push(`/${name}`).then(() => window.scrollTo(0, 0));
-    Router.prefetch(`/${name}`)
+    Router.prefetch(`/${name}`);
   }
 
   render() {
-    const iconPadding = { paddingLeft: '1vw', paddingRight: '1vw', }
+    const iconPadding = { paddingLeft: '1vw', paddingRight: '1vw' };
 
     return (
       <div>
@@ -54,7 +55,7 @@ class SocialLinks extends React.Component { // eslint-disable-line react/prefer-
               }
           `}
         </style>
-        <div className="background-color-yellow">
+        <div>
           <div style={{ paddingTop: '2vw' }}>
             <Animations classes="fadeInLeft">
               <SingleDesktop hasFullScreen={false} hasPaddingTop={false}>

@@ -20,7 +20,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
   render() {
     const { children } = this.props;
     return (
-      <div className={`aligner background-color-yellow`}>
+      <div className="aligner">
         <style jsx>
           {`
           .vertical-middle {
