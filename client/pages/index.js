@@ -25,6 +25,7 @@ import ParallaxEffect from '../components/ParallaxEffect/index';
 import AnimateOnce from '../components/AnimateOnce/index';
 import Posponer from '../components/Posponer/index';
 import AnimateTest from '../components/AnimateVertical/index';
+import SocialLinks from '../components/SocialLinks/index';
 
 
 class Index extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -65,6 +66,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
               </AnimateOnce>
             </Posponer>
           </Header>
+          <SocialLinks />
         </div>
       </Layout>
     );
