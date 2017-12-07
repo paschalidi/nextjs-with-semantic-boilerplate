@@ -11,7 +11,7 @@
     "dev": "node server",
     "start": "NODE_ENV=production node server",
     "test": "NODE_ENV=test jest --coverage",
-    "build": "next build client",
+    "build": "cd client/static/semantic/ && gulp build && cd ../../../ && next build client",
     "heroku-postbuild": "npm run build",
     "deploy": "now --public ",
     "generate": "plop --plopfile client/tools/generators/index.js"
@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^7.0.1",
     "express": "^4.15.3",
     "fullpage-react": "^3.0.7",
+    "gulp": "^3.9.1",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^20.0.0",
     "marked": "^0.3.6",
