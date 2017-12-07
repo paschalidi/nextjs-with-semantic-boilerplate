@@ -79,7 +79,7 @@ class SingleDesktop extends React.Component { // eslint-disable-line react/prefe
         <div
           className={`
               ${hasFullScreen ? "aligner-item full-height" : null}
-              ${hasColorPrime ? "background-color-prime" : hasColorDark ? "background-color-dark" : hasColorDarkPrime ? "background-color-dark-prime" : hasColorSec ? "background-color-sec" : hasColorBlue ? "background-color-blue" : hasColorOrange ? "background-color-angled-orange" : hasColorSplitBlue ? "background-color-angled-blue" : hasColorWhite ? "background-color-white" : null }
+              ${hasColorPrime ? "background-color-prime" : hasColorDark ? "background-color-dark" : hasColorDarkPrime ? "background-color-dark-prime" : hasColorSec ? "background-color-sec" : hasColorBlue ? "background-color-blue" : hasColorOrange ? "background-color-angled-orange" : hasColorSplitBlue ? "f7fdfdbackground-color-angled-index" : hasColorWhite ? "background-color-white" : null }
             `}
         >
           {

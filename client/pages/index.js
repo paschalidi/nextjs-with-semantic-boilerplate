@@ -43,7 +43,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
                 margin: 0 auto;
             }
         `}</style>
-        <div className="background-color-yellow">
+        <div className="f7fdfdbackground-color-angled-index">
           <Header>
             <Posponer timer={0}>
               <AnimateOnce classes="fadeInLeft">

@@ -3,10 +3,10 @@
 *******************************/
 .ui.menu a.item:hover {
     cursor: pointer;
-    background: #212121;
-    color: #ffd635;
+    background: #000;
+    color: #fff;
 }
 .ui.menu .active.item {
-    background: #212121 !important;
-    color: #ffd635 !important;
+    background: #ffff !important;
+    color: #313541 !important;
 }

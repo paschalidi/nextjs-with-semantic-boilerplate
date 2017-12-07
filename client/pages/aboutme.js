@@ -33,6 +33,7 @@ import Posponer from '../components/Posponer/index';
 import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
 import BounchingArrow from '../components/BounchingArrow/index';
+import ComponentFlippingText from '../components/ComponentFlippingText/index';
 
 
 class Aboutme extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -78,7 +79,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                 padding: 9vw 0;
             }
         `}</style>
-        <div className="background-color-yellow">
+        <div className="f7fdfdbackground-color-angled-index-revert">
           <SingleDesktop>
             <div className="section-style">
               <Grid centered container>
@@ -92,9 +93,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Posponer timer={0.4}>
                           <Animations>
                             <br />
-                            I am Christos Paschalidis, <span
-                            className="invert-colors"
-                          >a web developer.</span>
+                            <ComponentFlippingText children="I am Christos Paschalidis, " text="a web developer."/>
                           </Animations>
                         </Posponer>
                       </div>

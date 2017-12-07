@@ -76,12 +76,19 @@ p {
 }
 
 .background-color-yellow {
-    background-color: #FFEA03 !important;
+    background-color: #f7fdfd !important;
 }
-
 
 .background-diagonal {
     background-image: -webkit-linear-gradient(50deg, #f2f2f2 50%, #e3e8ee 50%);
+}
+
+.f7fdfdbackground-color-angled-index {
+    background: linear-gradient(60deg, #9cd6ff, #e6e6e661) !important;
+}
+
+.f7fdfdbackground-color-angled-index-revert {
+    background: linear-gradient(60deg, #9cc4ff, #e6e6e661) !important;
 }
 
 .background-color-white {
@@ -390,9 +397,11 @@ button-s {
 }
 
 .invert-colors {
+    padding: 0 10px;
     display: inline-block;
-    background-color: #212121 !important;
-    color: #FFEA03 !important;
+    background-color: #f2fcff2e !important;
+    color: #212121 !important;
+
 }
 
 .mouse-on-link-hover-footer:hover .invert-colors-on-hover {

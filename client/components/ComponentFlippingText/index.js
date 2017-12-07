@@ -30,10 +30,6 @@ class ComponentFlippingText extends React.Component { // eslint-disable-line rea
                 outline: none;
             }
 
-            span.flip-animate {
-                -webkit-perspective: 1000px;
-                perspective: 1000px;
-            }
 
             span.flip-animate span {
                 position: relative;
@@ -71,11 +67,10 @@ class ComponentFlippingText extends React.Component { // eslint-disable-line rea
             }
 
             span.flip-animate:hover span:before, span.flip-animate:focus span:before {
-                background-color: #212121 !important;
-                color: #fbfcfc;
+                color: #000;
             }
         `}</style>
-        <span className="paragraph-s flip-animate color-white" target="_blank">{this.props.children}<span
+        <span className="paragraph-s flip-animate" target="_blank">{this.props.children}<span
           className="invert-colors"
           data-hover={this.props.text}
         >{this.props.text}</span></span>
