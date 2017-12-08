@@ -12,11 +12,12 @@ import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 import { Segment, Grid } from 'semantic-ui-react';
-import { DefaultPlayer as Video } from 'react-html5video';
+import ReactPlayer from 'react-player';
 
 import Layout from '../components/Layout/index';
 import SingleDesktop from '../components/SingleDesktop/index';
 import ComponentTitle from '../components/ComponentTitle/index';
+import ComponentFlippingText from '../components/ComponentFlippingText/index';
 
 
 class Contact extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -25,21 +26,19 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
     const paddingStyle = { padding: '2.5vw 0' };
     return (
       <Layout pageId={this.props.url.pathname} title="Contact">
-        <Video
-          autoPlay loop muted
-          controls={false}
-          poster="http://sourceposter.jpg"
-        >
-          <source src="https://subsign.co/public/video/homepage.mp4" type="video/webm" />
-          <track
-            label="English"
-            kind="subtitles"
-            srcLang="en"
-            src="http://source.vtt"
-            default
-          />
-        </Video>
-        <div className="dark">
+        <ReactPlayer
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '15%',
+            zIndex: '0'
+          }}
+          loop
+          width="100%"
+          height="auto"
+          url='https://subsign.co/public/video/homepage.mp4' playing
+        />
+        <div className="background-color-black">
           <SingleDesktop>
             <Segment textAlign="center" className='transparent-s'>
               <Segment padded="very" textAlign="center" className='transparent-s'>
@@ -48,17 +47,15 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
               <Grid centered container>
                 <Grid.Row className="padding-none-s" columns={3}>
                   <Grid.Column textAlign="center" className="padding-none-s" width={4}>
-                    <a href="tel:+4915783675540" className="paragraph-s">
-                      <div className="mouse-on-link-hover-footer scale">
-                        <div style={paddingStyle}>
+                    <div style={paddingStyle}>
+                      <a href="tel:+4915783675540" className="paragraph-s">
+                        <div className="mouse-on-link-hover-footer">
                           <Segment className='padding-lr-s transparent-s'>
-                            <div className="paragraph-white-s invert-colors-on-hover">
-                              +49 1578 3675540
-                            </div>
+                            <ComponentFlippingText text="+49 1578 3675540" />
                           </Segment>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </Grid.Column>
                   <Grid.Column className="padding-none-s" width={1} />
                   <Grid.Column
@@ -66,21 +63,19 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
                     className="padding-none-s"
                     width={4}
                   >
-                    <a
-                      target="_top"
-                      href={'mailto:paschalidi@outlook.com?Subject=Lets talk!'}
-                      className="paragraph-s"
-                    >
-                      <div className="mouse-on-link-hover-footer scale">
-                        <div style={paddingStyle}>
+                    <div style={paddingStyle}>
+                      <a
+                        target="_top"
+                        href={'mailto:paschalidi@outlook.com?Subject=Lets talk!'}
+                        className="paragraph-s"
+                      >
+                        <div className="mouse-on-link-hover-footer">
                           <Segment textAlign="center" className='padding-lr-s transparent-s'>
-                            <div className="paragraph-white-s invert-colors-on-hover">
-                              paschalidi@mail
-                            </div>
+                            <ComponentFlippingText text="paschalidi@mail" />
                           </Segment>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

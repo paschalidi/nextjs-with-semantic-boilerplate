@@ -55,7 +55,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
   render() {
     const sectionStyle = { textAlign: 'center' };
     return (
-      <Layout pageId={this.props.url.pathname} title="Aboutme">
+      <Layout pageId={this.props.url.pathname} title="About Christos Paschalidis">
         {/* language=CSS */}
         <style jsx>{`
             .no-shadow {
@@ -81,8 +81,8 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                 padding: 9vw 0;
             }
         `}</style>
-        <div className="f7fdfdbackground-color-angled-index-revert">
-          <SingleDesktop>
+        <div className="background-color-angled-index-revert">
+          <SingleDesktop >
             <div className="section-style">
               <Grid centered container>
                 <Grid.Row textAlign="center" columns="equal">
