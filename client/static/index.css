@@ -87,7 +87,7 @@ p {
     background: linear-gradient(60deg, #9cd6ff, #e6e6e661) !important;
 }
 
-.f7fdfdbackground-color-angled-index-revert {
+.background-color-angled-index-revert {
     background: linear-gradient(60deg, #9cc4ff, #e6e6e661) !important;
 }
 
@@ -386,29 +386,22 @@ button-s {
 .invert-on-hover:hover {
     cursor: url('ico/cursor.ico'), auto !important;
     display: inline-block;
-    background-color: #212121 !important;
-    color: #FFEA03 !important;
+    background-color: #070507b3 !important;
+    color: #fcfcfc !important;
 }
 
 .invert-on-hover--footer:hover {
     display: inline-block;
-    background-color: #212121 !important;
-    color: #FFEA03 !important;
+    background-color: #fcfcfc !important;
+    color: #070507b3  !important;
 }
 
 .invert-colors {
     padding: 0 10px;
     display: inline-block;
-    background-color: #f2fcff2e !important;
-    color: #212121 !important;
+    background-color: #070507b3 !important;
+    color: #fcfcfc !important;
 
-}
-
-.mouse-on-link-hover-footer:hover .invert-colors-on-hover {
-    display: inline-block;
-    background-color: #212121 !important;
-    color: #FFEA03 !important;
-    transition: all 300ms
 }
 
 a,
@@ -429,15 +422,6 @@ canvas {
     position: absolute;
     bottom: 0;
     height: 20vw !important;
-}
-
-video {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 105%;
-    height: auto;
-    z-index: -100;
 }
 
 .scale:hover {
