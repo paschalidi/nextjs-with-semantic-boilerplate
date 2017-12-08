@@ -67,6 +67,7 @@ class ComponentFlippingText extends React.Component { // eslint-disable-line rea
             }
 
             span.flip-animate:hover span:before, span.flip-animate:focus span:before {
+                background-color: #fcfcfc;
                 color: #000;
             }
         `}</style>

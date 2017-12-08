@@ -26,19 +26,21 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
     const paddingStyle = { padding: '2.5vw 0' };
     return (
       <Layout pageId={this.props.url.pathname} title="Contact">
-        <ReactPlayer
-          style={{
-            position: 'absolute',
-            right: 0,
-            top: '15%',
-            zIndex: '0'
-          }}
-          loop
-          width="100%"
-          height="auto"
-          url='https://subsign.co/public/video/homepage.mp4' playing
-        />
-        <div className="background-color-black">
+        <div>
+          <ReactPlayer
+            style={{
+              right: 0,
+              top: 0,
+              zIndex: 0
+            }}
+            loop
+            width="110vw"
+            height="auto"
+            url="https://subsign.co/public/video/homepage.mp4"
+            playing
+          />
+        </div>
+        <div style={{ position: 'absolute', top: 0 }}>
           <SingleDesktop>
             <Segment textAlign="center" className='transparent-s'>
               <Segment padded="very" textAlign="center" className='transparent-s'>
@@ -49,11 +51,11 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
                   <Grid.Column textAlign="center" className="padding-none-s" width={4}>
                     <div style={paddingStyle}>
                       <a href="tel:+4915783675540" className="paragraph-s">
-                        <div className="mouse-on-link-hover-footer">
-                          <Segment className='padding-lr-s transparent-s'>
+                        <Segment className='padding-lr-s transparent-s'>
+                          <div className="mouse-on-link-hover-footer">
                             <ComponentFlippingText text="+49 1578 3675540" />
-                          </Segment>
-                        </div>
+                          </div>
+                        </Segment>
                       </a>
                     </div>
                   </Grid.Column>
@@ -69,11 +71,11 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
                         href={'mailto:paschalidi@outlook.com?Subject=Lets talk!'}
                         className="paragraph-s"
                       >
-                        <div className="mouse-on-link-hover-footer">
-                          <Segment textAlign="center" className='padding-lr-s transparent-s'>
+                        <Segment textAlign="center" className='padding-lr-s transparent-s'>
+                          <div className="mouse-on-link-hover-footer">
                             <ComponentFlippingText text="paschalidi@mail" />
-                          </Segment>
-                        </div>
+                          </div>
+                        </Segment>
                       </a>
                     </div>
                   </Grid.Column>
