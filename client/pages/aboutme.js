@@ -14,11 +14,7 @@ import Router from 'next/router';
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
 
-import { Grid } from 'semantic-ui-react';
-
-import Nerd from '../static/svgs/nerd.svg';
-import Smile from '../static/svgs/smile.svg';
-import Happy from '../static/svgs/happy.svg';
+import { Grid, Segment } from 'semantic-ui-react';
 
 import Scroll from 'react-scroll'; // Imports all Mixins
 
@@ -34,6 +30,7 @@ import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
 import BounchingArrow from '../components/BounchingArrow/index';
 import ComponentFlippingText from '../components/ComponentFlippingText/index';
+import ComponentParagraph from '../components/ComponentParagraph/index';
 
 
 class Aboutme extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -66,6 +63,16 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
       <Layout pageId={this.props.url.pathname} title="Aboutme">
         {/* language=CSS */}
         <style jsx>{`
+            .no-shadow {
+                text-shadow: none !important;
+            }
+
+            .white-box {
+                background: rgba(255, 255, 255, 0.9);
+                padding: 80px;
+                outline: 1px solid #fff;
+                outline-offset: 8px;
+            }
 
             .paragraph-padding {
                 padding-top: 3vw;
@@ -89,14 +96,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                       <Animations>
                         <ComponentTitle hasTextAlignCenter children={'hello'} />
                       </Animations>
-                      <div className="paragraph-padding">
-                        <Posponer timer={0.4}>
-                          <Animations>
-                            <br />
-                            <ComponentFlippingText children="I am Christos Paschalidis, " text="a web developer."/>
-                          </Animations>
-                        </Posponer>
-                      </div>
+                      <Text children="I am Christos Paschalidis, a web developer" />
                     </div>
                   </Grid.Column>
                 </Grid.Row>
@@ -115,21 +115,12 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                   <Grid centered container>
                     <Grid.Row textAlign="center" columns="equal">
                       <Grid.Column width={10}>
-                        <div style={sectionStyle} className="paragraph-s">
+                        <div style={sectionStyle} className=" paragraph-s ">
                           <Animations>
-                            <ComponentTitle hasTextAlignCenter children={'who am I'} />
+                            <ComponentTitle hasTextAlignCenter children={'01. history'} />
                           </Animations>
-                          <div className="paragraph-padding">
-                            <Posponer timer={0.4}>
-                              <Animations>
-                                <br />
-                                I am Christos Paschalidis, <span
-                                className="invert-colors"
-                              >a web developer.</span>
-                              </Animations>
-                            </Posponer>
-                          </div>
                         </div>
+                        <Text children="In the most part a self-taught Developer with over 6 years of coding experience. Grew up with the dream to become a developer. Studied Computer Science and Engineering. Now I’m based in Berlin, Germany, working for Vimcar GmbH and enjoying the life in the city." />
                       </Grid.Column>
                     </Grid.Row>
                   </Grid>
@@ -153,18 +144,11 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                         <Animations>
                           <ComponentTitle
                             hasTextAlignCenter
-                            children={'what kind of projects I like'}
+                            children={'02. what kind of products I like to build'}
                           />
                         </Animations>
-                        <div className="paragraph-padding">
-                          <Posponer timer={0.4}>
-                            <Animations>
-                              <br />
-                              I am Christos Paschalidis, <span
-                              className="invert-colors"
-                            >a web developer.</span>
-                            </Animations>
-                          </Posponer>
+                        <div className="paragraph-padding no-shadow">
+                          <Text children="I create and build websites to communicate a feeling of joy and comfort that shall invite the user to come back. For me, that means that not only graphical work, but also the frontend development like JS & css, HTML, and a CMS (backend, i know) are part of my field of activity. The development section is really important to me, because I thereby constantly improve my skills and stay up-to-date with new methods and technology." />
                         </div>
                       </div>
                     </Grid.Column>
@@ -173,6 +157,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
               </div>
             </ParallaxEffect>
           </SingleDesktop>
+          <ComponentDivider />
 
           <SingleDesktop hasFullScreen={false}>
             <ParallaxEffect>
@@ -182,17 +167,36 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                     <Grid.Column width={10}>
                       <div style={sectionStyle} className="paragraph-s">
                         <Animations>
-                          <ComponentTitle hasTextAlignCenter children={'what I am proud of '} />
+                          <ComponentTitle hasTextAlignCenter children={'03. principles'} />
                         </Animations>
-                        <div className="paragraph-padding">
-                          <Posponer timer={0.4}>
-                            <Animations>
-                              <br />
-                              I am Christos Paschalidis, <span
-                              className="invert-colors"
-                            >a web developer.</span>
-                            </Animations>
-                          </Posponer>
+                        <div className="paragraph-padding no-shadow">
+                          <Animations>
+                            <div style={{ paddingTop: '30px' }} />
+                            <Segment padded className='padding-lr-s transparent-s'>
+                              <ComponentParagraph
+                                hasTextAlignCenter
+                                width={80}
+                                children="<b>Clean ­– In thinking, in style.</b>"
+                              />
+                              <ComponentParagraph
+                                hasTextAlignCenter
+                                width={80}
+                                children="Simple, minimal and effective. This is my mantra and method. Clean code, fuss­free interfaces and expert execution, design as it should be."
+                              />
+                            </Segment>
+                            <Segment padded className='padding-lr-s transparent-s'>
+                              <ComponentParagraph
+                                hasTextAlignCenter
+                                width={80}
+                                children="<b>Perfection doesn’t do a 9-­5.</b>"
+                              />
+                              <ComponentParagraph
+                                hasTextAlignCenter
+                                width={80}
+                                children="And neither do I. I’m not bound to any time zones or tied to a desk. The project dictates where I need to be and who I need to collaborate with. Essentially, I always go the extra mile."
+                              />
+                            </Segment>
+                          </Animations>
                         </div>
                       </div>
                     </Grid.Column>
@@ -202,39 +206,6 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
             </ParallaxEffect>
             <ComponentDivider />
           </SingleDesktop>
-
-          <SingleDesktop hasFullScreen={false}>
-            <ParallaxEffect>
-              <div className="section-style">
-                <Grid centered container>
-                  <Grid.Row textAlign="center" columns="equal">
-                    <Grid.Column width={10}>
-                      <div style={sectionStyle} className="paragraph-s">
-                        <Animations>
-                          <ComponentTitle
-                            hasTextAlignCenter
-                            children={'how do I see myself in the future'}
-                          />
-                        </Animations>
-                        <div className="paragraph-padding">
-                          <Posponer timer={0.4}>
-                            <Animations>
-                              <br />
-                              I am Christos Paschalidis, <span
-                              className="invert-colors"
-                            >a web developer.</span>
-                            </Animations>
-                          </Posponer>
-                        </div>
-                      </div>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
-              </div>
-            </ParallaxEffect>
-            <ComponentDivider />
-          </SingleDesktop>
-
 
           <SingleDesktop hasFullScreen={false}>
             <ParallaxEffect>
@@ -254,14 +225,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
 
                         </Animations>
                         <div className="paragraph-padding">
-                          <Posponer timer={0.4}>
-                            <Animations>
-                              <br />
-                              I am Christos Paschalidis, <span
-                              className="invert-colors"
-                            >a web developer.</span>
-                            </Animations>
-                          </Posponer>
+                          <Text children="me" />
                         </div>
                       </div>
                     </Grid.Column>
@@ -297,5 +261,24 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
     );
   }
 }
+
+const Text = ({ children = null }) => (
+  <div className="paragraph-padding no-shadow">
+    <style jsx>{`
+            .no-shadow {
+                text-shadow: none !important;
+            }
+        `}</style>
+    <Animations>
+      <div style={{ paddingTop: '30px' }} />
+      <ComponentParagraph
+        hasTextAlignCenter
+        width={80}
+        children={children}
+      />
+    </Animations>
+  </div>
+
+);
 
 export default withRedux(initStore)(Aboutme);

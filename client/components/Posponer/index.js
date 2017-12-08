@@ -16,19 +16,23 @@ import VisibilitySensor from 'react-visibility-sensor';
 class Posponer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
     timer: 0,
-    waitElement: <div />
+    waitElement: <div />,
+    secondsElapsed: 0
+
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      secondsElapsed: 0
+      timer: props.timer,
+      secondsElapsed: props.secondsElapsed
     };
   }
 
   componentIsVisible() {
+    let secondsElapsed = 0;
     setTimeout(() => {
-      let secondsElapsed = this.state.secondsElapsed + 0.1;
+      secondsElapsed = this.state.secondsElapsed + 0.1;
       this.setState({ secondsElapsed });
     }, 100);
   }
@@ -41,7 +45,7 @@ class Posponer extends React.Component { // eslint-disable-line react/prefer-sta
             ({ isVisible }) => {
               isVisible ? this.componentIsVisible() : null;
               return (
-                isVisible && this.state.secondsElapsed > this.props.timer
+                isVisible && this.state.secondsElapsed > this.state.timer
                   ?
                   this.props.children
                   :

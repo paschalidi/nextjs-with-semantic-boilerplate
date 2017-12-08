@@ -10,6 +10,7 @@
 import React from 'react';
 import marked from 'marked';
 
+
 const ComponentParagraph = ({
                               children = null,
                               hasTextLg = false,
@@ -18,10 +19,13 @@ const ComponentParagraph = ({
                               hasTextWhite = false,
                               hasTextBlue = false,
                               classes = '-default',
-                              hasTextAlignCenter = false,
-                              color = '-default',
+                              width = 100,
+                              hasTextAlignCenter = false
                             }) => (
-  <div className={`padding-title-${classes} color-${color} ${hasTextAlignCenter ? 'middle' : null}`}>
+  <div
+    style={{ width: `${width}%` }}
+    className={`padding-title-${classes}  ${hasTextAlignCenter ? 'middle' : null}`}
+  >
     {/* language=CSS */}
     <style jsx>{`
         .middle {

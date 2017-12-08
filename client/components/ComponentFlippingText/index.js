@@ -14,7 +14,7 @@ import {} from 'semantic-ui-react';
 
 class ComponentFlippingText extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
-    hasColorPrime: false
+    moreChildren: false
   };
 
   render() {
@@ -29,7 +29,6 @@ class ComponentFlippingText extends React.Component { // eslint-disable-line rea
                 transition: color 0.3s;
                 outline: none;
             }
-
 
             span.flip-animate span {
                 position: relative;
@@ -73,7 +72,7 @@ class ComponentFlippingText extends React.Component { // eslint-disable-line rea
         <span className="paragraph-s flip-animate" target="_blank">{this.props.children}<span
           className="invert-colors"
           data-hover={this.props.text}
-        >{this.props.text}</span></span>
+        >{this.props.text}</span> {this.props.moreChildren && this.props.moreChildren}</span>
       </div>
     );
   }
