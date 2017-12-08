@@ -25,6 +25,20 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
     const paddingStyle = { padding: '2.5vw 0' };
     return (
       <Layout pageId={this.props.url.pathname} title="Contact">
+        <Video
+          autoPlay loop muted
+          controls={false}
+          poster="http://sourceposter.jpg"
+        >
+          <source src="https://subsign.co/public/video/homepage.mp4" type="video/webm" />
+          <track
+            label="English"
+            kind="subtitles"
+            srcLang="en"
+            src="http://source.vtt"
+            default
+          />
+        </Video>
         <div className="dark">
           <SingleDesktop>
             <Segment textAlign="center" className='transparent-s'>
@@ -71,21 +85,6 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
                 </Grid.Row>
               </Grid>
             </Segment>
-            <Video
-              autoPlay loop muted
-              controls={false}
-              poster="http://sourceposter.jpg"
-            >
-              <source src="https://subsign.co/public/video/homepage.mp4" type="video/webm" />
-              <track
-                label="English"
-                kind="subtitles"
-                srcLang="en"
-                src="http://source.vtt"
-                default
-              />
-            </Video>
-
           </SingleDesktop>
         </div>
       </Layout>
