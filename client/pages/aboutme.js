@@ -16,20 +16,15 @@ import initStore from '../store';
 
 import { Grid, Segment } from 'semantic-ui-react';
 
-import Scroll from 'react-scroll'; // Imports all Mixins
-
-let Element = Scroll.Element;
-let scroller = Scroll.scroller;
+import { Element, scroller } from 'react-scroll';
 
 import Layout from '../components/Layout/index';
 import Animations from '../components/Animations/index';
 import ComponentTitle from '../components/ComponentTitle/index';
 import SingleDesktop from '../components/SingleDesktop/index';
-import Posponer from '../components/Posponer/index';
 import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
 import BounchingArrow from '../components/BounchingArrow/index';
-import ComponentFlippingText from '../components/ComponentFlippingText/index';
 import ComponentParagraph from '../components/ComponentParagraph/index';
 
 
