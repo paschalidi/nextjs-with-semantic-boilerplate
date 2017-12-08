@@ -14,6 +14,7 @@ import {} from 'semantic-ui-react';
 
 class ComponentFlippingText extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
+    children: '',
     moreChildren: false
   };
 
