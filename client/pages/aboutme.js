@@ -10,6 +10,7 @@
 import React from 'react';
 import 'isomorphic-fetch';
 import Router from 'next/router';
+import axios from 'axios';
 
 import withRedux from 'next-redux-wrapper';
 import initStore from '../store';
@@ -26,13 +27,19 @@ import ComponentDivider from '../components/ComponentDivider/index';
 import ParallaxEffect from '../components/ParallaxEffect/index';
 import BounchingArrow from '../components/BounchingArrow/index';
 import ComponentParagraph from '../components/ComponentParagraph/index';
+import FormContactMe from '../components/FormContactMe/index';
 
 
 class Aboutme extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  static defaultProps = {
+    textRedux: 'empty'
+  };
+
   constructor(props) {
     super(props);
     this.state = {
-      reveal: false
+      textRedux: props.textRedux,
+      mailSent: false
     };
   }
 
@@ -40,8 +47,6 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
     Router.push(`/${name}`).then(() => window.scrollTo(0, 0));
     Router.prefetch(`/${name}`);
   }
-
-  handleHoverOn = () => this.setState({ reveal: true });
 
   scrollTo() {
     scroller.scrollTo('scroll-to-element', {
@@ -52,8 +57,23 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
     });
   }
 
+  handleSubmitForm(textRedux) {
+    axios.post('/aboutme-success', { textRedux })
+    .then(() => {
+      console.log('Email sent');
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  handleButtonClick = (email) => () => this.setState({
+    textRedux: email
+  });
+
   render() {
     const sectionStyle = { textAlign: 'center' };
+    const { textRedux } = this.state;
     return (
       <Layout pageId={this.props.url.pathname} title="About Christos Paschalidis">
         {/* language=CSS */}
@@ -82,7 +102,7 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
             }
         `}</style>
         <div className="background-color-angled-index-revert">
-          <SingleDesktop >
+          <SingleDesktop>
             <div className="section-style">
               <Grid centered container>
                 <Grid.Row textAlign="center" columns="equal">
@@ -133,7 +153,6 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
                   <Grid.Row textAlign="center" columns="equal">
                     <Grid.Column
                       width={10}
-                      onMouseEnter={this.handleHoverOn}
                     >
                       <div style={sectionStyle} className="reveal paragraph-s">
                         <Animations>
@@ -220,7 +239,16 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
 
                         </Animations>
                         <div className="paragraph-padding">
-                          <Text children="me" />
+                          {
+                            this.state.mailSent
+                              ?
+                              <ComponentParagraph children={'done baby'} />
+                              :
+                              <FormContactMe
+                                onButtonClick={this.handleButtonClick}
+                                onSubmit={this.handleSubmitForm.bind(this, textRedux)}
+                              />
+                          }
                         </div>
                       </div>
                     </Grid.Column>
@@ -259,11 +287,12 @@ class Aboutme extends React.Component { // eslint-disable-line react/prefer-stat
 
 const Text = ({ children = null }) => (
   <div className="paragraph-padding no-shadow">
+    {/* language=CSS */}
     <style jsx>{`
-            .no-shadow {
-                text-shadow: none !important;
-            }
-        `}</style>
+        .no-shadow {
+            text-shadow: none !important;
+        }
+    `}</style>
     <Animations>
       <div style={{ paddingTop: '30px' }} />
       <ComponentParagraph
