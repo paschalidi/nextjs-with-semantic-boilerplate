@@ -11,9 +11,10 @@ import React from 'react';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 
-Router.onRouteChangeStart = () => NProgress.start()
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
+
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 export default () => (
   <div>
@@ -26,7 +27,7 @@ export default () => (
           }
 
           #nprogress .bar {
-              background: #212121;
+              background: #fcfcfc;
 
               position: fixed;
               z-index: 1031;
@@ -34,7 +35,7 @@ export default () => (
               left: 0;
 
               width: 100%;
-              height: 2px;
+              height: 3px;
           }
 
           /* todo use this for whole page loading */
@@ -48,7 +49,7 @@ export default () => (
               right: 0px;
               width: 100px;
               height: 100%;
-              box-shadow: 0 0 10px #212121, 0 0 5px #212121;
+              box-shadow: none;
               opacity: 1.0;
               -webkit-transform: rotate(3deg) translate(0px, -4px);
               -ms-transform: rotate(3deg) translate(0px, -4px);
