@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 const express = require('express');
 const next = require('next');
 
@@ -16,20 +15,21 @@ app.prepare()
   server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
   server.get('/aboutme-success', (req, res) => {
-    console.log('req.body.textRedux');
-    console.log(req.body.textRedux);
     const actualPage = ' /aboutme';
     app.render(req, res, actualPage);
   });
 
   server.post('/aboutme-success', (req, res) => {
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    console.log("process.env")
+    console.log(process.env)
+    sgMail.setApiKey(process.env.SENDGRID_API);
+
     const msg = {
       to: 'paschalidi@outlook.com',
       from: 'paschalidi@outlook.com',
-      subject: 'you got an email from your website baby',
-      text: 'and easy to do anywhere, even with Node.js',
-      html: '<strong>and easy to do anywhere, even with Node.js</strong>'
+      subject: 'You are getting a new project Christos',
+      text: req.body.textRedux,
+      html: req.body.textRedux
     };
     sgMail.send(msg);
   });
