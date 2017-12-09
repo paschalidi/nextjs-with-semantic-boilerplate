@@ -1,7 +1,7 @@
 # new-boilerplate-website 
 the new boilerplate website. including a CMS  
 
-## Contents
+## Contents.
 
 - [Installation](#installation)
 - [Run](#run)
